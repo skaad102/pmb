@@ -1,0 +1,56 @@
+create table if not exists notices_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists author_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists authperso_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists categ_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists cms_editorial_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists collection_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists collstate_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists demandes_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists empr_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists explnum_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists expl_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists indexint_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists pret_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists publisher_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists serie_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists skos_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists subcollection_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+create table if not exists tu_custom_dates	Error may be fatal : All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+alter table author_custom_dates change author_custom_date_start	Error may be fatal : Table 'bibli.author_custom_dates' doesn't exist
+alter table author_custom_dates change author_custom_date_end	Error may be fatal : Table 'bibli.author_custom_dates' doesn't exist
+alter table authperso_custom_dates change authperso_custom_date_start	Error may be fatal : Table 'bibli.authperso_custom_dates' doesn't exist
+alter table authperso_custom_dates change authperso_custom_date_end	Error may be fatal : Table 'bibli.authperso_custom_dates' doesn't exist
+alter table categ_custom_dates change categ_custom_date_start	Error may be fatal : Table 'bibli.categ_custom_dates' doesn't exist
+alter table categ_custom_dates change categ_custom_date_end	Error may be fatal : Table 'bibli.categ_custom_dates' doesn't exist
+alter table cms_editorial_custom_dates change cms_editorial_custom_date_start	Error may be fatal : Table 'bibli.cms_editorial_custom_dates' doesn't exist
+alter table cms_editorial_custom_dates change cms_editorial_custom_date_end	Error may be fatal : Table 'bibli.cms_editorial_custom_dates' doesn't exist
+alter table collection_custom_dates change collection_custom_date_start	Error may be fatal : Table 'bibli.collection_custom_dates' doesn't exist
+alter table collection_custom_dates change collection_custom_date_end	Error may be fatal : Table 'bibli.collection_custom_dates' doesn't exist
+alter table collstate_custom_dates change collstate_custom_date_start	Error may be fatal : Table 'bibli.collstate_custom_dates' doesn't exist
+alter table collstate_custom_dates change collstate_custom_date_end	Error may be fatal : Table 'bibli.collstate_custom_dates' doesn't exist
+alter table demandes_custom_dates change demandes_custom_date_start	Error may be fatal : Table 'bibli.demandes_custom_dates' doesn't exist
+alter table demandes_custom_dates change demandes_custom_date_end	Error may be fatal : Table 'bibli.demandes_custom_dates' doesn't exist
+alter table empr_custom_dates change empr_custom_date_start	Error may be fatal : Table 'bibli.empr_custom_dates' doesn't exist
+alter table empr_custom_dates change empr_custom_date_end	Error may be fatal : Table 'bibli.empr_custom_dates' doesn't exist
+alter table explnum_custom_dates change explnum_custom_date_start	Error may be fatal : Table 'bibli.explnum_custom_dates' doesn't exist
+alter table explnum_custom_dates change explnum_custom_date_end	Error may be fatal : Table 'bibli.explnum_custom_dates' doesn't exist
+alter table expl_custom_dates change expl_custom_date_start	Error may be fatal : Table 'bibli.expl_custom_dates' doesn't exist
+alter table expl_custom_dates change expl_custom_date_end	Error may be fatal : Table 'bibli.expl_custom_dates' doesn't exist
+alter table indexint_custom_dates change indexint_custom_date_start	Error may be fatal : Table 'bibli.indexint_custom_dates' doesn't exist
+alter table indexint_custom_dates change indexint_custom_date_end	Error may be fatal : Table 'bibli.indexint_custom_dates' doesn't exist
+alter table notices_custom_dates change notices_custom_date_start	Error may be fatal : Table 'bibli.notices_custom_dates' doesn't exist
+alter table notices_custom_dates change notices_custom_date_end	Error may be fatal : Table 'bibli.notices_custom_dates' doesn't exist
+alter table pret_custom_dates change pret_custom_date_start	Error may be fatal : Table 'bibli.pret_custom_dates' doesn't exist
+alter table pret_custom_dates change pret_custom_date_end	Error may be fatal : Table 'bibli.pret_custom_dates' doesn't exist
+alter table publisher_custom_dates change publisher_custom_date_start	Error may be fatal : Table 'bibli.publisher_custom_dates' doesn't exist
+alter table publisher_custom_dates change publisher_custom_date_end	Error may be fatal : Table 'bibli.publisher_custom_dates' doesn't exist
+alter table serie_custom_dates change serie_custom_date_start	Error may be fatal : Table 'bibli.serie_custom_dates' doesn't exist
+alter table serie_custom_dates change serie_custom_date_end	Error may be fatal : Table 'bibli.serie_custom_dates' doesn't exist
+alter table skos_custom_dates change skos_custom_date_start	Error may be fatal : Table 'bibli.skos_custom_dates' doesn't exist
+alter table skos_custom_dates change skos_custom_date_end	Error may be fatal : Table 'bibli.skos_custom_dates' doesn't exist
+alter table subcollection_custom_dates change subcollection_custom_date_start	Error may be fatal : Table 'bibli.subcollection_custom_dates' doesn't exist
+alter table subcollection_custom_dates change subcollection_custom_date_end	Error may be fatal : Table 'bibli.subcollection_custom_dates' doesn't exist
+alter table tu_custom_dates change tu_custom_date_start	Error may be fatal : Table 'bibli.tu_custom_dates' doesn't exist
+alter table tu_custom_dates change tu_custom_date_end	Error may be fatal : Table 'bibli.tu_custom_dates' doesn't exist
+alter table authperso_custom_dates change authperso_custom_date_start	Error may be fatal : Table 'bibli.authperso_custom_dates' doesn't exist
+alter table authperso_custom_dates change authperso_custom_date_end	Error may be fatal : Table 'bibli.authperso_custom_dates' doesn't exist
