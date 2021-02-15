@@ -1,0 +1,29 @@
+div [class*=uk-inline] {
+    display: flex;
+    position: relative;
+    max-width: 100% !important;
+    vertical-align: middle;
+    -webkit-backface-visibility: hidden;
+}
+
+div .uk-card.uk-card-default:hover{
+    background-color: rgba(223, 217, 223, 0.863);
+    color: black;
+}
+
+button.uk-button.uk-button-default:hover{
+    background: rgba(180, 179, 180, 0.849);
+    border-radius: 0.5rem;
+
+}
+
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background:rgba(128, 128, 128, 0.87) ;
+}
+
+#navbar ul{
+    position: inherit;
+}

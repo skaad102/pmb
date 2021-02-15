@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: common.tpl.php,v 1.182 2019-05-27 14:55:51 btafforeau Exp $
 
@@ -32,12 +32,12 @@ if(!isset($param_chat_activate)) $param_chat_activate = 0;
 require_once($class_path."/sort.class.php");
 
 function link_styles($style) {
-    // où $rep = répertoire de stockage des feuilles
+    // oï¿½ $rep = rï¿½pertoire de stockage des feuilles
     
     global $feuilles_style_deja_lu;
     if ($feuilles_style_deja_lu) return $feuilles_style_deja_lu ;
     
-    // mise en forme du répertoire
+    // mise en forme du rï¿½pertoire
     global $styles_path;
     global $charset;
     
@@ -68,7 +68,7 @@ function link_styles($style) {
     
     
     /** classement des fichiers javascript communs**/
-    //Un peu de JS à la rigueur, on inclut tout dans l'ordre alpha
+    //Un peu de JS ï¿½ la rigueur, on inclut tout dans l'ordre alpha
     $jsfiles = array();
     $handle = @opendir($rep."common/javascript");
     if($handle) {
@@ -88,7 +88,7 @@ function link_styles($style) {
     /** fin classement des fichiers javascript communs**/
     
     
-    /** classement des feuilles de style issues des thèmes **/
+    /** classement des feuilles de style issues des thï¿½mes **/
     $handle = @opendir($rep.$style);
     if(!$handle) {
         $result = array();
@@ -107,10 +107,10 @@ function link_styles($style) {
     foreach($css_style_filenames as $css_style_filename){
         $feuilles_style.="\n\t<link rel='stylesheet' type='text/css' href='".$rep.$style."/".$css_style_filename."' title='lefttoright' />";
     }
-    /** fin classement des feuilles de style issues des thèmes **/
+    /** fin classement des feuilles de style issues des thï¿½mes **/
     
-    /** classement des fichiers javascript issus des thèmes **/
-    //Un peu de JS à la rigueur, on inclut tout dans l'ordre alpha
+    /** classement des fichiers javascript issus des thï¿½mes **/
+    //Un peu de JS ï¿½ la rigueur, on inclut tout dans l'ordre alpha
     $jsfiles = array();
     $handle = @opendir($rep.$style."/javascript");
     if($handle) {
@@ -126,7 +126,7 @@ function link_styles($style) {
             $feuilles_style.="\n\t<script type='text/javascript' src='".$rep.$style."/javascript/".$js."?".$vide_cache."' ></script>";
         }
     }
-    /** fin classement des fichiers javascript issus des thèmes **/
+    /** fin classement des fichiers javascript issus des thï¿½mes **/
     
     
     // RTL / LTR
@@ -159,7 +159,7 @@ if (isset($pmb_default_style_addon) && $pmb_default_style_addon) {
 
 //	----------------------------------
 // $std_header : template header standard
-// attention : il n'y a plus le <body> : est envoyé par le fichier init.inc.php, c'est bien un header
+// attention : il n'y a plus le <body> : est envoyï¿½ par le fichier init.inc.php, c'est bien un header
 $std_header = "<!DOCTYPE html>
 <html lang='".get_iso_lang_code()."'>
 <head>
@@ -168,8 +168,8 @@ $std_header = "<!DOCTYPE html>
       $msg[1001]
     </title>
 	<meta name='author' content='PMB Group' />
-	<meta name='description' content='Logiciel libre de gestion de médiathèque' />
-	<meta name='keywords' content='logiciel, gestion, bibliothèque, médiathèque, libre, free, software, mysql, php, linux, windows, mac' />
+	<meta name='description' content='Logiciel libre de gestion de mï¿½diathï¿½que' />
+	<meta name='keywords' content='logiciel, gestion, bibliothï¿½que, mï¿½diathï¿½que, libre, free, software, mysql, php, linux, windows, mac' />
 	<!--<meta http-equiv='Pragma' content='no-cache' />
 	<meta http-equiv='Cache-Control' content='no-cache' />-->
 	";
@@ -304,8 +304,8 @@ $std_header = "<!DOCTYPE html>
 <head>
 	<meta charset=\"".$charset."\" />
   	<meta name='author' content='PMB Group' />
-	<meta name='description' content='Logiciel libre de gestion de médiathèque' />
-	<meta name='keywords' content='logiciel, gestion, bibliothèque, médiathèque, libre, free, software, mysql, php, linux, windows, mac' />
+	<meta name='description' content='Logiciel libre de gestion de mï¿½diathï¿½que' />
+	<meta name='keywords' content='logiciel, gestion, bibliothï¿½que, mï¿½diathï¿½que, libre, free, software, mysql, php, linux, windows, mac' />
   	<script type=\"text/javascript\">
 		var base_path='".$base_path."';
 		var pmb_img_minus = '".get_url_icon('minus.gif')."';
@@ -399,9 +399,9 @@ $std_header = "<!DOCTYPE html>
     <title>
       PMB-selector
     </title>
-	<meta name='author' content='PMB Group' />
-	<meta name='description' content='Logiciel libre de gestion de médiathèque' />
-	<meta name='keywords' content='logiciel, gestion, bibliothèque, médiathèque, libre, free, software, mysql, php, linux, windows, mac' />
+	<meta name='author' content='TeamGi' />
+	<meta name='description' content='Logiciel libre de gestion de mï¿½diathï¿½que' />
+	<meta name='keywords' content='logiciel, gestion, bibliothï¿½que, mï¿½diathï¿½que, libre, free, software, mysql, php, linux, windows, mac' />
 	<!--<meta http-equiv='Pragma' content='no-cache'>
     <meta http-equiv='Cache-Control' content='no-cache'>-->
 	<script type=\"text/javascript\">
@@ -430,8 +430,8 @@ $std_header = "<!DOCTYPE html>
       
       //	----------------------------------
       // $menu_bar : template menu bar
-      //	Générer le $menu_bar selon les droits...
-      //	Par défaut : la page d'accueil.
+      //	Gï¿½nï¿½rer le $menu_bar selon les droits...
+      //	Par dï¿½faut : la page d'accueil.
       
       $menu_bar = "
 <!--	Menu bar	-->
@@ -465,7 +465,7 @@ $std_header = "<!DOCTYPE html>
           $menu_bar.= "title='$msg[743]' href='./catalog.php' accesskey='$msg[2002]'>$msg[6]</a></li>";
       }
       
-      //	L'utilisateur fait les AUTORITÉS ?
+      //	L'utilisateur fait les AUTORITï¿½S ?
       if (defined('SESSrights') && SESSrights & AUTORITES_AUTH) {
           $menu_bar = $menu_bar."\n<li id='navbar-autorites'";
           if ("$current" == "autorites.php") $menu_bar = $menu_bar." class='current'><a class='current' ";
@@ -473,7 +473,7 @@ $std_header = "<!DOCTYPE html>
           $menu_bar.= "title='$msg[744]' href='./autorites.php?categ=search' accesskey='$msg[2003]'>$msg[132]</a></li>";
       }
       
-      //	L'utilisateur fait l'ÉDITIONS ?
+      //	L'utilisateur fait l'ï¿½DITIONS ?
       if (defined('SESSrights') && SESSrights & EDIT_AUTH) {
           $menu_bar = $menu_bar."\n<li id='navbar-edit'";
           if ("$current" == "edit.php") $menu_bar = $menu_bar." class='current'><a class='current' ";
@@ -497,7 +497,7 @@ $std_header = "<!DOCTYPE html>
           $menu_bar.= "title='".htmlentities($msg['acquisition_menu_title'],ENT_QUOTES, $charset)."' href='./acquisition.php' >$msg[acquisition_menu]</a></li>";
       }
       
-      //	L'utilisateur accède aux extensions ?
+      //	L'utilisateur accï¿½de aux extensions ?
       if ($pmb_extension_tab && (defined('SESSrights') && SESSrights & EXTENSIONS_AUTH)) {
           $menu_bar = $menu_bar."\n<li id='navbar-extensions'";
           if ("$current" == "extensions.php") $menu_bar = $menu_bar." class='current'><a class='current' ";
@@ -545,7 +545,7 @@ $std_header = "<!DOCTYPE html>
           $menu_bar.= "title='".htmlentities($msg['frbr'],ENT_QUOTES, $charset)."' href='./frbr.php' >".$msg['frbr']."</a></li>";
       }
       
-      //	L'utilisateur fait l'onglet modélisation ?
+      //	L'utilisateur fait l'onglet modï¿½lisation ?
       if ($modelling_active==true && defined('SESSrights') && SESSrights & MODELLING_AUTH) {
           $menu_bar = $menu_bar."\n<li id='navbar-modelling'";
           if ("$current" == "modelling.php") $menu_bar = $menu_bar." class='current'><a class='current' ";
@@ -587,7 +587,7 @@ $std_header = "<!DOCTYPE html>
       $dashboard_module_name = substr($current,0,strpos($current,"."));
       $dashboard_class_name = '';
       if(file_exists($class_path."/dashboard/dashboard_module_".$dashboard_module_name.".class.php")){
-          //on récupère la classe;
+          //on rï¿½cupï¿½re la classe;
           require_once($class_path."/dashboard/dashboard_module_".$dashboard_module_name.".class.php");
           $dashboard_class_name = "dashboard_module_".$dashboard_module_name;
           $dash = new $dashboard_class_name();
@@ -662,11 +662,11 @@ $std_header = "<!DOCTYPE html>
                   
                   $extra .= "</div>";
                   
-                  $timeout_start_alert = 5000; // 5s pour déclancher la requette des alertes / tableau de bord
+                  $timeout_start_alert = 5000; // 5s pour dï¿½clancher la requette des alertes / tableau de bord
                   if(isset($categ) && (($categ=='pret') || $categ=='retour')){
-                      $timeout_start_alert = 30000; // 30s pour les phases de prêt / retour
+                      $timeout_start_alert = 30000; // 30s pour les phases de prï¿½t / retour
                   }
-                  // Récupération de l'url active et test de présence sur la chaine cir.php'
+                  // Rï¿½cupï¿½ration de l'url active et test de prï¿½sence sur la chaine cir.php'
                   $url_active = $_SERVER['PHP_SELF'];
                   $presence_chaine = strpos($url_active,'circ.php');
                   
@@ -754,8 +754,8 @@ $std_header = "<!DOCTYPE html>
 </html>
 ";
                   
-                  /* listes dépliables et tris */
-                  // ici, templates de gestion des listes dépliables et tris en résultat de recherche catalogage ou autres
+                  /* listes dï¿½pliables et tris */
+                  // ici, templates de gestion des listes dï¿½pliables et tris en rï¿½sultat de recherche catalogage ou autres
                   if($pmb_recherche_ajax_mode){
                       $begin_result_liste = "
 <script type=\"text/javascript\" src=\"".$javascript_path."/tablist.js\"></script>
@@ -789,7 +789,7 @@ $std_header = "<!DOCTYPE html>
 ";
                   
                   
-                  /* /listes dépliables et tris */
+                  /* /listes dï¿½pliables et tris */
                   
                   /* Editeur HTML DOJO */
                   $cms_dojo_plugins_editor=

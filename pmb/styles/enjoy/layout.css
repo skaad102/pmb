@@ -188,23 +188,10 @@ input.bouton:hover, input.bouton_small:hover {
 
 
 form {
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	background: #f8f8f8;
+	
+	background: #f8f8f83b;
 }
 
-.form-contenu {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.form-contenu label {
-	font-weight: bold;
-}
 
 
 /* ---------------------------------------------------------------------------*/
@@ -218,11 +205,10 @@ form {
 #navbar {
 	padding-left: 15px;
     padding-top: 20px;
-    margin-top: 5px;
     margin-bottom: 5px;
     background-repeat: no-repeat;
-    background-image: url("./images/navbar.jpg");
     background-position: left top;
+	background-image: linear-gradient(to left, #318f8c 0%, #3d99be 31%, #35204d 100%);
 }
 
 #navbar h3 {
@@ -2593,9 +2579,9 @@ div[id^="zoom_comment"] {
 	background-repeat: no-repeat;
 	background-position: top center;
 	position: absolute;
-	min-height: 90%;
+	min-height: 100%;
 	height: auto !important;
-	height: 90%;
+	height: 100%;
 	width: 100%;
 }
 

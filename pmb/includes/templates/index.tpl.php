@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: index.tpl.php,v 1.36 2019-05-27 16:26:52 btafforeau Exp $
 
@@ -16,57 +16,75 @@ if(!isset($nav_bar)) $nav_bar = '';
 // $login_form : template form login
 
 $login_form = "
-<div id='login-box'>
-    <h1>$msg[1000]</h1>
-    <div class='login_page'>
-    	<div class='login_form'>
-    		<form class='form-$current_module' id='login' method='post' action='./main.php'>
-    			<input type=hidden name=ret_url value=\"".addslashes($ret_url)."\">";
-if (count($_tableau_databases)>1) {
-	$login_form .= "<script type='text/javascript' src='./javascript/http_request.js'></script>
-	<script type='text/javascript' src='./javascript/change_db.js'></script>
-	<div class='row'>
-		<label class='etiquette' for='database'>$msg[choix_database]</label>
-	</div>
-	<div class='row'><select name='database' class='liste_choix_db_login' onchange='change_db(this.options[this.selectedIndex].value);'>";
-	for ($idatabase=0;$idatabase<count($_tableau_databases);$idatabase++){
-		$login_form .= "<option value='".$_tableau_databases[$idatabase]."' class='liste_choix_db_login'";
-		if ($_tableau_databases[$idatabase] == LOCATION) {
-			$login_form .= " selected";
-		}
-		$login_form .= ">".$_libelle_databases[$idatabase]."</option>" ;
-	}
-	$login_form .= "</select></div>" ;
-} else {
-	$login_form .= "<input type='hidden' name='database' value='".$_tableau_databases[0]."'>" ;
-}
-$login_form .= "<div class='row'>
-			<label class='etiquette' for='user'>$msg[1]</label>
-		</div>
-		<div class='row'>
-			<input class='saisie-20em' type='text' name='user' id='user' value='' size='15'/>
-		</div>
-		<div class='row'>
-			<label class='etiquette' for='password'>$msg[2]</label>
-		</div>
-		<div class='row'>
-			<input class='saisie-20em' type='password' name='password' id='password' value='' size='15'/>
-		</div>
-		<div class='row'></div>
-		<!--    Bouton d'envoi    -->
-	    <div class='row'>
-	        <input type='submit' class='bouton' value='$msg[715]' />
-	    </div>
-	    <div class='row'>
-	        !!erreur!!
-	    </div>
-			</form>
-    	</div>
-		<div class='pmb_login_message' id='pmb_login_message'>".$pmb_login_message."</div>
-		<div class='login_message' id='login_message'>!!login_message!!</div>
-	</div>
+<br>
+
+<hr class='uk-divider-icon'>
+<br>
+<br>
+
+
+<div class='uk-container uk-width-auto'>
+          <div class='uk-card uk-card-default uk-card-hover uk-width-1-4@m uk-margin-auto uk-margin-auto-vertical '>
+              <div class='uk-card-header '>
+                <h2 class='uk-card-title'><strong>IdentificaciÃ³n</strong></h2 >
+              </div>
+      
+                  <form id='login' method='post' action='./main.php' autocomplete='off'>
+                      <input type=hidden name=ret_url value=\"".addslashes($ret_url)."\">";
+                          if (count($_tableau_databases)>1) {
+                            $login_form .= "<script type='text/javascript' src='./javascript/http_request.js'></script>
+                            <script type='text/javascript' src='./javascript/change_db.js'></script>
+                            <div class='row'>
+                              <label class='etiquette' for='database'>$msg[choix_database]</label>
+                            </div>
+                            <div class='row'><select name='database' class='liste_choix_db_login' onchange='change_db(this.options[this.selectedIndex].value);'>";
+                            for ($idatabase=0;$idatabase<count($_tableau_databases);$idatabase++){
+                              $login_form .= "<option value='".$_tableau_databases[$idatabase]."' class='liste_choix_db_login'";
+                              if ($_tableau_databases[$idatabase] == LOCATION) {
+                                $login_form .= " selected";
+                              }
+                              $login_form .= ">".$_libelle_databases[$idatabase]."</option>" ;
+                            }
+                            $login_form .= "</select></div>" ;
+                          } else {
+                            $login_form .= "<input type='hidden' name='database' value='".$_tableau_databases[0]."'>" ;
+                          }
+            $login_form .= "
+
+                      <legend class='uk-legend'>Usuario</legend>
+      
+                      <div class='uk-margin'>
+                        <div class='uk-inline'>
+                            <span class='uk-form-icon' uk-icon='icon: user'></span>
+                            <input class='uk-input uk-width-expand' type='text' name='user' id='user' value=''>
+                        </div>
+                      </div>
+
+                      <legend class='uk-legend'>ContraseÃ±a</legend>
+                    <div class='uk-margin'>
+                        <div class='uk-inline'>
+                          <span class='uk-form-icon uk-form-icon-flip' uk-icon='icon: lock'></span>
+                          <input class='uk-input' type='password' name='password' id='password' value=''>
+                        </div>
+                    </div>
+                    <div class='row'></div>
+                <!--    header    -->
+                
+                <div class='uk-card-footer'>
+                <button class='uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom' type='submit'>Conectar</button>
+                </div>
+      
+                  <div class='row'>
+                      !!erreur!!
+                  </div>
+                </form>
+                </div>
+              <div class='pmb_login_message' id='pmb_login_message'>".$pmb_login_message."</div>
+              <div class='login_message' id='login_message'>!!login_message!!</div>
+        </div>
 </div>";
 
+/* esto no  */
 $login_form_demo = "
 <div id='login-box'>
             <h1>$msg[demo] $msg[1001]</h1>
@@ -77,8 +95,8 @@ $login_form_demo = "
             </div>
             <div class='row'>
                 <select class='saisie-20em' name='user' id='user' selected='selected' style='width: 90%;'>
-                    <option value='fr'>français</option>
-                    <option value='es'>español</option>
+                    <option value='fr'>franï¿½ais</option>
+                    <option value='es'>espaï¿½ol</option>
                     <option value='en'>english</option>
                     <option value='it'>italiano</option>
                 </select>
@@ -107,7 +125,7 @@ $login_form_demo = "
 <blockquote>
   <p> La base de d&eacute;montration n'est pas charg&eacute;e 
     avec un th&eacute;saurus mais simplement avec un petit r&eacute;pertoire d'<strong>autorit&eacute;s 
-    mati&egrave;res</strong>, de mots clés, hi&eacute;rarchis&eacute;es mais pas li&eacute;es. 
+    mati&egrave;res</strong>, de mots clï¿½s, hi&eacute;rarchis&eacute;es mais pas li&eacute;es. 
     Vous n'aurez donc ici aucun aper&ccedil;u de la navigation dans les termes 
     associ&eacute;s. De m&ecirc;me, ce r&eacute;pertoire ne comporte pas de termes 
     non descripteurs et vous ne pourrez donc pas voir ces renvois.<br />
@@ -157,42 +175,46 @@ $login_form_demo = "
     peuvent vous apporter toute l'aide n&eacute;cessaire.<br />
   </p>
 </blockquote>
-<p><em>L'écran de démarrage ici correspond à la version de démonstration : la 
-  langue que vous sélectionnez correspond à un utilisateur utilisant l'application 
+<p><em>L'ï¿½cran de dï¿½marrage ici correspond ï¿½ la version de dï¿½monstration : la 
+  langue que vous sï¿½lectionnez correspond ï¿½ un utilisateur utilisant l'application 
   dans cette langue. </em></p>
-<p><i>Ne vous étonnez pas si votre thème change en cours d'utilisation de PMB 
-  dans cette démonstration, il est possible qu'un autre internaute utilise le 
-  même compte utilisateur que vous et change son thème ! </i> </p>
-<p><i>L'onglet Administration est désactivé de cette version de démonstration pour une question évidente de sécurité.
+<p><i>Ne vous ï¿½tonnez pas si votre thï¿½me change en cours d'utilisation de PMB 
+  dans cette dï¿½monstration, il est possible qu'un autre internaute utilise le 
+  mï¿½me compte utilisateur que vous et change son thï¿½me ! </i> </p>
+<p><i>L'onglet Administration est dï¿½sactivï¿½ de cette version de dï¿½monstration pour une question ï¿½vidente de sï¿½curitï¿½.
 </i>
 </p>
 ";
 
 $login_form_error = "<h4 class='erreur'>$msg[10]</h4>";
 
-// $index_header : template header index
+// $index_header : Ã­ndice de encabezado de plantilla
 $index_header = "<!DOCTYPE html>
-<html lang='".get_iso_lang_code()."'>
+<html lang='es'>
 <head>
 	<meta charset=\"".$charset."\" />
     <title>
       $msg[1001]
     </title>
-    <meta name='author' content='PMB Group' />
-    <meta name='description' content='Logiciel libre de gestion de médiathèque' />
-    <meta name='keywords' content='logiciel, gestion, bibliothèque, médiathèque, libre, free, software, mysql, php, linux, windows, mac, PMB $pmb_version' />
+    <meta name='author' content='PMB && TeamGi' />
+    <meta name='description' content='Software gratuito de gestiÃ³n de Biblioteca' />
+    <meta name='keywords' content='software, administraciÃ³n, biblioteca, medios, gratis, gratis, software, mysql, php, linux, windows, mac, PMB $pmb_version' />
     <meta http-equiv='Pragma' content='no-cache' />
     <meta http-equiv='Cache-Control' content='no-cache' />";
 //$stylesheet='couleurs_onglets' ;
 $index_header.= link_styles($stylesheet); //"    <link rel='stylesheet' type='text/css' href='./styles/$stylesheet'>";
 $index_header.="
     <link rel=\"SHORTCUT ICON\" href=\"images/favicon.ico\">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/css/uikit.min.css' />
+    <script src='https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit-icons.min.js'></script>
     </head>
+    <link rel='stylesheet' href='styles/enjoy/app.css'>
   <body class='index'>
 ";
 
 $extra_version ="
-<div id='extra'>".$msg['sauv_misc_restaure_db']." : <span id='extra_bdd'>".LOCATION."</span> / ".sprintf($msg["print_n_notices"],'<span id=\'extra_nb_docs\'>'.$pmb_nb_documents.'</span>')."
+<div id='extra'>Base Datos : <span id='extra_bdd'>".LOCATION."</span> / ".sprintf($msg["print_n_notices"],'<span id=\'extra_nb_docs\'>'.$pmb_nb_documents.'</span>')."
 </div>
 ";
 
@@ -204,7 +226,7 @@ $login_menu="
     </div>";
 
 // Barre de menu
-//    Par défaut : l'échappatoire de l'appli...   ;-)
+//    Par dï¿½faut : l'ï¿½chappatoire de l'appli...   ;-)
 $nav_bar = $nav_bar."
 	<div id='navbar'>
     		<h3>&nbsp;</h3>
@@ -213,10 +235,13 @@ $nav_bar = $nav_bar."
 				<a title='$msg[1913]' class='current' href='./' accesskey='$msg[2008]'>$msg[1913]</a>
 			</li>
         		<li id='navbar-opac'>
-				<a title='$msg[1027]' href='$pmb_opac_url' target=_blank accesskey='$msg[2007]' id='opac_url'>$msg[1026]</a>
+				<a title='Abrir el catÃ¡logo pÃºblico en una nueva ventana' href='$pmb_opac_url' target=_blank accesskey='$msg[2007]' id='opac_url'>$msg[1026]</a>
 			</li>
 		</ul>
 	</div>";
+
+  
+
 
 // affichage en fonction de
 $index_layout = "
@@ -227,17 +252,19 @@ $extra_version
 <div id='noconteneur'>
 $login_menu
     <div id='nocontenu'>
-";
+    ";
 
 $index_footer = "
-</div>
-<div id='footer'>
-    <hr />
-        <div class='left'>&nbsp;&nbsp;PMB $pmb_version (<a href='./changelogs.txt' title='changelogs.txt' style='margin-left: 0px;' target=_blank>changelogs.txt</a>) - database <span id='bdd_version'>$pmb_bdd_version</span> - &copy; 2002~".date("Y")."</div>
-        <div class='right'><a title='www.sigb.net' href='$homepage' style='margin-left: 0px;' target=_blank>www.sigb.net</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a title='forge PMB' href='http://forge.sigb.net' style='margin-left: 0px;' target=_blank>forge.sigb.net</a>&nbsp;&nbsp;</div>
-    </div>
-</div>
-</body>
-</html>
-";
-
+<div class='uk-grid uk-grid-small uk-width-1' uk-grid>
+    <footer>
+      <hr class='uk-divider-icon'>
+      <div>
+              <div class='left'>&nbsp;&nbsp;PMB $pmb_version &copy; 2002~".date("Y")."</div>
+              <div class='right'><a title='www.sigb.net' href='$homepage' style='margin-left: 0px;' target=_blank>www.sigb.net</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a title='forge PMB' href='http://forge.sigb.net' style='margin-left: 0px;' target=_blank>forge.sigb.net</a>&nbsp;&nbsp;</div>
+          </div>
+      </div>
+    </footer>
+  </div>
+  </body>
+  </html>
+  ";
