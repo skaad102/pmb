@@ -186,7 +186,12 @@ $login_form_demo = "
 </p>
 ";
 
-$login_form_error = "<h4 class='erreur'>$msg[10]</h4>";
+$login_form_error = "<h4 class='erreur'>
+<div class='uk-alert-danger' uk-alert>
+<a class='uk-alert-close' uk-close></a>
+<p>Datos Incorretos</p>
+</div>
+</h4>";
 
 // $index_header : índice de encabezado de plantilla
 $index_header = "<!DOCTYPE html>

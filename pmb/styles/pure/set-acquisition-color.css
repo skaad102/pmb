@@ -176,9 +176,7 @@ li#navbar-acquisition.current,
 	background-color: rgba(89, 205, 32, 0.4);
 }
 
-/* ========================================================================
-inside menu //  button
-===========================================================================  */
+
 
 .pure.acquisition .hmenu .wui-button.uk-active {
     background: #6eab50;
