@@ -1,20 +1,19 @@
+Este es el archivo README.TXT para la distribuci√≥n actual de PMB
 
-Ceci est le fichier README.TXT pour la distribution courante de PMB
+PMB se publica bajo los t√©rminos de la GNU General Public License (GPL) versi√≥n 2.0.
 
-PMB est diffusÈ suivant les termes de la Licence Publique GÈnÈrale GNU (GPL) version 2.0.
-
-Pour toute question ou commentaire sur cette application, vous pouvez contacter les dÈveloppeurs et la communautÈ du projet:
+Para cualquier pregunta o comentario sobre esta aplicaci√≥n, puede comunicarse con los desarrolladores y la comunidad del proyecto:
 
 http://www.sigb.net
 
-ATTENTION :
+ATENCI√ìN :
 
-Si vous faites une mise-‡-jour ‡ partir d'une version existante :
+Si est√° actualizando desde una versi√≥n existente:
 
-Allez en Administration
-Rubrique Outils
-Choisissez l'option maj base 
+Ir a Administraci√≥n
+Secci√≥n de herramientas
+Elija la opci√≥n de actualizaci√≥n base
 
-afin de mettre ‡ jour le noyau de votre base de donnÈes.
+para actualizar el kernel de su base de datos.
 
 
