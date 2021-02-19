@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: common.tpl.php,v 1.263 2019-08-23 12:37:58 btafforeau Exp $
 
@@ -24,7 +24,7 @@ require_once("$include_path/javascript/surligner.inc.php");
 
 // template for PMB OPAC
 
-// éléments standards pour les pages :
+// ï¿½lï¿½ments standards pour les pages :
 // $short_header
 // $std_header
 //
@@ -36,7 +36,7 @@ require_once("$include_path/javascript/surligner.inc.php");
 //		$meteo
 //		$adresse
 //
-//Classes et IDs utilisés dans l'OPAC
+//Classes et IDs utilisï¿½s dans l'OPAC
 //
 //Tout est contenu dans #container
 //
@@ -53,17 +53,17 @@ require_once("$include_path/javascript/surligner.inc.php");
 //		#intro_message : message d'information s'il existe
 //		#intro_bibli
 //			h3 : nom de la bibli
-//			p .intro_bibli_presentation_1 : texte de présentation de la bibli
+//			p .intro_bibli_presentation_1 : texte de prï¿½sentation de la bibli
 //	
-//	#main : contient les différents blocs d'affichage et de recherches (browsers)
+//	#main : contient les diffï¿½rents blocs d'affichage et de recherches (browsers)
 //		div
 //			h3 : nom du bloc
 //			contenu du bloc
 					
-//	récupère les feuilles de styles du répertoire /styles/$css/
+//	rï¿½cupï¿½re les feuilles de styles du rï¿½pertoire /styles/$css/
 function link_styles($style) {
-	// où $rep = répertoire de stockage des feuilles
-	// retourne un tableau indexé avec les noms des CSS disponibles
+	// oï¿½ $rep = rï¿½pertoire de stockage des feuilles
+	// retourne un tableau indexï¿½ avec les noms des CSS disponibles
 	
 	global $charset;
 	global $base_path;
@@ -116,12 +116,12 @@ function link_styles($style) {
 }
 
 
-//Récupération du login
+//Rï¿½cupï¿½ration du login
 if (!$_SESSION["user_code"]) {
 	//Si pas de session
 	$cb_=$msg['common_tpl_cardnumber_default'];
 } else {
-	//Récupération des infos de connection
+	//Rï¿½cupï¿½ration des infos de connection
 	$cb_=$_SESSION["user_code"];
 }
 $toolkits_scripts_html="";
@@ -202,7 +202,7 @@ switch ($lvl) {
 }
 
 $std_header.="
-	<!--IE et son enfer de compatibilité-->
+	<!--IE et son enfer de compatibilitï¿½-->
 	<meta http-equiv='X-UA-Compatible' content='IE=Edge' />
 	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\" />
 			
@@ -241,7 +241,18 @@ $std_header.="
 			}
 		}
 	</script>
+    <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'
+        integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous'>
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js'
+        integrity='sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi' crossorigin='anonymous'>
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js'
+        integrity='sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0' crossorigin='anonymous'>
+    </script>
+
 ";
+/* commir */
 
 $src_maps_dojo_opac = '';
 if($opac_map_activate){
@@ -287,7 +298,7 @@ $std_header.="
 
 $std_header.=$src_maps_dojo_opac;
 
-//Opposition à l'utilisation des cookies, désactivation des partages sur les réseaux sociaux
+//Opposition ï¿½ l'utilisation des cookies, dï¿½sactivation des partages sur les rï¿½seaux sociaux
 if (isset($_COOKIE['PhpMyBibli-COOKIECONSENT']) && $_COOKIE['PhpMyBibli-COOKIECONSENT'] == "false") {
 	$opac_show_social_network = 0;
 }
@@ -521,7 +532,7 @@ $inclus_header.="
 <script type='text/javascript' src='".$javascript_path."/dojo/dojo/dojo.js'></script>
 ";
 
-//Opposition à l'utilisation des cookies, désactivation des partages sur les réseaux sociaux
+//Opposition ï¿½ l'utilisation des cookies, dï¿½sactivation des partages sur les rï¿½seaux sociaux
 if (isset($_COOKIE['PhpMyBibli-COOKIECONSENT']) && $_COOKIE['PhpMyBibli-COOKIECONSENT'] == "false") {
 	$opac_show_social_network = 0;
 }
@@ -655,7 +666,7 @@ function show_what(quoi, id) {
 </script>
 <script type='text/javascript' src='".$javascript_path."/dojo/dojo/dojo.js'></script>";
 
-//Opposition à l'utilisation des cookies, désactivation des partages sur les réseaux sociaux
+//Opposition ï¿½ l'utilisation des cookies, dï¿½sactivation des partages sur les rï¿½seaux sociaux
 if (isset($_COOKIE['PhpMyBibli-COOKIECONSENT']) && $_COOKIE['PhpMyBibli-COOKIECONSENT'] == "false") {
 	$opac_show_social_network = 0;
 }
@@ -834,14 +845,14 @@ $common_tpl_lang_select="<div id='lang_select'><h3 ><span>!!msg_lang_select!!</s
 $home_on_left.="!!common_tpl_lang_select!!
 					</div><!-- fermeture #accueil -->\n" ;
 
-// HOME lorsque le bandeau gauche n'est pas affiché
+// HOME lorsque le bandeau gauche n'est pas affichï¿½
 $home_on_top ="<div id='home_on_top'>
 	<span onclick='document.location=\"./index.php?\"' style='cursor: pointer;'><img src='".get_url_icon("home.gif")."' align='absmiddle' /> ".$msg["welcome_page"]."</span>
 	</div>
 	";
 
 // LOGIN FORM=0
-// Si le login est autorisé, alors afficher le formulaire de saisie utilisateur/mot de passe ou le code de l'utilisateur connecté
+// Si le login est autorisï¿½, alors afficher le formulaire de saisie utilisateur/mot de passe ou le code de l'utilisateur connectï¿½
 $loginform='';
 if ($opac_show_loginform) {
 	$loginform ="<div id=\"connexion\">\n
@@ -926,12 +937,12 @@ $inclus_footer = "
 		</div><!-- /div id=main -->\n
 		<div id=\"intro\">\n";
 		
-// Si $opac_biblio_important_p1 est renseigné, alors intro_message est affiché
-// Ceci permet plus de liberté avec la CSS
+// Si $opac_biblio_important_p1 est renseignï¿½, alors intro_message est affichï¿½
+// Ceci permet plus de libertï¿½ avec la CSS
 $std_header_suite="<div id=\"intro_message\">";
 if ($opac_biblio_important_p1) 	
 		 $std_header_suite.="<div class=\"p1\">$opac_biblio_important_p1</div>";
-// si $opac_biblio_important_p2 est renseigné alors suite d'intro_message
+// si $opac_biblio_important_p2 est renseignï¿½ alors suite d'intro_message
 if ($opac_biblio_important_p2 && !$std_header_suite)
 	   $std_header_suite.="<div class=\"p2\">$opac_biblio_important_p2</div>";
 else $std_header_suite.="<div class=\"p2\">$opac_biblio_important_p2</div>";
@@ -949,7 +960,7 @@ eval("\$opac_biblio_preamble_p2=\"".str_replace("\"","\\\"",$opac_biblio_preambl
 $footer_suite ="<div id=\"intro_bibli\">
 			<h3>$opac_biblio_name</h3>
 			<div class=\"p1\">$opac_biblio_preamble_p1</div>
-			<div class=\"p2\">$opac_biblio_preamble_p2</div>
+			<div class=\"p2 navbar navbar-expand-lg navbar-light bg-light\">$opac_biblio_preamble_p2</div>
 			</div>
 		</div><!-- /div id=intro -->";
 

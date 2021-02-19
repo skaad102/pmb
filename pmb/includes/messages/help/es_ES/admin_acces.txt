@@ -1,5 +1,4 @@
-<h2>Gestion des Droits d'acc&egrave;s</h2>
+<h2> Gestión de derechos de acceso </h2>
 
-<p>La gestion des droits d'acc&egrave;s permet de d&eacute;finir de fa�on pr&eacute;cise les droits d'utilisation des ressources du logiciel.</p>
+<p> La gestión de los derechos de acceso le permite definir con precisión los derechos para utilizar los recursos del software. </p>
 <br />
- 

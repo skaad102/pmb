@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: account.tpl.php,v 1.24 2019-05-27 16:55:44 btafforeau Exp $
 
@@ -108,10 +108,7 @@ $account_form ="
 		</div>
 	</div>
 	<div class='colonne_suite'>
-	<!--	Style/thème	-->
-		<div class='row'>
-			<label class='etiquette' for=''>$msg[935]</label>
-		</div>
+	<!--	Style/thï¿½me	-->
 		<div class='row'>
 			!!combo_user_style!!
 		</div>
@@ -134,7 +131,7 @@ $account_form ="
 		</div>
 	</div>	
 	<div class='colonne4'>
-		<!--	Nombre d'enregistrements par page en sélection d'autorités	-->
+		<!--	Nombre d'enregistrements par page en sï¿½lection d'autoritï¿½s	-->
 		<div class='row'>
 			<label class='etiquette'>${msg[901]}</label>
 		</div>

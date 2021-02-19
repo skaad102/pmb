@@ -6185,8 +6185,13 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code = "cms_module_common_datasource_desc_fields_type_label"> Etiqueta de campo </entry>
 <entry code = "cms_module_common_datasource_desc_fields_type_values"> Matriz de matrices de valores (para cada valor una matriz de valor sin formato y formateado) </entry>
 
-<entry code="cms_module_common_datasource_desc_fields_type_values_format_value">Valeur format�e du champ</entry>
+
+
+<entry 
+code="cms_module_common_datasource_desc_fields_type_values_format_value">Valeur format�e du champ</entry>
 <entry code="cms_module_common_datasource_desc_fields_type_values_value">Valeur brute du champ</entry>
+
+
 <entry code="cms_module_common_datasource_desc_create_date">Date de cr�ation</entry>
 <entry code="cms_module_common_datasource_main_fields">Champs principaux</entry>
 <entry code="cms_module_common_datasource_types">Types de contenus</entry>

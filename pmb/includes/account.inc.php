@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: account.inc.php,v 1.13 2019-06-10 08:57:12 btafforeau Exp $
 
@@ -18,10 +18,10 @@ function get_account_info($user) {
 	}
 
 function get_styles() {
-	// où $rep = répertoire de stockage des feuilles
-	// retourne un tableau indexé avec les noms des CSS disponibles
+	// oï¿½ $rep = rï¿½pertoire de stockage des feuilles
+	// retourne un tableau indexï¿½ avec les noms des CSS disponibles
 	
-	// mise en forme du répertoire
+	// mise en forme du rï¿½pertoire
 	global $styles_path;
 	
 	if($styles_path) $rep = $styles_path;
@@ -47,13 +47,13 @@ function get_styles() {
 	}
 
 function make_user_lang_combo($lang='') {
-	// retourne le combo des langues avec la langue $lang selectionnée
-	// nécessite l'inclusion de XMLlist.class.php (normalement c'est déjà le cas partout
+	// retourne le combo des langues avec la langue $lang selectionnï¿½e
+	// nï¿½cessite l'inclusion de XMLlist.class.php (normalement c'est dï¿½jï¿½ le cas partout
 	global $include_path;
 	global $msg;
 	global $charset;
 	
-	// langue par défaut
+	// langue par dï¿½faut
 	if(!$lang) $lang="fr_FR";
 	
 	$langues = new XMLlist("$include_path/messages/languages.xml");
@@ -72,17 +72,10 @@ function make_user_lang_combo($lang='') {
 	}
 
 function make_user_style_combo($dstyle='') {
-	// retourne le combo des styles avec le style $style selectionné
+	// retourne le combo des styles avec le style $style selectionnï¿½
 	global $msg;
 	$style = get_styles();
-	$combo = "<select name='form_style' id='form_style' class='saisie-20em'>";
-	foreach ($style as $cle => $valeur) {
-        	$libelle = $valeur; 
-        	if(strcmp($valeur, $dstyle) == 0)
-            		$combo .= "<option value=\"$valeur\" selected='selected'>$libelle</option>";
-        		else $combo .= "<option value=\"$valeur\">$libelle</option>";
-    		}
-    	$combo .= "</select>";
+	$combo = "<input id='form_style' name='form_style' type='hidden' value='pure'>";
 	return $combo;
 	}
 

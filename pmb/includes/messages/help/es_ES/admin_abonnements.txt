@@ -1,8 +1,7 @@
-<h2>Administraci&oacute;n de las subscripciones</h2>
+<h2> Administración de las suscripciones </h2>
 
-<p>La secci&oacute;n <b>administraci&oacute;n de las subscripciones</b> permite definir los par&aacute;metros de la aplicaci&oacute;n para las subscripciones.
+<p> La sección <b> administración de las subscripciones </b> permite definir los por metros de la aplicación para las subscripciones.
 <ul>
-<li><b>Periodicidad</b> la Periodicidad de las subscripciones permite describir todos los tipos de Periodicidad usadas en las subscripciones.</li>
+<li> <b> Periodicidad </b> la Periodicidad de las subscripciones permite describir todos los tipos de Periodicidad usada en las subscripciones. </li>
 
-</ul></p>
- 
+</ul> </p>
