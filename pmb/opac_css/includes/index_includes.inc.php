@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: index_includes.inc.php,v 1.180 2019-06-18 12:37:43 ngantier Exp $
 
@@ -8,10 +8,10 @@ if (stristr($_SERVER['REQUEST_URI'], ".inc.php")) die("no access");
 
 require_once($base_path."/includes/init.inc.php");
 
-//fichiers nécessaires au bon fonctionnement de l'environnement
+//fichiers nï¿½cessaires au bon fonctionnement de l'environnement
 require_once($base_path."/includes/common_includes.inc.php");
 
-// classe de gestion des catégories
+// classe de gestion des catï¿½gories
 require_once($base_path.'/classes/categorie.class.php');
 
 // classe indexation interne
@@ -22,8 +22,8 @@ require_once($base_path.'/classes/tags.class.php');
 
 require_once($base_path."/includes/rec_history.inc.php");
 
-//Détournement de la page d'accueil
-// au premier coup, on veut juste savoir si les vues sont impliquées
+//Dï¿½tournement de la page d'accueil
+// au premier coup, on veut juste savoir si les vues sont impliquï¿½es
 if ((!$lvl)&&(!$search_type_asked)&&($opac_first_page_params)) {
 	$params_to_load=json_decode($opac_first_page_params,true);
 	foreach ($params_to_load as $varname=>$value) {
@@ -35,7 +35,7 @@ if ((!$lvl)&&(!$search_type_asked)&&($opac_first_page_params)) {
 
 require_once($include_path.'/plugins.inc.php');
 
-//si les vues sont activées (à laisser après le calcul des mots vides)
+//si les vues sont activï¿½es (ï¿½ laisser aprï¿½s le calcul des mots vides)
 if($opac_opac_view_activate){
 	if ($opac_view) {
 		if ($current_opac_view!=$opac_view*1) {
@@ -43,23 +43,23 @@ if($opac_opac_view_activate){
 			//on stocke le tri en cours pour la vue en cours
 		    $_SESSION["last_sortnotices_view_".$current_opac_view]=(isset($_SESSION["last_sortnotices"]) ? $_SESSION["last_sortnotices"] : '');
 			if (isset($_SESSION["last_sortnotices_view_".($opac_view*1)])) {
-				//on a déjà un tri pour la nouvelle vue, on l'applique
+				//on a dï¿½jï¿½ un tri pour la nouvelle vue, on l'applique
 				$_SESSION["last_sortnotices"] = $_SESSION["last_sortnotices_view_".($opac_view*1)];
 			} else {
 				unset($_SESSION["last_sortnotices"]);
 			}
-			//comparateur de facettes : on ré-initialise
+			//comparateur de facettes : on rï¿½-initialise
 			require_once($base_path.'/classes/facette_search_compare.class.php');
 			facette_search_compare::session_facette_compare(null,true);
-			//comparateur de facettes externes : on ré-initialise
+			//comparateur de facettes externes : on rï¿½-initialise
 			require_once($base_path.'/classes/facettes_external_search_compare.class.php');
 			facettes_external_search_compare::session_facette_compare(null,true);
 		}
 	}
 }
 
-//Détournement de la page d'accueil
-// là, on les applique vraiment !
+//Dï¿½tournement de la page d'accueil
+// lï¿½, on les applique vraiment !
 if ((!$lvl)&&(!$search_type_asked)&&($opac_first_page_params)) {
 	$params_to_load=json_decode($opac_first_page_params,true);
 	foreach ($params_to_load as $varname=>$value) {
@@ -73,14 +73,14 @@ if($opac_search_other_function){
 
 if (!isset($_SESSION["nb_sortnotices"]) || !$_SESSION["nb_sortnotices"]) $_SESSION["nb_sortnotices"]=0; 
 
-//Mettre le tri de l'étagère en session avant l'affichage du sélecteur de tris
+//Mettre le tri de l'ï¿½tagï¿½re en session avant l'affichage du sï¿½lecteur de tris
 if (($lvl=='etagere_see') && ($id)) {
     $id = intval($id);
 	$requete="select idetagere,name,comment,id_tri from etagere where idetagere=$id";
 	$resultat=pmb_mysql_query($requete);
 	$r=pmb_mysql_fetch_object($resultat);
 	if(($r->id_tri) && !(isset($_GET["sort"]))) {
-		//Le tri est défini en gestion, on l'ajoute aux tris dispos en OPAC si nécessaire
+		//Le tri est dï¿½fini en gestion, on l'ajoute aux tris dispos en OPAC si nï¿½cessaire
 		$res_tri = pmb_mysql_query("SELECT * FROM tris WHERE id_tri=".$r->id_tri);
 		if (pmb_mysql_num_rows($res_tri)) {
 			$last = "";
@@ -116,7 +116,7 @@ if (($lvl=='etagere_see') && ($id)) {
 	}
 }
 
-//L'usager a demandé à voir plus de résultats dans sa liste paginée
+//L'usager a demandï¿½ ï¿½ voir plus de rï¿½sultats dans sa liste paginï¿½e
 if(isset($nb_per_page_custom) && intval($nb_per_page_custom)) {
 	$nb_per_page_custom=intval($nb_per_page_custom);
 	$opac_nb_aut_rec_per_page = $nb_per_page_custom;
@@ -143,7 +143,7 @@ require_once($base_path."/includes/empr.inc.php");
 require_once($base_path."/classes/sort.class.php");
 
 
-// si paramétrage authentification particulière
+// si paramï¿½trage authentification particuliï¿½re
 if (file_exists($base_path.'/includes/ext_auth.inc.php')) require_once($base_path.'/includes/ext_auth.inc.php');
 
 // autenticazione LDAP - by MaxMan
@@ -151,13 +151,13 @@ require_once($base_path."/includes/ldap_auth.inc.php");
 
 // pour visualiser une notice issue de DSI avec une connexion auto
 if(isset($code)) {		
-	// pour fonction de vérification de connexion
+	// pour fonction de vï¿½rification de connexion
 	require_once($base_path.'/includes/empr_func.inc.php');
 	$log_ok=connexion_empr();
 	if($log_ok) $_SESSION["connexion_empr_auto"]=1;
 }
 
-//Premier accès ??
+//Premier accï¿½s ??
 if ($search_type_asked) $_SESSION["search_type"]=$search_type_asked;
 
 if(!isset($autolevel1)) $autolevel1 = '';
@@ -168,12 +168,12 @@ if (empty($_SESSION["search_type"]) || (( $lvl=="" || $lvl=="index") && $search_
 	unset($_SESSION['level1']);
 }
 
-//Conserver l'endroit où on est et l'endroit où on va
+//Conserver l'endroit oï¿½ on est et l'endroit oï¿½ on va
 
-//Récupération du type de recherche
+//Rï¿½cupï¿½ration du type de recherche
 $search_type=(isset($_SESSION["search_type"]) ? $_SESSION["search_type"] : '');
 
-//Si vidage historique des recherches demandé ?
+//Si vidage historique des recherches demandï¿½ ?
 if(!isset($raz_history)) $raz_history = 0;
 if ($raz_history) {
 	
@@ -183,7 +183,7 @@ if ($raz_history) {
 		$cases_a_suppr=$_POST['cases_suppr'];
 		$t = array();
 		
-		//remplissage du tableau temporaire  de l'historique des recherches $t, si une recherche est sélectionnée, la valeur l'élément du tableau temporaire sera à -1 
+		//remplissage du tableau temporaire  de l'historique des recherches $t, si une recherche est sï¿½lectionnï¿½e, la valeur l'ï¿½lï¿½ment du tableau temporaire sera ï¿½ -1 
 		
 		for ($i=1;$i<=$_SESSION["nb_queries"];$i++) {
 			$bool=false;
@@ -199,7 +199,7 @@ if ($raz_history) {
 				$t[$i]=-1;
 			}
 		}
-		//parcours du tableau temporaire, et réécriture des variables de session
+		//parcours du tableau temporaire, et rï¿½ï¿½criture des variables de session
 		
 		for ($i=count($t);$i>=1;$i--) {
 			if ($t[$i]=="-1") {
@@ -235,7 +235,7 @@ if ($raz_history) {
 			}
 		}
 		
-		//si il ne subsiste plus d'historique de recherches, mise à null des variables de session
+		//si il ne subsiste plus d'historique de recherches, mise ï¿½ null des variables de session
 		if ($_SESSION["nb_queries"]==0) {
 			$_SESSION["last_query"]="";
 		} 
@@ -248,7 +248,7 @@ if (($search_type=="term_search")&&($lvl=="categ_see")&&($rec_history==1)) {
 	require_once($base_path."/includes/rec_history.inc.php");
 	rec_history();
 }
-// pour les étagères et les nouveaux affichages
+// pour les ï¿½tagï¿½res et les nouveaux affichages
 require_once($base_path."/includes/isbn.inc.php");
 require_once($base_path."/classes/notice_affichage.class.php");
 require_once($base_path."/includes/etagere_func.inc.php");
@@ -274,16 +274,16 @@ if($opac_notice_enrichment){
 	$std_header = str_replace("!!enrichment_headers!!",$enrichment->getHeaders(),$std_header);
 }else $std_header = str_replace("!!enrichment_headers!!","",$std_header);
 
-// si $opac_show_homeontop est à 1 alors on affiche le lien retour à l'accueil sous le nom de la bibliothèque
+// si $opac_show_homeontop est ï¿½ 1 alors on affiche le lien retour ï¿½ l'accueil sous le nom de la bibliothï¿½que
 if ($opac_show_homeontop==1) $std_header= str_replace("!!home_on_top!!",$home_on_top,$std_header);
 else $std_header= str_replace("!!home_on_top!!","",$std_header);
 
-// mise à jour du contenu opac_biblio_main_header
+// mise ï¿½ jour du contenu opac_biblio_main_header
 $std_header= str_replace("!!main_header!!",$opac_biblio_main_header,$std_header);
 
 // RSS
 $std_header= str_replace("!!liens_rss!!",genere_link_rss(),$std_header);
-// l'image $logo_rss_si_rss est calculée par genere_link_rss() en global
+// l'image $logo_rss_si_rss est calculï¿½e par genere_link_rss() en global
 $liens_bas = str_replace("<!-- rss -->",$logo_rss_si_rss,$liens_bas);
 
 if($opac_parse_html || $cms_active){
@@ -298,7 +298,7 @@ if ($time_expired==1) {
 	echo "<script>alert(reverse_html_entities(\"".sprintf($msg["anonymous_session_expired"],round($opac_duration_session_auth/60))."\"));</script>";
 }
 
-//from_permalink va permettre de stocker la recherche en session même si autolevel2 = 0
+//from_permalink va permettre de stocker la recherche en session mï¿½me si autolevel2 = 0
 if($lvl != "search_segment" && ($opac_autolevel2 || !empty($from_permalink))){
     $es=new search();
 }
@@ -320,7 +320,7 @@ $link_to_visionneuse = "
 <script type='text/javascript' >var oldAction;</script>
 <span class=\"open_visionneuse\"><a href='#' onclick=\"open_visionneuse(sendToVisionneuse);return false;\" title=\"".htmlentities($msg["result_to_phototeque"], ENT_QUOTES, $charset)."\">".$msg["result_to_phototeque"]."</a></span>";
 
-//cas général
+//cas gï¿½nï¿½ral
 $sendToVisionneuseByPost ="
 <script type='text/javascript'>
 	function sendToVisionneuse(explnum_id){
@@ -340,7 +340,7 @@ $sendToVisionneuseByPost ="
 	}
 </script>";
 
-//cas des autorités
+//cas des autoritï¿½s
 $sendToVisionneuseByGet ="
 <script type='text/javascript'>
 	function sendToVisionneuse(explnum_id){
@@ -445,13 +445,13 @@ switch($lvl) {
 		
 	case 'information':
 		// Insertion page d'information
-		// Ceci permet d'afficher une page d'info supplémentaire en incluant un fichier.
+		// Ceci permet d'afficher une page d'info supplï¿½mentaire en incluant un fichier.
 		// Ce fichier s'appelle sous la forme ./index.php?lvl=information&askedpage=NOM_DE_MON_FICHIER
-		// NOM_DE_MON_FICHIER peut être une URL si le serveur l'autorise
-		// NOM_DE_MON_FICHIER doit être déclaré dans les paramètres de l'OPAC de PMB : 
-		// $opac_authorized_information_pages, tous les noms de fichiers autorisés séparés par une virgule
+		// NOM_DE_MON_FICHIER peut ï¿½tre une URL si le serveur l'autorise
+		// NOM_DE_MON_FICHIER doit ï¿½tre dï¿½clarï¿½ dans les paramï¿½tres de l'OPAC de PMB : 
+		// $opac_authorized_information_pages, tous les noms de fichiers autorisï¿½s sï¿½parï¿½s par une virgule
 		//
-		// Code pour tester la validité de la page demandée. Si la page ne figure pas dans les pages demandées : rien. 
+		// Code pour tester la validitï¿½ de la page demandï¿½e. Si la page ne figure pas dans les pages demandï¿½es : rien. 
 		if ($opac_authorized_information_pages) {
 			$array_pages = explode(",",$opac_authorized_information_pages);
 			$as=array_search($askedpage,$array_pages);
@@ -459,10 +459,10 @@ switch($lvl) {
 		}
 		break;
 	case 'infopages':
-		// Insertion pages d'information internes paramétrées dans PMB
-		// Ceci permet d'afficher une page d'info supplémentaire en incluant un code HTML lu en table.
+		// Insertion pages d'information internes paramï¿½trï¿½es dans PMB
+		// Ceci permet d'afficher une page d'info supplï¿½mentaire en incluant un code HTML lu en table.
 		// Cette page s'appelle sous la forme ./index.php?lvl=internal&pagesid=#,#,#
-		// tous les id des pages à afficher, séparés par une virgule, ils seront affichés dans l'ordre
+		// tous les id des pages ï¿½ afficher, sï¿½parï¿½s par une virgule, ils seront affichï¿½s dans l'ordre
 		$idpages = array() ;
 		$idpages = explode(",",$pagesid);
 		require_once($base_path.'/includes/infopages.inc.php');
@@ -549,7 +549,7 @@ if($pmb_logs_activate){
 	$log->add_log('expl',$infos_expl);
 	$log->add_log('docs',$infos_notice);
 
-	//Enregistrement du nombre de résultats	
+	//Enregistrement du nombre de rï¿½sultats	
 	$log->add_log('nb_results', $nb_results_tab);
 
 	//Enregistrement multicritere
@@ -606,7 +606,7 @@ if ($opac_show_bandeaugauche==0) {
 	$footer= str_replace("!!contenu_bandeau!!",$bandeau_2_contains,$footer);
 	$footer= str_replace("!!contenu_bandeau_2!!",$opac_facette_in_bandeau_2?$lvl1.$facette:"",$footer); 
 } else {
-	$footer = str_replace("!!contenu_bandeau!!","<div id=\"bandeau\">!!contenu_bandeau!!</div>".$bandeau_2_contains,$footer);
+	$footer = str_replace("!!contenu_bandeau!!","<div id=\"bandeau\" >!!contenu_bandeau!!</div>".$bandeau_2_contains,$footer);
 	$home_on_left=str_replace("!!welcome_page!!",$msg["welcome_page"],$home_on_left);
 	$adresse=str_replace("!!common_tpl_address!!",$msg["common_tpl_address"],$adresse);
 	$adresse=str_replace("!!common_tpl_contact!!",$msg["common_tpl_contact"],$adresse);

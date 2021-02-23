@@ -843,7 +843,7 @@ else $home_on_left .= "<p class=\"centered\"><a href='./index.php?'><img src='".
 $common_tpl_lang_select="<div id='lang_select'><h3 ><span>!!msg_lang_select!!</span></h3>!!lang_select!!</div>\n";
 
 $home_on_left.="!!common_tpl_lang_select!!
-					</div><!-- fermeture #accueil -->\n" ;
+					</div><!-- comente #accueil -->\n" ;
 
 // HOME lorsque le bandeau gauche n'est pas affich�
 $home_on_top ="<div id='home_on_top'>

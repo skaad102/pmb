@@ -24,7 +24,7 @@ $login_form = "
 
 
 <div class='uk-container uk-width-auto'>
-          <div class='uk-card uk-card-default uk-card-hover uk-width-1-4@m uk-margin-auto uk-margin-auto-vertical '>
+          <div class='uk-card uk-card-default uk-card-hover uk-width-auto@m uk-margin-auto uk-margin-auto-vertical '>
               <div class='uk-card-header '>
                 <h2 class='uk-card-title'><strong>Identificación</strong></h2 >
               </div>

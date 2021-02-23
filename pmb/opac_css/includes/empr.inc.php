@@ -1,19 +1,19 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: empr.inc.php,v 1.20 2017-03-01 07:59:36 jpermanne Exp $
 
 if (stristr($_SERVER['REQUEST_URI'], ".inc.php")) die("no access");
 
-// Fonction qui génère le formulaire de connexion emprunteur
+// Fonction qui gï¿½nï¿½re le formulaire de connexion emprunteur
 function genere_form_connexion_empr(){
 	global $opac_websubscribe_show,$opac_password_forgotten_show,$msg;
 	
-	$loginform="<form action='empr.php' method='post' name='myform'>
+	$loginform="<form action='empr.php' method='post' name='myform' autocomplete='off'>
 				<label>".$msg["common_tpl_cardnumber_default"]."</label><br />
-				<input type='text' name='login' class='login' size='14' placeholder='".$msg["common_tpl_cardnumber"]."' ><br />
-				<input type='password' name='password' class='password' size='8' placeholder='".$msg["common_tpl_empr_password"]."' value=''/>
+				<input type='text' name='login' class='login' size='14' placeholder='Usuario' ><br />
+				<input type='password' name='password' class='password' size='8' placeholder='ContraseÃ±a' value=''/>
 				<input type='submit' name='ok' value='".$msg[11]."' class='bouton'></form>";
 	if($opac_password_forgotten_show)	
 		$loginform.="<a  class='mdp_forgotten' href='./askmdp.php'>".$msg["mdp_forgotten"]."</a>";
