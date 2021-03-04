@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: extended.inc.php,v 1.122 2019-08-06 08:55:19 dgoron Exp $
 
@@ -46,9 +46,9 @@ if($opac_allow_affiliate_search && $allow_search_affiliate_and_external){
 		<div id=\"resultatrech_see\">";
 }
 
-//le contenu du catalogue est calculé dans 2 cas  :
-// 1- la recherche affiliée n'est pas activée, c'est donc le seul résultat affichable
-// 2- la recherche affiliée est active et on demande l'onglet catalog...
+//le contenu du catalogue est calculï¿½ dans 2 cas  :
+// 1- la recherche affiliï¿½e n'est pas activï¿½e, c'est donc le seul rï¿½sultat affichable
+// 2- la recherche affiliï¿½e est active et on demande l'onglet catalog...
 if(!$opac_allow_affiliate_search || ($opac_allow_affiliate_search && $tab == "catalog")){
 	//gestion du tri
 	if (isset($_GET["sort"])) {	
@@ -66,8 +66,8 @@ if(!$opac_allow_affiliate_search || ($opac_allow_affiliate_search && $tab == "ca
 		$_SESSION["lq_facette"]=$_SESSION["facette"];
 		$_SESSION["lq_facette_search"]["lq_search"]=$es->serialize_search();
 	}else if(isset($from_see) && $from_see == 1 && isset($filtre_compare) && $filtre_compare == "compare"){
-		//from_see est un élément posté dans un formulaire d'une page d'autorité 
-		//il flage l'origine qui nécessite une reconstruction de l'environnement de la multi-critère pour faire les filtres multiples ou le comparateur
+		//from_see est un ï¿½lï¿½ment postï¿½ dans un formulaire d'une page d'autoritï¿½ 
+		//il flage l'origine qui nï¿½cessite une reconstruction de l'environnement de la multi-critï¿½re pour faire les filtres multiples ou le comparateur
 		facettes::make_facette_search_env();
 	}
 	$lib_recherche=$es->make_human_query();
@@ -77,7 +77,7 @@ if(!$opac_allow_affiliate_search || ($opac_allow_affiliate_search && $tab == "ca
 		$nbexplnum_to_photo = $searcher->get_nb_explnums();	
 	}
 	$count = $searcher->get_nb_results();
-	$l_typdoc= implode(",",$searcher->get_typdocs());// La variable global $l_typdoc est utilisée pour la photothèque
+	$l_typdoc= implode(",",$searcher->get_typdocs());// La variable global $l_typdoc est utilisï¿½e pour la photothï¿½que
 	//Enregistrement des stats
 	if($pmb_logs_activate){
 		global $nb_results_tab;
@@ -98,7 +98,8 @@ if(!$opac_allow_affiliate_search || ($opac_allow_affiliate_search && $tab == "ca
 	}
 	$sr_form.= pmb_bidi("<h3 class='searchResult-search'><span class='searchResult-equation'><span class='search-found'>$count $msg[titles_found]</span> ".$lib_recherche."</span></h3>");
 	
-	// pour la DSI - création d'une alerte
+	
+	// pour la DSI - crï¿½ation d'une alerte
 	if ($opac_allow_bannette_priv && $allow_dsi_priv && ((isset($_SESSION['abon_cree_bannette_priv']) && $_SESSION['abon_cree_bannette_priv']==1) || $opac_allow_bannette_priv==2)) {
 	    $sr_form.= $es->make_hidden_search_form('./index.php?lvl=more_results&mode=extended', 'bannette_priv_form_values', '', false);
 	    $sr_form.= $es->make_hidden_opac_view_form_content();
@@ -205,7 +206,7 @@ if(!$opac_allow_affiliate_search || ($opac_allow_affiliate_search && $tab == "ca
 	facettes::session_filtre_compare();
 	$sr_form.= "<blockquote>";
 	if($filtre_compare=='compare'){
-		//on valide la variable session qui comprend les critères de comparaisons
+		//on valide la variable session qui comprend les critï¿½res de comparaisons
 		facette_search_compare::session_facette_compare();
 		//affichage comparateur
 		$facette_compare= new facette_search_compare();
@@ -216,7 +217,7 @@ if(!$opac_allow_affiliate_search || ($opac_allow_affiliate_search && $tab == "ca
 			$sr_form.=  $msg[$compare];
 		}
 	}else{
-		//si demande de réinitialisation
+		//si demande de rï¿½initialisation
 		if(isset($reinit_compare) && $reinit_compare==1){
 			facette_search_compare::session_facette_compare(null,$reinit_compare);
 		}
@@ -239,7 +240,7 @@ if(!$opac_allow_affiliate_search || ($opac_allow_affiliate_search && $tab == "ca
 	
 	$sr_form.= "<div class='row'><span class=\"espaceResultSearch\">&nbsp;</span></div>";
 	
-	//Si pas de résultats, affichage des suggestions
+	//Si pas de rï¿½sultats, affichage des suggestions
 	if(!$count && $opac_simple_search_suggestions){
 		$tableSuggest="";
 		if ($opac_autolevel2==2) {
@@ -303,7 +304,7 @@ if(!$opac_allow_affiliate_search || ($opac_allow_affiliate_search && $tab == "ca
 } else {
 	
 	if($tab == "affiliate"){
-		//l'onglet source affiliées est actif, il faut son contenu...
+		//l'onglet source affiliï¿½es est actif, il faut son contenu...
 		$query = $es->serialize_search();
 		$as=new affiliate_search_extended($query);
 		$as->getResults();

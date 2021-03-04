@@ -111,7 +111,7 @@ function link_styles($style) {
 	}
 	closedir($handle);
 	// AR - A la demande des graphistes, on pousse le style dans une globale JS
-	$feuilles_style.="<script type='text/javascript'>var opac_style= '".$style."';</script>";
+	$feuilles_style.="<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/css/uikit.min.css'> <script type='text/javascript'>var opac_style= '".$style."';</script>";
 	return $feuilles_style;	
 }
 
@@ -250,6 +250,8 @@ $std_header.="
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js'
         integrity='sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0' crossorigin='anonymous'>
     </script>
+	<script src='https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit.min.js'></script>
+	<script src='https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit-icons.min.js'></script>
 
 ";
 /* commir */
@@ -738,7 +740,7 @@ $popup_header = "<!DOCTYPE html>
     </script>
     <script type='text/javascript' src='".$javascript_path."/dojo/dojo/dojo.js.uncompressed.js'></script>
 </head>
-<body id='pmbopac' class='popup tundra'>
+<body  id='pmbopac' class='popup tundra'>
 <script type='text/javascript'>
 var opac_show_social_network =$opac_show_social_network;
 var pmb_img_patience = '".get_url_icon('patience.gif')."';
@@ -939,7 +941,7 @@ $inclus_footer = "
 		
 // Si $opac_biblio_important_p1 est renseign�, alors intro_message est affich�
 // Ceci permet plus de libert� avec la CSS
-$std_header_suite="<div id=\"intro_message\">";
+$std_header_suite="<div class='mt-5 mb-1' id=\"intro_message\">";
 if ($opac_biblio_important_p1) 	
 		 $std_header_suite.="<div class=\"p1\">$opac_biblio_important_p1</div>";
 // si $opac_biblio_important_p2 est renseign� alors suite d'intro_message
@@ -960,7 +962,7 @@ eval("\$opac_biblio_preamble_p2=\"".str_replace("\"","\\\"",$opac_biblio_preambl
 $footer_suite ="<div id=\"intro_bibli\">
 			<h3>$opac_biblio_name</h3>
 			<div class=\"p1\">$opac_biblio_preamble_p1</div>
-			<div class=\"p2 navbar navbar-expand-lg navbar-light bg-light\">$opac_biblio_preamble_p2</div>
+			<nav style='margin-left:200px' class=\"uk-navbar-containert\" uk-navbar>$opac_biblio_preamble_p2</nav>
 			</div>
 		</div><!-- /div id=intro -->";
 

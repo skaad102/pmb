@@ -12,9 +12,8 @@
 /* ---------------------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------*/
 
-html,body{
-	height:100%;
-
+html#pmbopac,body#pmbopac{
+	background-image: linear-gradient(to top, #02bd889d 0%, #72afd375 100%);
 }
 
 body#pmbopac, #intro #intro_bibli .p2 ul li, .cms_menu_deep0 li, ul.search_tabs li, #onglets_list ul.list_tabs li,
@@ -367,6 +366,7 @@ iframe#iframe_resume_panier {
 	padding-left: 2px;
 	padding-right: 2px;
 	text-align: center;
+	background-color: #0D6EFD;
 }
 
 
@@ -528,6 +528,14 @@ iframe#iframe_resume_panier {
   
 }
 
+#main #search ul.search_tabs.serchOnly li {
+	margin-left: -16px !important;
+    font-size: 1.166666em !important;
+	margin-top: 3rem !important;
+	background-color: #0D6EFD;
+	font-weight: bold;
+}
+
 #main #search ul.search_tabs li:hover, #onglets_list ul.list_tabs li:hover, #empr_onglet ul.empr_tabs li:hover {
 	padding-bottom: 5px;
 	padding-top: 5px;
@@ -596,7 +604,7 @@ input.bouton, input.boutonrechercher {
 }
 
 
-/*---Recherche multi-critères---*/
+/*---Recherche multi-critï¿½res---*/
 
 
 .ext_search_txt {
@@ -753,7 +761,7 @@ input#a2z_abt_actif {
 }
 
 
-/*-----Search périodiques-----*/
+/*-----Search pï¿½riodiques-----*/
 
 #search #perio_a2z {
 	margin-top: 0px;
