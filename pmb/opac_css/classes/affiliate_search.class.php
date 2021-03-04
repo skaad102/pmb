@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2010 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2010 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: affiliate_search.class.php,v 1.29 2019-02-21 11:03:40 ngantier Exp $
 
@@ -14,7 +14,7 @@ require_once($include_path."/navbar.inc.php");
 require_once($include_path."/surlignage.inc.php");
 require_once($class_path."/suggest.class.php");
 /*
- *  Classe pilotant les recherches affiliées dans les sources externes
+ *  BÃºsqueda de afiliados de conducciÃ³n de clase en fuentes externas
  */
  
 class affiliate_search {
@@ -54,7 +54,7 @@ class affiliate_search {
     	$this->generateSearch();
     }
     
-    //On récupère la liste des sources affiliées
+    //Recuperamos la lista de fuentes afiliadas
     public function fetch_sources(){
   		global $base_path;
   		
@@ -89,7 +89,7 @@ class affiliate_search {
     	$field_label = "f_".$this->look_array[$this->type];
 		$search = array();
 		$search[0] = $field_label;
-		//opérateur
+		//opï¿½rateur
 		$op_="BOOLEAN";
 	    $op="op_0_".$field_label;
 	    global ${$op};
@@ -102,7 +102,7 @@ class affiliate_search {
 		global ${$field};
 		${$field}=$field_;
 	    
-	    //opérateur inter-champ
+	    //opï¿½rateur inter-champ
 	    $inter="inter_0_".$field_label;
 	    global ${$inter};
 	    ${$inter}="and";
@@ -225,9 +225,10 @@ class affiliate_search {
     	$requete = "select * from ".$this->table_tempo;
 		$requete .= " limit ".$start_page.",".$nb_per_page_search;
 		$resultat=pmb_mysql_query($requete,$dbh);
+		echo $resultat.'ress';
+		echo $requete.'requete';
 
     	$this->results ="
-
 		<div id=\"resultatrech_container\">
 		<div id=\"resultatrech_see\">
 		";
@@ -242,7 +243,7 @@ class affiliate_search {
 		flush();
 		
 		$entrepots_localisations = array();
-		$entrepots_localisations_sql = "SELECT * FROM entrepots_localisations ORDER BY loc_visible DESC";
+		$entrepots_localisations_sql = 'SELECT * FROM entrepots_localisations ORDER BY loc_visible DESC';
 		$res = pmb_mysql_query($entrepots_localisations_sql);
 		while ($row = pmb_mysql_fetch_array($res)) {
 			$entrepots_localisations[$row["loc_code"]] = array("libelle" => $row["loc_libelle"], "visible" => $row["loc_visible"]); 
@@ -335,7 +336,7 @@ class affiliate_search {
 }
 
 /*
- * Classe de recherche sur les notices
+ * Clase de bÃºsqueda de registros
  */
 class affiliate_search_records extends affiliate_search {
 
@@ -368,7 +369,7 @@ class affiliate_search_records extends affiliate_search {
 }
 
 /*
- * Classe de recherche sur les autorités
+ * Clase de investigaciÃ³n de autoridades
  */
 class affiliate_search_authorities extends affiliate_search {
 	
@@ -409,7 +410,7 @@ class affiliate_search_authorities extends affiliate_search {
 }
 
 /*
- * Classe de recherche sur les auteurs
+ * Clase de investigaciÃ³n de autor
  */
 class affiliate_search_author extends affiliate_search_authorities {
 	
@@ -426,7 +427,7 @@ class affiliate_search_author extends affiliate_search_authorities {
     	if($this->table_tempo){
  			if(!$this->authoritiesResult){
 		    	$this->authoritiesResult ="
-				<div id='resultatrech_container'>
+					<div id='resultatrech_container'>
 					<div id='resultatrech_see'>";
 				switch($this->filter){
 					case "71":
@@ -526,7 +527,7 @@ class affiliate_search_author extends affiliate_search_authorities {
 					$nb_results++;
 				}
 			}
-			//TODO : Classsement du tableau par pert...
+			// TODO: ClasificaciÃ³n del arreglo por pert ...
 		}
 		
 		switch($this->filter){
@@ -542,7 +543,7 @@ class affiliate_search_author extends affiliate_search_authorities {
 				break;
 		}
 
-		//construction des infos de l'autorité...
+		// construcciÃ³n de informaciÃ³n de autoridad ...
 		$rqt= "select distinct source_id from ".$this->table_tempo." join  external_count on notice_id = rid";
 		$resultat = pmb_mysql_query($rqt);
 		if(pmb_mysql_num_rows($resultat)){
@@ -582,7 +583,7 @@ class affiliate_search_author extends affiliate_search_authorities {
 										$auteur["rejete"]=$elem->value;
 										break;
 									case "d":
-										$auteur["numéro"]=$elem->value;
+										$auteur["numÃ©ro"]=$elem->value;
 										break;
 									case "e":
 										$auteur["lieu"]=$elem->value;
@@ -595,12 +596,12 @@ class affiliate_search_author extends affiliate_search_authorities {
 						}
 					}
 					$aut_titre=$auteur["rejete"].($auteur["rejete"]?" ":"").$auteur["name"];
-					$auteur_cplt = ($auteur["numéro"]?" ".$auteur["numéro"]:"");
+					$auteur_cplt = ($auteur["numÃ©ro"]?" ".$auteur["numÃ©ro"]:"");
 					$auteur_cplt.=($auteur_cplt ? " ; " : "").($auteur["date"]? $auteur["date"] : "");
 					$auteur_cplt.=($auteur_cplt ? " ; " : "").($auteur["lieu"]? $auteur["lieu"] : "");
 					$aut_titre.=($auteur_cplt ? " > ".$auteur_cplt : "");
 						
-					//si on a trouvé un résultat, on insiste pas...
+					// si encontramos un resultado, no insistimos ...
 					break;
 				}
 			}
@@ -770,6 +771,7 @@ class affiliate_search_collection extends affiliate_search_authorities {
     	if($this->table_tempo){
  			if(!$this->authoritiesResult){
 		    	$this->authoritiesResult ="
+
 				<div id='resultatrech_container'>
 					<div id='resultatrech_see'>";
 
@@ -852,7 +854,7 @@ class affiliate_search_collection extends affiliate_search_authorities {
 		
 		$authority_title = $msg['detail_coll'];
 
-		//construction des infos de l'autorité...
+		//construction des infos de l'autoritï¿½...
 		$rqt= "select distinct source_id from ".$this->table_tempo." join  external_count on notice_id = rid";
 		$resultat = pmb_mysql_query($rqt);
 		if(pmb_mysql_num_rows($resultat)){
@@ -890,7 +892,7 @@ class affiliate_search_collection extends affiliate_search_authorities {
 							}
 						}
 					}
-					//si on a trouvé un résultat, on insiste pas...
+					//si on a trouvï¿½ un rï¿½sultat, on insiste pas...
 					break;
 				}
 			}
@@ -969,6 +971,7 @@ class affiliate_search_collection extends affiliate_search_authorities {
     	$requete = "select * from ".$this->table_tempo;
 		$requete .= " limit ".$start_page.",".$nb_per_page_search;
 		$resultat=pmb_mysql_query($requete,$dbh);
+
 
     	$this->results ="
 
@@ -1069,6 +1072,7 @@ class affiliate_search_indexint extends affiliate_search_authorities {
     	if($this->table_tempo){
  			if(!$this->authoritiesResult){
 		    	$this->authoritiesResult ="
+
 				<div id='resultatrech_container'>
 					<div id='resultatrech_see'>";
 
@@ -1151,7 +1155,7 @@ class affiliate_search_indexint extends affiliate_search_authorities {
 		
 		$authority_title = $msg['detail_indexint'];
 
-		//construction des infos de l'autorité...
+		//construction des infos de l'autoritï¿½...
 		$rqt= "select distinct source_id from ".$this->table_tempo." join  external_count on notice_id = rid";
 		$resultat = pmb_mysql_query($rqt);
 		if(pmb_mysql_num_rows($resultat)){
@@ -1172,7 +1176,7 @@ class affiliate_search_indexint extends affiliate_search_authorities {
 							}
 						}
 					}
-					//si on a trouvé un résultat, on insiste pas...
+					//si on a trouvï¿½ un rï¿½sultat, on insiste pas...
 					break;
 				}
 			}
@@ -1245,6 +1249,7 @@ class affiliate_search_indexint extends affiliate_search_authorities {
     	$requete = "select * from ".$this->table_tempo;
 		$requete .= " limit ".$start_page.",".$nb_per_page_search;
 		$resultat=pmb_mysql_query($requete,$dbh);
+
 
     	$this->results ="
 
@@ -1319,6 +1324,7 @@ class affiliate_search_publisher extends affiliate_search_authorities {
     	if($this->table_tempo){
  			if(!$this->authoritiesResult){
 		    	$this->authoritiesResult ="
+
 				<div id='resultatrech_container'>
 					<div id='resultatrech_see'>";
 
@@ -1354,6 +1360,7 @@ class affiliate_search_publisher extends affiliate_search_authorities {
     }   
     
  	public function getNoticesAuthorityResults(){
+		 
 		global $dbh;
     	global $begin_result_liste;
     	global $opac_notices_depliable;
@@ -1401,7 +1408,7 @@ class affiliate_search_publisher extends affiliate_search_authorities {
 		
 		$authority_title = $msg['publisher_see_title'];
 
-		//construction des infos de l'autorité...
+		//construction des infos de l'autoritï¿½...
 		$rqt= "select distinct source_id from ".$this->table_tempo." join  external_count on notice_id = rid";
 		$resultat = pmb_mysql_query($rqt);
 		if(pmb_mysql_num_rows($resultat)){
@@ -1425,7 +1432,7 @@ class affiliate_search_publisher extends affiliate_search_authorities {
 							}
 						}
 					}
-					//si on a trouvé un résultat, on insiste pas...
+					//si on a trouvï¿½ un rï¿½sultat, on insiste pas...
 					break;
 				}
 			}
@@ -1499,6 +1506,7 @@ class affiliate_search_publisher extends affiliate_search_authorities {
     	$requete = "select * from ".$this->table_tempo;
 		$requete .= " limit ".$start_page.",".$nb_per_page_search;
 		$resultat=pmb_mysql_query($requete,$dbh);
+
 
     	$this->results ="
 
@@ -1574,6 +1582,7 @@ class affiliate_search_category extends affiliate_search_authorities {
 	} 
     
    public function getAuthoritiesResults(){
+
     	global $msg;
     	global $opac_search_results_per_page;
     	global $page;
@@ -1581,6 +1590,7 @@ class affiliate_search_category extends affiliate_search_authorities {
     	if($this->table_tempo){
  			if(!$this->authoritiesResult){
 		    	$this->authoritiesResult ="
+
 				<div id='resultatrech_container'>
 					<div id='resultatrech_see'>";
 
@@ -1616,6 +1626,7 @@ class affiliate_search_category extends affiliate_search_authorities {
     }   
     
  	public function getNoticesAuthorityResults(){
+
 		global $dbh;
     	global $begin_result_liste;
     	global $opac_notices_depliable;
@@ -1663,7 +1674,7 @@ class affiliate_search_category extends affiliate_search_authorities {
 		
 		$authority_title = $msg['categories'];
 
-		//construction des infos de l'autorité...
+		//construction des infos de l'autoritï¿½...
 		$rqt= "select distinct source_id from ".$this->table_tempo." join  external_count on notice_id = rid";
 		$resultat = pmb_mysql_query($rqt);
 		if(pmb_mysql_num_rows($resultat)){
@@ -1685,7 +1696,7 @@ class affiliate_search_category extends affiliate_search_authorities {
 							}
 						}
 					}
-					//si on a trouvé un résultat, on insiste pas...
+					//si on a trouvï¿½ un rï¿½sultat, on insiste pas...
 					break;
 				}
 			}
@@ -1759,6 +1770,7 @@ class affiliate_search_category extends affiliate_search_authorities {
 		$requete .= " limit ".$start_page.",".$nb_per_page_search;
 		$resultat=pmb_mysql_query($requete,$dbh);
 
+
     	$this->results ="
 
 		<div id=\"resultatrech_container\">
@@ -1797,6 +1809,7 @@ class affiliate_search_category extends affiliate_search_authorities {
     }    
 
 	public function fetch_authorities() {
+
 		global $dbh ;
 		global $opac_url_base ;
 	
@@ -1825,6 +1838,7 @@ class affiliate_search_subcollection extends affiliate_search_authorities {
 	} 
     
    public function getAuthoritiesResults(){
+
     	global $msg;
     	global $opac_search_results_per_page;
     	global $page;
@@ -1832,6 +1846,7 @@ class affiliate_search_subcollection extends affiliate_search_authorities {
     	if($this->table_tempo){
  			if(!$this->authoritiesResult){
 		    	$this->authoritiesResult ="
+
 				<div id='resultatrech_container'>
 					<div id='resultatrech_see'>";
 
@@ -1914,7 +1929,7 @@ class affiliate_search_subcollection extends affiliate_search_authorities {
 		
 		$authority_title = $msg['detail_coll'];
 
-		//construction des infos de l'autorité...
+		//construction des infos de l'autoritï¿½...
 		$rqt= "select distinct source_id from ".$this->table_tempo." join  external_count on notice_id = rid";
 		$resultat = pmb_mysql_query($rqt);
 		if(pmb_mysql_num_rows($resultat)){
@@ -1959,7 +1974,7 @@ class affiliate_search_subcollection extends affiliate_search_authorities {
 							}
 						}
 					}
-					//si on a trouvé un résultat, on insiste pas...
+					//si on a trouvï¿½ un rï¿½sultat, on insiste pas...
 					break;
 				}
 			}
@@ -2009,6 +2024,7 @@ class affiliate_search_subcollection extends affiliate_search_authorities {
 	}   
 	
 	public function getNoticesResults() {
+
     	global $dbh;
     	global $begin_result_liste;
     	global $opac_notices_depliable;
@@ -2037,6 +2053,7 @@ class affiliate_search_subcollection extends affiliate_search_authorities {
     	$requete = "select * from ".$this->table_tempo;
 		$requete .= " limit ".$start_page.",".$nb_per_page_search;
 		$resultat=pmb_mysql_query($requete,$dbh);
+
 
     	$this->results ="
 
@@ -2076,6 +2093,7 @@ class affiliate_search_subcollection extends affiliate_search_authorities {
     }    
 
 	public function fetch_authorities() {
+
 		global $dbh ;
 	
 		$auteurs = array() ;
@@ -2096,11 +2114,13 @@ class affiliate_search_subcollection extends affiliate_search_authorities {
 class affiliate_search_titre_uniforme extends affiliate_search_authorities {
 	
 	public function __construct($user_query="",$search_type="notices"){
+
 		$this->type= "titre_uniforme";
 		parent::__construct($user_query,$search_type);
 	} 
     
    public function getAuthoritiesResults(){
+
     	global $msg;
     	global $opac_search_results_per_page;
     	global $page;
@@ -2108,6 +2128,7 @@ class affiliate_search_titre_uniforme extends affiliate_search_authorities {
     	if($this->table_tempo){
  			if(!$this->authoritiesResult){
 		    	$this->authoritiesResult ="
+
 				<div id='resultatrech_container'>
 					<div id='resultatrech_see'>";
 
@@ -2143,6 +2164,7 @@ class affiliate_search_titre_uniforme extends affiliate_search_authorities {
     }   
     
  	public function getNoticesAuthorityResults(){
+
 		global $dbh;
     	global $begin_result_liste;
     	global $opac_notices_depliable;
@@ -2190,7 +2212,7 @@ class affiliate_search_titre_uniforme extends affiliate_search_authorities {
 		
 		$authority_title = $msg['titre_uniforme_see_title'];
 
-		//construction des infos de l'autorité...
+		//construction des infos de l'autoritï¿½...
 		$rqt= "select distinct source_id from ".$this->table_tempo." join  external_count on notice_id = rid";
 		$resultat = pmb_mysql_query($rqt);
 		if(pmb_mysql_num_rows($resultat)){
@@ -2211,7 +2233,7 @@ class affiliate_search_titre_uniforme extends affiliate_search_authorities {
 							}
 						}
 					}
-					//si on a trouvé un résultat, on insiste pas...
+					//si on a trouvï¿½ un rï¿½sultat, on insiste pas...
 					break;
 				}
 			}
@@ -2256,6 +2278,7 @@ class affiliate_search_titre_uniforme extends affiliate_search_authorities {
 	}   
 	
 	public function getNoticesResults() {
+
     	global $dbh;
     	global $begin_result_liste;
     	global $opac_notices_depliable;
@@ -2284,6 +2307,7 @@ class affiliate_search_titre_uniforme extends affiliate_search_authorities {
     	$requete = "select * from ".$this->table_tempo;
 		$requete .= " limit ".$start_page.",".$nb_per_page_search;
 		$resultat=pmb_mysql_query($requete,$dbh);
+
 
     	$this->results ="
 
@@ -2323,6 +2347,7 @@ class affiliate_search_titre_uniforme extends affiliate_search_authorities {
     }    
 
 	public function fetch_authorities() {
+
 		global $dbh ;
 		global $opac_url_base ;
 	
@@ -2376,6 +2401,8 @@ class affiliate_search_extended extends affiliate_search {
     }
     
 	public function getNoticesResults() {
+
+
     	global $dbh;
     	global $begin_result_liste;
     	global $opac_notices_depliable;
@@ -2479,6 +2506,7 @@ class affiliate_search_concept extends affiliate_search_authorities {
     	if($this->table_tempo){
  			if(!$this->authoritiesResult){
 		    	$this->authoritiesResult ="
+
 				<div id='resultatrech_container'>
 					<div id='resultatrech_see'>";
 
@@ -2561,7 +2589,7 @@ class affiliate_search_concept extends affiliate_search_authorities {
 		
 		$authority_title = $msg['skos_view_concepts_concepts'];
 
-		//construction des infos de l'autorité...
+		//construction des infos de l'autoritï¿½...
 		$rqt= "select distinct source_id from ".$this->table_tempo." join  external_count on notice_id = rid";
 		$resultat = pmb_mysql_query($rqt);
 		if(pmb_mysql_num_rows($resultat)){
@@ -2583,7 +2611,7 @@ class affiliate_search_concept extends affiliate_search_authorities {
 							}
 						}
 					}
-					//si on a trouvé un résultat, on insiste pas...
+					//si on a trouvï¿½ un rï¿½sultat, on insiste pas...
 					break;
 				}
 			}
@@ -2657,7 +2685,9 @@ class affiliate_search_concept extends affiliate_search_authorities {
 		$requete .= " limit ".$start_page.",".$nb_per_page_search;
 		$resultat=pmb_mysql_query($requete,$dbh);
 
+
     	$this->results ="
+		<h1>haaaaaa</h1>
 
 		<div id=\"resultatrech_container\">
 		<div id=\"resultatrech_see\">

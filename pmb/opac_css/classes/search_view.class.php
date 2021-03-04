@@ -40,7 +40,7 @@ class search_view {
 		global $onglet_persopac;
 		
 		$search_others_tabs = "";
-		$search_others_tabs .= static::get_search_others_tab('simple_search', $msg["simple_search"]);
+		// $search_others_tabs .= static::get_search_others_tab('simple_search', $msg["simple_search"]);
 		
 		if ($opac_allow_personal_search) {
 			$search_others_tabs .= static::get_search_others_tab('search_perso', $msg["search_perso_menu"]);
@@ -61,9 +61,9 @@ class search_view {
 				$search_others_tabs .= static::get_search_others_tab('extended_search_authorities', $msg["extended_search_authorities"]);
 			}
 		}
-		if ($opac_allow_term_search) {
-			$search_others_tabs .= static::get_search_others_tab('term_search', $msg["term_search"]);
-		}
+		// if ($opac_allow_term_search) {
+		// 	$search_others_tabs .= static::get_search_others_tab('term_search', $msg["term_search"]);
+		// }
 		if ($opac_allow_tags_search) {
 			$search_others_tabs .= static::get_search_others_tab('tags_search', $msg["tags_search"]);
 		}
@@ -85,9 +85,9 @@ class search_view {
 				$search_others_tabs .= "<li><a href=\"$empr_link_onglet\">".$msg["onglet_empr_compte"]."</a></li>";
 			}
 		}
-		if ($opac_allow_external_search) {
-			$search_others_tabs .= "<li ".(static::$search_type == 'external_search' ? "id='current'" : "")."><a href=\"".static::format_url("search_type_asked=external_search&external_type=simple")."\">".$msg["connecteurs_external_search"]."</a></li>";
-		}
+		// if ($opac_allow_external_search) {
+		// 	$search_others_tabs .= "<li ".(static::$search_type == 'external_search' ? "id='current'" : "")."><a href=\"".static::format_url("search_type_asked=external_search&external_type=simple")."\">".$msg["connecteurs_external_search"]."</a></li>";
+		// }
 		if ($opac_show_onglet_map && $opac_map_activate) {
 			$search_others_tabs .= static::get_search_others_tab('map', $msg["search_by_map"]);
 		}
@@ -98,7 +98,7 @@ class search_view {
 		global $msg;
 		global $opac_show_onglet_help;
 		
-		$search_tabs = "<ul class='search_tabs'>";
+		$search_tabs = "<ul class='search_tabs serchOnly' >";
 		$search_tabs .= static::get_search_others_tabs();
 		$search_tabs .= ($opac_show_onglet_help ? "<li><a href=\"".static::$url_base."lvl=infopages&pagesid=$opac_show_onglet_help\">".$msg["search_help"]."</a></li>": '');
 		$search_tabs .= "</ul>";
@@ -167,8 +167,7 @@ class search_view {
 		global $opac_search_other_function;
 		global $opac_recherches_pliables, $charset;
 
-		$form = "
-		<form name='search_input' action='".($opac_autolevel2 ? static::format_url("lvl=more_results&autolevel1=1") : static::format_url("lvl=search_result"))."' method='post' onSubmit=\"if (search_input.user_query.value.length == 0) { search_input.user_query.value='*'; return true; }\">
+		$form = "<form name='search_input' style='display:none' action='".($opac_autolevel2 ? static::format_url("lvl=more_results&autolevel1=1") : static::format_url("lvl=search_result"))."' method='post' onSubmit=\"if (search_input.user_query.value.length == 0) { search_input.user_query.value='*'; return true; }\" autocomplete='off'>
 			".static::get_typdoc_field()."
 			".($opac_search_other_function ? search_other_function_filters() : '')."
 			<br />
@@ -185,18 +184,22 @@ class search_view {
 		if ($opac_show_help) {
 			$form .= "<input type='button' value='$msg[search_help]' class='bouton' onClick='window.open(\"$base_path/help.php?whatis=simple_search\", \"search_help\", \"scrollbars=yes, toolbar=no, dependent=yes, width=400, height=400, resizable=yes\"); return false' />\n";
 		}
+		
+		
+		$divSsz = "<div id='simple_search_zone'>";
 		switch ($opac_recherches_pliables) {
+			
 			case '1':
-				$form .= "<div id='simple_search_zone'>".gen_plus_form("zsimples",$msg["rechercher_dans"], static::do_ou_chercher(),false)."</div>";
+				$form .= $divSsz.gen_plus_form("zsimples",$msg["rechercher_dans"], static::do_ou_chercher(),false)."</div>";
 				break;
 			case '2':
-				$form .= "<div id='simple_search_zone'>".gen_plus_form("zsimples",$msg["rechercher_dans"], static::do_ou_chercher(),true)."</div>";
+				$form .= $divSsz.gen_plus_form("zsimples",$msg["rechercher_dans"], static::do_ou_chercher(),true)."</div>";
 				break;
 			case '3':
 				$form .= static::do_ou_chercher_hidden();
 				break;
 			default:
-				$form .= "<div id='simple_search_zone'>".static::do_ou_chercher()."</div>";
+				$form .= $divSsz.static::do_ou_chercher()."</div>";
 				break;
 		}
 		
@@ -335,7 +338,7 @@ class search_view {
 		$liste_thesaurus = thesaurus::getThesaurusList();
 		$sel_thesaurus = '';
 			
-		if ($opac_thesaurus != 0) {	 //la liste des thesaurus n'est pas affichée en mode monothesaurus
+		if ($opac_thesaurus != 0) {	 //la liste des thesaurus n'est pas affichï¿½e en mode monothesaurus
 			$sel_thesaurus = "<select class='saisie-30em' id='id_thes' name='id_thes' ";
 			$sel_thesaurus.= "onchange = \"document.location = '".static::$url_base."lvl=index&search_type_asked=term_search&id_thes='+document.getElementById('id_thes').value; \">" ;
 			foreach($liste_thesaurus as $id_thesaurus=>$libelle_thesaurus) {
@@ -380,7 +383,7 @@ class search_view {
 		$display_search .= "<div class='row'>";
 		
 		switch (static::$search_type) {
-			// éléments pour la recherche simple
+			//Elementos para una bÃºsqueda simple
 			case "search_universes":
 			    $display_search .= static::get_display_search_universe_form();
 			    break;
@@ -388,9 +391,11 @@ class search_view {
 				$display_search .= static::get_display_simple_search_form();
 				break;
 			case "extended_search":
+				// vista href
 				global $opac_autolevel2;
 				global $es;
 				global $lvl;
+
 // 				$display_search .= static::get_display_extended_search_form();
 				$es=new search();				
 				if($opac_autolevel2==2){
@@ -400,6 +405,7 @@ class search_view {
 				}
 				break;
 			case "extended_search_authorities":
+				echo 'seche autoriteis';
 				global $opac_autolevel2;
 				global $es;
 				global $lvl;
@@ -442,9 +448,11 @@ class search_view {
 				$display_search .= $a2z->get_form();
 				break;
 			case "map":
-				//Géolocalisation
+				//Gï¿½olocalisation
 				$display_search .= static::get_search_form_map();
 				break;
+			default:
+			break;
 		}
 		$display_search .= "</div>";
 		$display_search .= static::get_display_search_perso();
@@ -662,7 +670,7 @@ class search_view {
 		global $msg, $charset;
 		global $statut_query;
 		
-		// récupération des statuts de documents utilisés.
+		// rï¿½cupï¿½ration des statuts de documents utilisï¿½s.
 		$query = "SELECT count(statut), id_notice_statut, gestion_libelle ";
 		$query .= "FROM notices, notice_statut where id_notice_statut=statut GROUP BY id_notice_statut order by gestion_libelle";
 		$result = pmb_mysql_query($query);
@@ -813,7 +821,7 @@ class search_view {
 	
 	public static function do_ou_chercher_hidden() {
 	
-		// on récupère les globales de ce qui est autorisé en recherche dans le paramétrage de l'OPAC
+		// on rï¿½cupï¿½re les globales de ce qui est autorisï¿½ en recherche dans le paramï¿½trage de l'OPAC
 		global	$opac_modules_search_title,
 		$opac_modules_search_author,
 		$opac_modules_search_publisher,
@@ -829,22 +837,23 @@ class search_view {
 		$opac_modules_search_concept;
 	
 		$ou_chercher_hidden = '' ;
-		if ($opac_modules_search_title>1) $ou_chercher_hidden .= "<input type='hidden' name='look_TITLE' id='look_TITLE' value='1' />";
-		if ($opac_modules_search_author>1) $ou_chercher_hidden .= "<input type='hidden' name='look_AUTHOR' id='look_AUTHOR' value='1' />";
-		if ($opac_modules_search_publisher>1) $ou_chercher_hidden .= "<input type='hidden' name='look_PUBLISHER' id='look_PUBLISHER' value='1' />";
-		if ($opac_modules_search_titre_uniforme>1) $ou_chercher_hidden .= "<input type='hidden' name='look_TITRE_UNIFORME' id='look_TITRE_UNIFORME' value='1' />";
-		if ($opac_modules_search_collection>1) $ou_chercher_hidden .= "<input type='hidden' name='look_COLLECTION' id='look_COLLECTION' value='1' />";
-		if ($opac_modules_search_subcollection>1) $ou_chercher_hidden .= "<input type='hidden' name='look_SUBCOLLECTION' id='look_SUBCOLLECTION' value='1' />";
-		if ($opac_modules_search_category>1) $ou_chercher_hidden .= "<input type='hidden' name='look_CATEGORY' id='look_CATEGORY' value='1' />";
-		if ($opac_modules_search_indexint>1) $ou_chercher_hidden .= "<input type='hidden' name='look_INDEXINT' id='look_INDEXINT' value='1' />";
-		if ($opac_modules_search_keywords>1) $ou_chercher_hidden .= "<input type='hidden' name='look_KEYWORDS' id='look_KEYWORDS' value='1' /> ";
-		if ($opac_modules_search_abstract>1) $ou_chercher_hidden .= "<input type='hidden' name='look_ABSTRACT' id='look_ABSTRACT' value='1' />";
-		if ($opac_modules_search_all>1) $ou_chercher_hidden .= "<input type='hidden' name='look_ALL' id='look_ALL' value='1' />";
-		if ($opac_modules_search_docnum>1) $ou_chercher_hidden .= "<input type='hidden' name='look_DOCNUM' id='look_DOCNUM' value='1' />";
-		if ($opac_modules_search_concept>1) $ou_chercher_hidden .= "<input type='hidden' name='look_CONCEPT' id='look_CONCEPT' value='1' />";
+		if ($opac_modules_search_title>1) {$ou_chercher_hidden .= "<input type='hidden' name='look_TITLE' id='look_TITLE' value='1' />";}
+		if ($opac_modules_search_author>1) {$ou_chercher_hidden .= "<input type='hidden' name='look_AUTHOR' id='look_AUTHOR' value='1' />";}
+		if ($opac_modules_search_publisher>1) {$ou_chercher_hidden .= "<input type='hidden' name='look_PUBLISHER' id='look_PUBLISHER' value='1' />";}
+		if ($opac_modules_search_titre_uniforme>1) {$ou_chercher_hidden .= "<input type='hidden' name='look_TITRE_UNIFORME' id='look_TITRE_UNIFORME' value='1' />";}
+		if ($opac_modules_search_collection>1){ $ou_chercher_hidden .= "<input type='hidden' name='look_COLLECTION' id='look_COLLECTION' value='1' />";}
+		if ($opac_modules_search_subcollection>1) {$ou_chercher_hidden .= "<input type='hidden' name='look_SUBCOLLECTION' id='look_SUBCOLLECTION' value='1' />";}
+		if ($opac_modules_search_category>1) {$ou_chercher_hidden .= "<input type='hidden' name='look_CATEGORY' id='look_CATEGORY' value='1' />";}
+		if ($opac_modules_search_indexint>1) {$ou_chercher_hidden .= "<input type='hidden' name='look_INDEXINT' id='look_INDEXINT' value='1' />";}
+		if ($opac_modules_search_keywords>1) {$ou_chercher_hidden .= "<input type='hidden' name='look_KEYWORDS' id='look_KEYWORDS' value='1' /> ";}
+		if ($opac_modules_search_abstract>1){ $ou_chercher_hidden .= "<input type='hidden' name='look_ABSTRACT' id='look_ABSTRACT' value='1' />";}
+		if ($opac_modules_search_all>1) {$ou_chercher_hidden .= "<input type='hidden' name='look_ALL' id='look_ALL' value='1' />";}
+		if ($opac_modules_search_docnum>1){ $ou_chercher_hidden .= "<input type='hidden' name='look_DOCNUM' id='look_DOCNUM' value='1' />";}
+		if ($opac_modules_search_concept>1){ $ou_chercher_hidden .= "<input type='hidden' name='look_CONCEPT' id='look_CONCEPT' value='1' />";}
 	
 		$authpersos=authpersos::get_instance();
 		$ou_chercher_hidden.=$authpersos->get_simple_seach_list_tpl_hiden();
+		
 		return $ou_chercher_hidden;
 	}
 	
@@ -1234,8 +1243,8 @@ class search_view {
 							$n=$_SESSION["nb_queries"];
 						}
 					}
-					//générer les critères de la multi_critères
-					//Attention ! si on est déjà dans une facette !
+					//gï¿½nï¿½rer les critï¿½res de la multi_critï¿½res
+					//Attention ! si on est dï¿½jï¿½ dans une facette !
 					if ($facette) {
 					    $es->unserialize_search($_SESSION["lq_facette_search"]["lq_search"]);
 					} else {
@@ -1258,7 +1267,7 @@ class search_view {
 						global ${$field};
 						${$field}=$field_;
 							
-						//opérateur inter-champ
+						//opï¿½rateur inter-champ
 						$inter="inter_0_".$search[0];
 						global ${$inter};
 						${$inter}="";
@@ -1277,7 +1286,7 @@ class search_view {
 						$search=array();
 					}
 					$search[0]="f_34";
-					//opérateur
+					//opï¿½rateur
 					$op="op_0_".$search[0];
 					global ${$op};
 					$op_ ="EQ";
@@ -1290,7 +1299,7 @@ class search_view {
 					${$field}=$field_;
 					 
 					$search[1]="f_42";
-					//opérateur
+					//opï¿½rateur
 					$op="op_1_".$search[0];
 					global ${$op};
 					$op_ ="BOOLEAN";
@@ -1305,8 +1314,8 @@ class search_view {
 				if($onglet_persopac){
 					global $search;
 					if (empty($search) && ($_GET['onglet_persopac'] || $_SERVER['REQUEST_METHOD'] == "GET")) {
-						//On ne charge les champs de la prédéfinie que si l'on vient de cliquer sur le lien
-						//EDIT 13/12/17 - AR : ou si on y accède pas via un formulaire (utilisation du paramètres first_page_params)
+						//On ne charge les champs de la prï¿½dï¿½finie que si l'on vient de cliquer sur le lien
+						//EDIT 13/12/17 - AR : ou si on y accï¿½de pas via un formulaire (utilisation du paramï¿½tres first_page_params)
 						$search_p_direct= new search_persopac($onglet_persopac);
 						$es->unserialize_search($search_p_direct->query);
 					}
@@ -1372,11 +1381,11 @@ class search_view {
 						}
 					}
 					if ($mode_aff) {
-						//générer les critères de la multi_critères
+						//gï¿½nï¿½rer les critï¿½res de la multi_critï¿½res
 						$search[1]="s_1";
 						$op_="EQ";
 						 
-						//opérateur
+						//opï¿½rateur
 						$op="op_1_".$search[1];
 						global ${$op};
 						${$op}=$op_;
@@ -1388,7 +1397,7 @@ class search_view {
 						global ${$field};
 						${$field}=$field_;
 		    	
-						//opérateur inter-champ
+						//opï¿½rateur inter-champ
 						$inter="inter_1_".$search[1];
 						global ${$inter};
 						${$inter}="and";
@@ -1403,7 +1412,7 @@ class search_view {
 					$result.= static::get_display_search();
 				} else {
 					global $mode_aff;
-					//Si il y a une mode d'affichage demandé, on construit l'écran correspondant
+					//Si il y a une mode d'affichage demandï¿½, on construit l'ï¿½cran correspondant
 					if ($mode_aff) {
 						$f=static::get_field_text($n);
 						$user_query=$f[0];
@@ -1477,8 +1486,8 @@ class search_view {
 							$n=$_SESSION["nb_queries"];
 						}
 					}
-					//générer les critères de la multi_critères
-					//Attention ! si on est déjà dans une facette !
+					//gï¿½nï¿½rer les critï¿½res de la multi_critï¿½res
+					//Attention ! si on est dï¿½jï¿½ dans une facette !
 					if ($facette)
 						$es->unserialize_search($_SESSION["lq_facette_search"]["lq_search"]);
 						else {
@@ -1498,7 +1507,7 @@ class search_view {
 							global ${$field};
 							${$field}=$field_;
 				
-							//opérateur inter-champ
+							//opï¿½rateur inter-champ
 							$inter="inter_0_".$search[0];
 							global ${$inter};
 							${$inter}="";
@@ -1517,7 +1526,7 @@ class search_view {
 						$search=array();
 					}
 					$search[0]="f_34";
-					//opérateur
+					//opï¿½rateur
 					$op="op_0_".$search[0];
 					global ${$op};
 					$op_ ="EQ";
@@ -1530,7 +1539,7 @@ class search_view {
 					${$field}=$field_;
 				
 					$search[1]="f_42";
-					//opérateur
+					//opï¿½rateur
 					$op="op_1_".$search[0];
 					global ${$op};
 					$op_ ="BOOLEAN";
@@ -1545,8 +1554,8 @@ class search_view {
 				if($onglet_persopac){
 					global $search;
 					if (!$search && ($_GET['onglet_persopac'] || $_SERVER['REQUEST_METHOD'] == "GET")) {
-						//On ne charge les champs de la prédéfinie que si l'on vient de cliquer sur le lien
-						//EDIT 13/12/17 - AR : ou si on y accède pas via un formulaire (utilisation du paramètres first_page_params)
+						//On ne charge les champs de la prï¿½dï¿½finie que si l'on vient de cliquer sur le lien
+						//EDIT 13/12/17 - AR : ou si on y accï¿½de pas via un formulaire (utilisation du paramï¿½tres first_page_params)
 						$search_p_direct= new search_persopac($onglet_persopac);
 						$es->unserialize_search($search_p_direct->query);
 					}
@@ -1580,7 +1589,7 @@ class search_view {
 	    global $opac_focus_user_query;
 	    
 	    $form = "
-		<form name='search_input' action='".($opac_autolevel2 ? static::format_url("lvl=more_results&autolevel1=1") : static::format_url("lvl=search_result"))."' method='post' onSubmit=\"if (search_input.user_query.value.length == 0) { search_input.user_query.value='*'; return true; }\">
+		<form name='search_input' action='".($opac_autolevel2 ? static::format_url("lvl=more_results&autolevel1=1") : static::format_url("lvl=search_result"))."' method='post' onSubmit=\"if (search_input.user_query.value.length == 0) { search_input.user_query.value='*'; return true; }\" >
 			".static::get_typdoc_field()."
 			<br />
 			<input type='hidden' name='surligne' value='!!surligne!!'/>";
@@ -1604,6 +1613,7 @@ class search_view {
 			".($opac_focus_user_query ? 'document.forms["search_input"].elements["user_query"].focus();' : '')."
 			".($opac_simple_search_suggestions ? "ajax_parse_dom();" : "")."
 		</script>";
+		echo $opac_autolevel2.'holiii';
 	    return $form;
 	}
 }

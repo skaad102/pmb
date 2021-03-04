@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: search.class.php,v 1.316 2019-08-22 15:42:00 ccraig Exp $
 
@@ -12,7 +12,7 @@ require_once($include_path."/parser.inc.php");
 require_once($class_path."/parametres_perso.class.php");
 require_once($class_path."/analyse_query.class.php");
 
-//pour les autorités
+//pour les autoritï¿½s
 require_once($class_path."/author.class.php");
 require_once($class_path."/categories.class.php");
 require_once($class_path."/publisher.class.php");
@@ -110,7 +110,7 @@ class search {
 	protected $list_criteria;
 	
 	/**
-	 * Script à appeler au chargement de la page (ne sert qu'à transmettre l'info au show_form())
+	 * Script ï¿½ appeler au chargement de la page (ne sert qu'ï¿½ transmettre l'info au show_form())
 	 * @var string
 	 */
 	protected $script_window_onload;
@@ -188,9 +188,9 @@ class search {
 			}
 		}else{
 			if (file_exists($tempFile) ) {
-				//Le fichier XML original a-t-il été modifié ultérieurement ?
+				//Le fichier XML original a-t-il ï¿½tï¿½ modifiï¿½ ultï¿½rieurement ?
 				if (filemtime($filepath) > filemtime($tempFile)) {
-					//on va re-générer le pseudo-cache
+					//on va re-gï¿½nï¿½rer le pseudo-cache
 					unlink($tempFile);
 				} else {
 					$dejaParse = true;
@@ -463,7 +463,7 @@ class search {
 								}
 							}
 						} else $q[0]["BOOLEAN"]=false;
-						//prise en compte ou non du paramétrage du stemming
+						//prise en compte ou non du paramï¿½trage du stemming
 						if(isset($ff["QUERY"][$j]['STEMMING']) && $ff["QUERY"][$j]['STEMMING']=="no"){
 							$q[0]["STEMMING"]= false;
 						}else{
@@ -573,7 +573,7 @@ class search {
 	
 			//Lecture des champs dynamiques
 			if (isset($param["DYNAMICFIELDS"][0]["VISIBLE"]) && $param["DYNAMICFIELDS"][0]["VISIBLE"]=="no") $this->dynamics_not_visible=true;
-			if(!isset($param["DYNAMICFIELDS"][0]["FIELDTYPE"]) || !$param["DYNAMICFIELDS"][0]["FIELDTYPE"]){//Pour le cas de fichiers subst basés sur l'ancienne version
+			if(!isset($param["DYNAMICFIELDS"][0]["FIELDTYPE"]) || !$param["DYNAMICFIELDS"][0]["FIELDTYPE"]){//Pour le cas de fichiers subst basï¿½s sur l'ancienne version
 				$tmp=(isset($param["DYNAMICFIELDS"][0]["FIELD"]) ? $param["DYNAMICFIELDS"][0]["FIELD"] : '');
 				unset($param["DYNAMICFIELDS"]);
 				$param["DYNAMICFIELDS"][0]["FIELDTYPE"][0]["PREFIX"]="d";
@@ -591,7 +591,7 @@ class search {
 				$champType=array();
 				$ft=$param["DYNAMICFIELDS"][0]["FIELDTYPE"][$h];
 				$champType["TYPE"]=$ft["TYPE"];
-				//Exclusion de champs persos cités par nom
+				//Exclusion de champs persos citï¿½s par nom
 				if (isset($ft["HIDEBYCUSTOMNAME"])) {
 					$this->dynamicfields_hidebycustomname[$ft["TYPE"]]=$ft["HIDEBYCUSTOMNAME"];
 				}
@@ -852,7 +852,7 @@ class search {
 				}
 				$this->set_global_value("field_".$i."_".$search[$i], $field);
 				$this->set_global_value("field_".$i."_".$search[$i]."_1", $field1);
-				//Fieldvar doit aussi être addslashé pour les shorturls
+				//Fieldvar doit aussi ï¿½tre addslashï¿½ pour les shorturls
 				$fieldvar=$this->get_global_value("fieldvar_".$i."_".$search[$i]);
 				if ($fieldvar == '') $fieldvar = array();
 				if (is_object($this)) {
@@ -868,7 +868,7 @@ class search {
 	}
 
 	public function make_stripslashes_test_array($value){
-		//stripslashes récursif car les facette sont des tableaux de tableaux
+		//stripslashes rï¿½cursif car les facette sont des tableaux de tableaux
 		if (is_array($value)) {
 			foreach ($value as $k=>$v) {
 				$value[$k] = $this->make_stripslashes_test_array($value[$k]);
@@ -906,7 +906,7 @@ class search {
 		$v=$this->clean_completion_empty_values($v);
 		$nb_values=count($v);
 		if(!$nb_values){
-			//Création de la ligne
+			//Crï¿½ation de la ligne
 			$nb_values=1;
 		}
 		$nb_max_aut=$nb_values-1;
@@ -1012,7 +1012,7 @@ class search {
 		$v=$this->clean_completion_empty_values($v);
 		$nb_values=count($v);
 		if(!$nb_values){
-			//Création de la ligne
+			//Crï¿½ation de la ligne
 			$nb_values=1;
 		}
 		$nb_max_aut=$nb_values-1;
@@ -1030,7 +1030,7 @@ class search {
 			switch ($op) {
 				case 'AUTHORITY':
 					if ($params['selector'] == 'ontology') {
-						// On vérifie si c'est un id transmis
+						// On vï¿½rifie si c'est un id transmis
 						if ($v[$inc] && !is_numeric($v[$inc])) {
 							// C'est une uri
 							$v[$inc] = onto_common_uri::get_id($v[$inc]);
@@ -1121,11 +1121,11 @@ class search {
 				} else {
 				    $tmp = $options->table;
 				}
-				$tmp=array_map("convert_diacrit",$tmp);//On enlève les accents
+				$tmp=array_map("convert_diacrit",$tmp);//On enlï¿½ve les accents
 				$tmp=array_map("strtoupper",$tmp);//On met en majuscule
 				asort($tmp);//Tri sur les valeurs en majuscule sans accent
 				foreach ( $tmp as $key => $value ) {
-					$tmp[$key]=$options->table[$key];//On reprend les bons couples clé / libellé
+					$tmp[$key]=$options->table[$key];//On reprend les bons couples clï¿½ / libellï¿½
 				}
 				$options->table=$tmp;
 				reset($options->table);
@@ -1617,7 +1617,7 @@ class search {
 					//Recuperation de la requete associee au champ et a l'operateur
 					$q=$ff["QUERIES"][$q_index[${$op}]];
 	
-					//Si c'est une requete conditionnelle, on sélectionne la bonne requete et on supprime les autres
+					//Si c'est une requete conditionnelle, on sï¿½lectionne la bonne requete et on supprime les autres
 					if(isset($q[0]["CONDITIONAL"]) && $q[0]["CONDITIONAL"]){
 						$k_default=0;
 						$q_temp = array();
@@ -1643,7 +1643,7 @@ class search {
 					}
 					$last_main_table="";
 					
-					// pour les listes, si un opérateur permet une valeur vide, il en faut une...
+					// pour les listes, si un opï¿½rateur permet une valeur vide, il en faut une...
 					if($this->op_empty[${$op}] && !is_array($field) ){
 						$field = array();
 						$field[0] = "";
@@ -1899,7 +1899,7 @@ class search {
 					$last_main_table="";
 					if (count($field)==0) $field[0]="";
 					for ($j=0; $j<count($field); $j++) {
-						//appel de la classe dynamique associée au type de champ s'il y en a une
+						//appel de la classe dynamique associï¿½e au type de champ s'il y en a une
 						if(file_exists($include_path."/search_queries/dynamics/dynamic_search_".$this->pp[$s[0]]->t_fields[$s[1]]['TYPE'].".class.php")) {
 							require_once($include_path."/search_queries/dynamics/dynamic_search_".$this->pp[$s[0]]->t_fields[$s[1]]['TYPE'].".class.php");
 							$dynamic_class_name = "dynamic_search_".$this->pp[$s[0]]->t_fields[$s[1]]['TYPE'];
@@ -2054,8 +2054,8 @@ class search {
 						$main="select * from ".$last_main_table;
 					}
 				} elseif ($s[0]=="authperso") {
-					//on est sur le cas de la recherche "Tous les champs" de l'autorité perso
-	    			//$s["1"] vaut l'identifiant du type d'autorité perso
+					//on est sur le cas de la recherche "Tous les champs" de l'autoritï¿½ perso
+	    			//$s["1"] vaut l'identifiant du type d'autoritï¿½ perso
 	    			$df=$this->dynamicfields["a"]["FIELD"]["10"];
 	    			$q_index=$df["QUERIES_INDEX"];
 	    			$q=$df["QUERIES"][$q_index[${$op}]];
@@ -2218,7 +2218,7 @@ class search {
 	    				@pmb_mysql_query($requete,$dbh);
 						break;
 					case "or":
-						//Si la table précédente est vide, c'est comme au premier jour !
+						//Si la table prï¿½cï¿½dente est vide, c'est comme au premier jour !
 						$requete_c="select count(*) from ".$last_table;
 						if (!@pmb_mysql_result(pmb_mysql_query($requete_c),0,0)) {
 							$isfirst_criteria=true;
@@ -2369,7 +2369,7 @@ class search {
 
 			if (!is_array($fieldvar)) $fieldvar=array();
 
-			// si sélection d'autorité et champ vide : on ne doit pas le prendre en compte
+			// si sï¿½lection d'autoritï¿½ et champ vide : on ne doit pas le prendre en compte
 			if(${$op}=='AUTHORITY'){
 				$field = $this->clean_completion_empty_values($field);
 			}elseif(${$op}=='EQ'){
@@ -2509,7 +2509,7 @@ class search {
 					if (isset($q["DEFAULT_OPERATOR"]))
 						$operator_multi=$q["DEFAULT_OPERATOR"];
 					for ($j=0; $j<count($field); $j++) {
-						//appel de la classe dynamique associée au type de champ s'il y en a une
+						//appel de la classe dynamique associï¿½e au type de champ s'il y en a une
 						if(file_exists($include_path."/search_queries/dynamics/dynamic_search_".$this->pp[$s[0]]->t_fields[$s[1]]['TYPE'].".class.php")) {
 							require_once($include_path."/search_queries/dynamics/dynamic_search_".$this->pp[$s[0]]->t_fields[$s[1]]['TYPE'].".class.php");
 							$dynamic_class_name = "dynamic_search_".$this->pp[$s[0]]->t_fields[$s[1]]['TYPE'];
@@ -3044,7 +3044,7 @@ class search {
 			
 		$mt=array();
 			
-		//Récupération du type de recherche
+		//Rï¿½cupï¿½ration du type de recherche
 		$sc_type = $this->fichier_xml;
 		$sc_type = substr($sc_type,0,strlen($sc_type)-8);
 		
@@ -3212,7 +3212,7 @@ class search {
 		return $mt;
 	}
 
-	// fonction de calcul de visibilite d'un champ de recherche selon les droits d'accès
+	// fonction de calcul de visibilite d'un champ de recherche selon les droits d'accï¿½s
 	public function access_rights() {
 		global $gestion_acces_active,$gestion_acces_empr_notice;
 			
@@ -3261,7 +3261,7 @@ class search {
 		$sort_list_criteria_by_groups = array();
 		foreach($this->groups as $group_id => $group){
 			$group_name = $this->groups[$group_id]['label'];
-			if(isset($this->list_criteria[$group_name])){ //On a des champs définis pour le groupe courant
+			if(isset($this->list_criteria[$group_name])){ //On a des champs dï¿½finis pour le groupe courant
 				if(!count($this->filtered_objects_types) || in_array($group['objects_type'], $this->filtered_objects_types)) {
 					$sort_list_criteria_by_groups[$group_name] = $this->list_criteria[$group_name];
 				}
@@ -3285,7 +3285,7 @@ class search {
 		$group_name = '';
 		
 		/**
-		 * if else, si il n'y a pas de groupe défini, on conserve le traitement de base
+		 * if else, si il n'y a pas de groupe dï¿½fini, on conserve le traitement de base
 		 * Sinon, ordonnancement via les IDs de groupes
 		 */
 		if(!$this->groups_used){
@@ -3306,14 +3306,14 @@ class search {
 						$group_name = $msg["search_custom_".$value["TYPE"]];
 						reset($this->pp[$key]->t_fields);
 						$array_dyn_tmp=array();
-						//liste des champs persos à cacher par type
+						//liste des champs persos ï¿½ cacher par type
 						$hide_customfields_array = array();
 						if ($this->dynamicfields_hidebycustomname[$value["TYPE"]]) {
 							$hide_customfields_array = explode(",",$this->dynamicfields_hidebycustomname[$value["TYPE"]]);
 						}
 						foreach ($this->pp[$key]->t_fields as $id => $df) {
 							if ($df["OPAC_SHOW"]) {
-								//On n'affiche pas les champs persos cités par nom dans le fichier xml
+								//On n'affiche pas les champs persos citï¿½s par nom dans le fichier xml
 								if ((!count($hide_customfields_array)) || (!in_array($df["NAME"],$hide_customfields_array))) {
 									$array_dyn_tmp[strtolower($df["TITRE"])] = array('id' => $key."_".$id, 'label' => $df["TITRE"]);
 								}
@@ -3330,13 +3330,13 @@ class search {
 					}
 				}
 			}
-			//Champs autorités perso
+			//Champs autoritï¿½s perso
 			foreach($this->authpersos as $authperso){
 				if(!$authperso['opac_multi_search'])continue;
 				$group_name = $msg["authperso_multi_search_by_field_title"]." : ".$authperso['name'];
 				$this->add_criteria($group_name, "authperso_".$authperso['id'], $msg["authperso_multi_search_tous_champs_title"]);
 				foreach($authperso['fields'] as $field){
-					// On vérifie la visibilité en OPAC grâce à la propriété
+					// On vï¿½rifie la visibilitï¿½ en OPAC grï¿½ce ï¿½ la propriï¿½tï¿½
 					if ($field['multiple']) {
 						$this->add_criteria($group_name, "a_".$field['id'], $field['label']);
 					}
@@ -3378,14 +3378,14 @@ class search {
 					if(!$this->pp[$key]->no_special_fields && count($this->pp[$key]->t_fields) && ($key != 'a')){
 						reset($this->pp[$key]->t_fields);
 						$array_dyn_tmp=array();
-						//liste des champs persos à cacher par type
+						//liste des champs persos ï¿½ cacher par type
 						$hide_customfields_array = array();
 						if ($this->dynamicfields_hidebycustomname[$value["TYPE"]]) {
 							$hide_customfields_array = explode(",",$this->dynamicfields_hidebycustomname[$value["TYPE"]]);
 						}
 						foreach ($this->pp[$key]->t_fields as $id => $df) {
 							if ($df["OPAC_SHOW"]) {
-								//On n'affiche pas les champs persos cités par nom dans le fichier xml
+								//On n'affiche pas les champs persos citï¿½s par nom dans le fichier xml
 								if ((!count($hide_customfields_array)) || (!in_array($df["NAME"],$hide_customfields_array))) {
 									$array_dyn_tmp[strtolower($df["TITRE"])]= array('id' => $key."_".$id, 'label' => $df["TITRE"]);
 								}
@@ -3412,7 +3412,7 @@ class search {
 					}
 				}
 			}
-			//Traitement des champs spéciaux
+			//Traitement des champs spï¿½ciaux
 			if (!$this->specials_not_visible && $this->specialfields) {
 			    foreach ($this->specialfields as $id => $sf) {
 					for($i=0 ; $i<count($this->tableau_speciaux['TYPE']) ; $i++){
@@ -3431,19 +3431,19 @@ class search {
 				}
 			}
 			/**
-			 * On parcourt la propriété groups contenant les
-			 * groupes ordonnés selon l'ordre défini dans le XML
+			 * On parcourt la propriï¿½tï¿½ groups contenant les
+			 * groupes ordonnï¿½s selon l'ordre dï¿½fini dans le XML
 			 */
 			$this->sort_list_criteria();
 	
-			//Traitement des autorités persos (le champs doit être généré dynamiquement
+			//Traitement des autoritï¿½s persos (le champs doit ï¿½tre gï¿½nï¿½rï¿½ dynamiquement
 			$r_authperso="";
 			foreach($this->authpersos as $authperso){
 				if(!count($this->filtered_objects_types) || (in_array("authperso", $this->filtered_objects_types) && $authperso_id == $authperso['id'])) {
 					if(!$authperso['opac_multi_search'])continue;
 					$this->add_criteria($msg["authperso_multi_search_by_field_title"]." : ".$authperso['name'], "authperso_".$authperso['id'], $msg["authperso_multi_search_tous_champs_title"]);
 					foreach($authperso['fields'] as $field){
-						// On vérifie la visibilité en OPAC grâce à la propriété
+						// On vï¿½rifie la visibilitï¿½ en OPAC grï¿½ce ï¿½ la propriï¿½tï¿½
 						if ($field['multiple']) {
 							$this->add_criteria($msg["authperso_multi_search_by_field_title"]." : ".$authperso['name'], "a_".$field['id'], $field['label']);
 						}
@@ -3579,7 +3579,7 @@ class search {
 				return field;
 			}
 						
-			//callback du selecteur d'opérateur
+			//callback du selecteur d'opï¿½rateur
 			function operatorChanged(field,operator,datatype) {
 				if(datatype == 'small_text') {
 					date_flottante_type_onchange('field_' + field, operator);
@@ -3665,13 +3665,13 @@ class search {
 	
 			//callback du selecteur AJAX
 			function selectionSelected(infield) {
-				//on enlève le dernier _X
+				//on enlï¿½ve le dernier _X
 				var tmp_infield = infield.split('_');
 				var tmp_infield_length = tmp_infield.length;
 				//var inc = tmp_infield[tmp_infield_length-1];
 				tmp_infield.pop();
 				infield = tmp_infield.join('_');
-				//pour assurer la compatibilité avec le selecteur AJAX
+				//pour assurer la compatibilitï¿½ avec le selecteur AJAX
 				infield=infield.replace('_lib','');
 				
 				var op_name =infield.replace('field','op');
@@ -3701,21 +3701,21 @@ class search {
 				}
 			}
 										
-			//callback du selecteur AJAX pour les autorités
+			//callback du selecteur AJAX pour les autoritï¿½s
 			function authoritySelected(infield) {
-				//on enlève le dernier _X
+				//on enlï¿½ve le dernier _X
 				var tmp_infield = infield.split('_');
 				var tmp_infield_length = tmp_infield.length;
 				//var inc = tmp_infield[tmp_infield_length-1];
 				tmp_infield.pop();
 				infield = tmp_infield.join('_');
-				//pour assurer la compatibilité avec le selecteur AJAX
+				//pour assurer la compatibilitï¿½ avec le selecteur AJAX
 				infield=infield.replace('_lib','');
 				infield=infield.replace('_authority_label','');
 				
 				var op_name =infield.replace('field','op');
 				var op_selector = document.forms['search_form'][op_name];
-				//on passe le champ en selecteur d'autorité !
+				//on passe le champ en selecteur d'autoritï¿½ !
 				for (var i=0 ; i<op_selector.options.length ; i++) {
 					if(op_selector.options[i].value == 'AUTHORITY') {
 						op_selector.options[i].selected = true;
@@ -4016,7 +4016,7 @@ class search {
 					global ${$op};
 					if ($f[0]=="f") {
 						$r.="<span class='search_sous_critere'><select name='op_".$n."_".$search[$i]."' id='op_".$n."_".$search[$i]."'";
-						//gestion des autorités
+						//gestion des autoritï¿½s
 						$onchange =" onchange='operatorChanged(\"".$n."_".$search[$i]."\",this.value, \"".$this->fixedfields[$f[1]]['INPUT_TYPE']."\");' ";
 						$r.="$onchange>\n";
 						for ($j=0; $j<count($this->fixedfields[$f[1]]["QUERIES"]); $j++) {
@@ -4069,11 +4069,11 @@ class search {
 							}
 						}
 					} elseif ($f[0]=="authperso") {
-						//on est sur le cas de la recherche "Tous les champs" de l'autorité perso
-						//$f["1"] vaut l'identifiant du type d'autorité perso
+						//on est sur le cas de la recherche "Tous les champs" de l'autoritï¿½ perso
+						//$f["1"] vaut l'identifiant du type d'autoritï¿½ perso
 						$df=10;
 						$r.="<span class='search_sous_critere'><select name='op_".$n."_".$search[$i]."' id='op_".$n."_".$search[$i]."'";
-						//gestion des autorités
+						//gestion des autoritï¿½s
 						$onchange ="";
 						if (isset($this->dynamicfields["a"]["FIELD"][$df]["QUERIES_INDEX"]["AUTHORITY"])){
 							//$selector=$this->dynamicfields["a"]["FIELD"][$df]["INPUT_OPTIONS"]["SELECTOR"];
@@ -4123,7 +4123,7 @@ class search {
 	}
 	
 	/**
-	 * Génération du formulaire en drag'n'drop
+	 * Gï¿½nï¿½ration du formulaire en drag'n'drop
 	 */
 	public function show_dnd_form() {
 		global $javascript_path, $extended_search_dnd_tpl;
@@ -4134,7 +4134,7 @@ class search {
 	public function make_encoding_array($value){
 		global $charset;
 	
-		//htmlentities récursif car les facette sont des tableaux de tableaux
+		//htmlentities rï¿½cursif car les facette sont des tableaux de tableaux
 		if (is_array($value)) {
 			foreach ($value as $k=>$v) {
 				$value[$k] = $this->make_encoding_array($value[$k]);
@@ -4176,7 +4176,7 @@ class search {
 	public function make_decode_array($value){
 		global $charset;
 	
-		//html_entity_decode récursif car les facette sont des tableaux de tableaux
+		//html_entity_decode rï¿½cursif car les facette sont des tableaux de tableaux
 		if (is_array($value)) {
 			foreach ($value as $k=>$v) {
 				$value[$k] = $this->make_decode_array($value[$k]);
@@ -4280,8 +4280,8 @@ class search {
 			}
 		}
 	
-		//Décalage des critères
-		//1) copie des critères valides
+		//Dï¿½calage des critï¿½res
+		//1) copie des critï¿½res valides
 		for ($i=0; $i<count($tt); $i++) {
 			$it=$tt[$i];
 			$fieldt[$i]["op"]=$this->get_global_value("op_".$it."_".$search[$it]);
@@ -4304,7 +4304,7 @@ class search {
 		}
 	}
 	
-	//suppression des champs de recherche marqués FORBIDDEN pour recherche externe
+	//suppression des champs de recherche marquï¿½s FORBIDDEN pour recherche externe
 	public function remove_forbidden_fields() {
 		global $search;
 		$old_search=array();
@@ -4332,7 +4332,7 @@ class search {
 						$saved_search[$k]=$s;
 					}
 				} elseif(array_key_exists($s[0],$this->pp)){
-					//Pas de recherche affiliée dans des champs personnalisés.
+					//Pas de recherche affiliï¿½e dans des champs personnalisï¿½s.
 				} elseif ($s[0]=="s") {
 					if ($this->specialfields[substr($s,2)] && ($this->specialfields[substr($s,2)]['UNIMARCFIELD']!='FORBIDDEN')) {
 						$saved_search[$k]=$s;
@@ -4868,6 +4868,8 @@ class search {
 
 		$resultat=pmb_mysql_query($requete,$dbh);
 
+		
+
 		print "	<div id=\"resultatrech\"><h3>$msg[resultat_recherche]</h3>\n
 		<div id=\"resultatrech_container\">
 		<div id=\"resultatrech_see\">
@@ -4901,7 +4903,7 @@ class search {
 		facettes_external::session_filtre_compare();
 		print "<blockquote>";
 		if($filtre_compare=='compare'){
-			//on valide la variable session qui comprend les critères de comparaisons
+			//on valide la variable session qui comprend les critï¿½res de comparaisons
 			facettes_external_search_compare::session_facette_compare();
 			//affichage comparateur
 			$facette_compare= new facettes_external_search_compare();
@@ -4912,7 +4914,7 @@ class search {
 				print  $msg[$compare];
 			}
 		} else {
-			//si demande de réinitialisation
+			//si demande de rï¿½initialisation
 			if($reinit_compare==1){
 				facettes_external_search_compare::session_facette_compare(null,$reinit_compare);
 			}
@@ -4926,7 +4928,7 @@ class search {
 				</div>";
 	}
 
-	//Permet de savoir si la recherche utilise des champs qui ne sont pas autorisé dans les recherches externes ou affiliée
+	//Permet de savoir si la recherche utilise des champs qui ne sont pas autorisï¿½ dans les recherches externes ou affiliï¿½e
 	public function has_forbidden_fields() {
 		global $search;
 		$saved_search=array();
@@ -4937,7 +4939,7 @@ class search {
 					$saved_search[$k]=$s;
 				}
 			} elseif(array_key_exists($s[0],$this->pp)){
-				//Pas de recherche affiliée dans des champs personnalisés.
+				//Pas de recherche affiliï¿½e dans des champs personnalisï¿½s.
 			} elseif ($s[0]=="s") {
 			    if (!empty($this->specialfields[substr($s,2)]) && ($this->specialfields[substr($s,2)]['UNIMARCFIELD']!='FORBIDDEN')) {
 					$saved_search[$k]=$s;
@@ -4969,7 +4971,7 @@ class search {
 					$trouveHistoriqueDansCriteres=true;
 					require_once($include_path."/search_queries/specials/combine/search.class.php");
 					$sf=$es->specialfields[$s[1]];
-					//on est sur un historique, on vérifie le type de recherche
+					//on est sur un historique, on vï¿½rifie le type de recherche
 					$valeur_="field_".$i."_s_".$s[1];
 					global ${$valeur_};
 					$valeur=${$valeur_};
@@ -4979,7 +4981,7 @@ class search {
 					$specialclass_serialized_search = $specialclass->serialize_search();
 					$specialSearch = unserialize($specialclass_serialized_search);
 					if ($search_type == 'simple_search') {
-						//on transforme la recherche simple historisée en recherche spéciale s_4 (recherche simple)
+						//on transforme la recherche simple historisï¿½e en recherche spï¿½ciale s_4 (recherche simple)
 						$search[$i] = "s_4";
 						$field="field_".$i."_s_4";
 						$op="op_".$i."_s_4";
@@ -5166,7 +5168,7 @@ class search {
 	
 	        if (!is_array($fieldvar)) $fieldvar=array();
 	
-	        // si sélection d'autorité et champ vide : on ne doit pas le prendre en compte
+	        // si sï¿½lection d'autoritï¿½ et champ vide : on ne doit pas le prendre en compte
 	        if(${$op}=='AUTHORITY'){
 	            $field = $this->clean_completion_empty_values($field);
 	        }elseif(${$op}=='EQ'){
@@ -5278,7 +5280,7 @@ class search {
 	        else $page_en_cours=$page ;
 	        
 	        $nav_bar = '';
-	        //Première
+	        //Premiï¿½re
 	        if(($page_en_cours+1)-$etendue > 1) {
 	            $nav_bar .= "<a href='#' onClick=\"document.".$this->get_hidden_form_name().".page.value=0;";
 	            if (!$hidden_form) $nav_bar .= "document.".$this->get_hidden_form_name().".launch_search.value=1; ";
@@ -5316,7 +5318,7 @@ class search {
 	            $nav_bar .= "</a>";
 	        } else 	$nav_bar .= "";
 	        
-	        //Dernière
+	        //Derniï¿½re
 	        if((($page_en_cours+1)+$etendue)<$n_max_page){
 	            $nav_bar .= "<a href='#' onClick=\"document.".$this->get_hidden_form_name().".page.value=".($n_max_page-1).";";
 	            if (!$hidden_form) $nav_bar .= "document.".$this->get_hidden_form_name().".launch_search.value=1; ";
