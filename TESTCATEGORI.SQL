@@ -10,7 +10,7 @@ CREATE TABLE categories(
   ,path_word_categ       VARCHAR(30)
   ,index_path_word_categ VARCHAR(30)
 );
-INSERT INTO categories(num_thesaurus,num_noeud,langue,libelle_categorie,note_application,comment_public,comment_voir,index_categorie,path_word_categ,index_path_word_categ) VALUES (1,2512,'fr_FR','~ tÉrminos no clasificados',"","","",'tÉrminos no clasificados',"","");
+INSERT INTO categories(num_thesaurus,num_noeud,langue,libelle_categorie,note_application,comment_public,comment_voir,index_categorie,path_word_categ,index_path_word_categ) VALUES (1,2512,'fr_FR','~ tÉrminos no clasificados',"","","",'TÉrminos no clasificados',"","");
 INSERT INTO categories(num_thesaurus,num_noeud,langue,libelle_categorie,note_application,comment_public,comment_voir,index_categorie,path_word_categ,index_path_word_categ) VALUES (1,1378,'fr_FR','Arte y Cultura',"","","",'Arte y Cultura',"","");
 INSERT INTO categories(num_thesaurus,num_noeud,langue,libelle_categorie,note_application,comment_public,comment_voir,index_categorie,path_word_categ,index_path_word_categ) VALUES (1,1379,'fr_FR','Instituciones y polÍtica',"","","",'Instituciones y polÍtica',"","");
 INSERT INTO categories(num_thesaurus,num_noeud,langue,libelle_categorie,note_application,comment_public,comment_voir,index_categorie,path_word_categ,index_path_word_categ) VALUES (1,1380,'fr_FR','Juventud',"","","",'Juventud',"","");

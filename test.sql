@@ -5,6 +5,7 @@ CREATE TABLE indexint(
   ,index_indexint   TEXT NOT NULL
   ,num_pclass       int(11)  NOT NULL
 );
+
 INSERT INTO indexint(indexint_id,indexint_name,indexint_comment,index_indexint,num_pclass) VALUES (1,0,'Información de comunicación','000 Información de comunicación',1);
 INSERT INTO indexint(indexint_id,indexint_name,indexint_comment,index_indexint,num_pclass) VALUES (2,10,'Bibliografías Catálogos','010 catálogos de bibliografías',1);
 INSERT INTO indexint(indexint_id,indexint_name,indexint_comment,index_indexint,num_pclass) VALUES (3,20,'Bibliotecas - y lectura, documentación','020 bibliotecas leyendo documentación',1);
