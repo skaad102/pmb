@@ -1,0 +1,13 @@
+a:4:{i:0;a:21:{s:28:"fetch_item_input_description";s:28:"Au choix: item_cb ou item_id";s:31:"fetch_notices_items_description";s:81:"Fait la même chose que fetch_notice_items mais pour plusieurs notices à la fois";s:22:"pmbesItems_description";s:35:"Fonctions relatives aux exemplaires";s:15:"fetch_item_item";s:24:"L'exemplaire s'il existe";s:29:"fetch_notice_items_OPACUserId";s:145:"l'id d'un emprunteur, pour vérifier les droits d'accès sur cette notice.
+	-1: Ne pas tenir compte
+	0: emprunteur anonyme
+	x: id de l'emprunteur";s:21:"fetch_item_OPACUserId";s:145:"l'id d'un emprunteur, pour vérifier les droits d'accès sur cette notice.
+	-1: Ne pas tenir compte
+	0: emprunteur anonyme
+	x: id de l'emprunteur";s:32:"fetch_bulletins_items_OPACUserId";s:145:"l'id d'un emprunteur, pour vérifier les droits d'accès sur cette notice.
+	-1: Ne pas tenir compte
+	0: emprunteur anonyme
+	x: id de l'emprunteur";s:30:"fetch_notices_items_OPACUserId";s:145:"l'id d'un emprunteur, pour vérifier les droits d'accès sur cette notice.
+	-1: Ne pas tenir compte
+	0: emprunteur anonyme
+	x: id de l'emprunteur";s:18:"fetch_item_item_id";s:20:"L'id de l'exemplaire";s:35:"fetch_notices_items_result_noticeid";s:17:"L'id de la notice";s:39:"fetch_bulletins_items_result_bulletinid";s:16:"L'id du bulletin";s:18:"fetch_item_item_cb";s:29:"Le code barre de l'exemplaire";s:27:"fetch_notice_items_noticeid";s:23:"Le numéro de la notice";s:24:"fetch_notice_items_items";s:29:"Les exemplaire s'ils existent";s:32:"fetch_notices_items_result_items";s:28:"Les exemplaires de la notice";s:34:"fetch_bulletins_items_result_items";s:27:"Les exemplaires du bulletin";s:33:"fetch_bulletins_items_bulletinids";s:21:"Les ids des bulletins";s:30:"fetch_notice_items_description";s:74:"Renvoie les différents exemplaires associés à une notice s'ils existent";s:33:"fetch_bulletins_items_description";s:59:"Renvoie les exemplaires associés à une liste de bulletins";s:22:"fetch_item_description";s:48:"Renvoie un exemplaire par un de ses identifiants";s:29:"fetch_notices_items_noticesid";s:27:"Un tableau d'ids de notices";}i:1;a:0:{}i:2;a:0:{}i:3;a:0:{}}

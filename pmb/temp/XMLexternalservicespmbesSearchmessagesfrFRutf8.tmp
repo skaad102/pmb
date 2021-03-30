@@ -1,0 +1,64 @@
+a:4:{i:0;a:108:{s:33:"get_sort_types_output_description";s:321:"
+    Exemple de retour:
+    Array
+    (
+    [0] => Array
+    (
+    [sort_name] => text_1
+    [sort_caption] => Titre
+    )
+    
+    [1] => Array
+    (
+    [sort_name] => num_2
+    [sort_caption] => Indexation décimale
+    )
+    
+    [2] => Array
+    (
+    [sort_name] => text_3
+    [sort_caption] => Auteur
+    )
+  ...
+)";s:42:"fetchSearchRecordsSorted_input_description";s:371:"
+    Le paramètre sortType se construit de la façon suivante:
+    typedutri_nomdutri, avec:
+    -typedutri: d ou c pour un tri croissant ou décroissant
+    -nomdutri: l'id du tri (voir la fonction get_sort_types).
+    
+    exemples:
+    -c_text_1: tri par titre croissant.
+    -d_num_7: tri par année d'édition décroissante.
+    -c_text_5: tri par côte croissante.";s:47:"fetchSearchRecordsArraySorted_input_description";s:371:"
+    Le paramètre sortType se construit de la façon suivante:
+    typedutri_nomdutri, avec:
+    -typedutri: d ou c pour un tri croissant ou décroissant
+    -nomdutri: l'id du tri (voir la fonction get_sort_types).
+    
+    exemples:
+    -c_text_1: tri par titre croissant.
+    -d_num_7: tri par année d'édition décroissante.
+    -c_text_5: tri par côte croissante.";s:43:"simple_search_inputs_description_searchTerm";s:20:"chaine à rechercher";s:52:"simple_search_localise_inputs_description_searchTerm";s:20:"chaine à rechercher";s:47:"listFacets_inputs_description_filter_code_champ";s:10:"Code champ";s:46:"listFacets_inputs_description_field_code_champ";s:10:"Code champ";s:29:"listFacets_results_code_champ";s:10:"Code champ";s:58:"listRecordsFromFacets_inputs_description_filter_code_champ";s:10:"Code champ";s:50:"listFacets_inputs_description_filter_code_ss_champ";s:15:"Code sous champ";s:49:"listFacets_inputs_description_field_code_ss_champ";s:15:"Code sous champ";s:32:"listFacets_results_code_ss_champ";s:15:"Code sous champ";s:61:"listRecordsFromFacets_inputs_description_filter_code_ss_champ";s:15:"Code sous champ";s:13:"unknown_field";s:29:"Critère de recherche inconnu";s:47:"get_advanced_sf_inputs_description_search_realm";s:93:"dans quel domaine de recherche on se situe. exemple: search_simple_fields, opac|search_fields";s:50:"get_advanced_sfone_inputs_description_search_realm";s:93:"dans quel domaine de recherche on se situe. exemple: search_simple_fields, opac|search_fields";s:46:"advancedSearch_inputs_description_search_realm";s:93:"dans quel domaine de recherche on se situe. exemple: search_simple_fields, opac|search_fields";s:26:"advancedSearch_description";s:32:"Effectuer une recherche avancée";s:25:"simple_search_description";s:30:"Effectuer une recherche simple";s:34:"simple_search_localise_description";s:67:"Effectuer une recherche simple filtrée par localisation et section";s:28:"search_functions_description";s:57:"Fonctions pour effectuer des recherches dans le catalogue";s:52:"fetch_search_records_inputs_description_recordFormat";s:21:"format des résultats";s:37:"fetchSearchRecordsSorted_recordFormat";s:21:"format des résultats";s:50:"listRecordsFromFacets_outputs_description_noticeId";s:24:"Identifiant de la notice";s:37:"fetchSearchRecordsSorted_includeItems";s:40:"inclure les exemplaires dans la zone 995";s:36:"fetchSearchRecordsArray_includeItems";s:40:"inclure les exemplaires dans la zone 995";s:42:"fetchSearchRecordsArraySorted_includeItems";s:40:"inclure les exemplaires dans la zone 995";s:52:"fetch_search_records_inputs_description_includeItems";s:40:"inclure les exemplaires dans la zone 995";s:37:"fetchSearchRecordsSorted_includeLinks";s:54:"inclure les liens entre notices, bulletins et articles";s:36:"fetchSearchRecordsArray_includeLinks";s:54:"inclure les liens entre notices, bulletins et articles";s:52:"fetch_search_records_inputs_description_includeLinks";s:54:"inclure les liens entre notices, bulletins et articles";s:42:"fetchSearchRecordsArraySorted_includeLinks";s:54:"inclure les liens entre notices, bulletins et articles";s:43:"simple_search_inputs_description_OPACUserId";s:146:"l'id d'un emprunteur, pour filtrer les résultats selon les droits d'accès
+	-1: Ne pas tenir compte
+	0: emprunteur anonyme
+	x: id de l'emprunteur";s:52:"simple_search_localise_inputs_description_OPACUserId";s:146:"l'id d'un emprunteur, pour filtrer les résultats selon les droits d'accès
+	-1: Ne pas tenir compte
+	0: emprunteur anonyme
+	x: id de l'emprunteur";s:44:"advancedSearch_inputs_description_OPACEmprId";s:146:"l'id d'un emprunteur, pour filtrer les résultats selon les droits d'accès
+	-1: Ne pas tenir compte
+	0: emprunteur anonyme
+	x: id de l'emprunteur";s:32:"get_sort_types_results_sort_name";s:13:"L'id d'un tri";s:51:"simple_search_localise_inputs_description_pmbUserId";s:114:"l'id d'un utilisateur pmb, pour filtrer les résultats selon les droits d'accès. 
+-1: pour ne pas en tenir compte";s:42:"simple_search_inputs_description_pmbUserId";s:114:"l'id d'un utilisateur pmb, pour filtrer les résultats selon les droits d'accès. 
+-1: pour ne pas en tenir compte";s:43:"advancedSearch_inputs_description_pmbUserId";s:106:"l'id d'un utilisateur pmb, pour filtrer les résultats selon les droits d'accès. -1: ne pas tenir compte.";s:41:"fetchSearchRecordsSorted_results_noticeId";s:17:"l'id de la notice";s:49:"fetch_search_records_outputs_description_noticeId";s:17:"l'id de la notice";s:46:"advancedSearch_inputs_description_search_field";s:26:"l'id du champ de recherche";s:46:"get_advanced_sfone_inputs_description_field_id";s:47:"l'id du champ dont on souhaite les informations";s:33:"fetchSearchRecordsSorted_searchId";s:42:"l'id renvoyé par la fonction de recherche";s:38:"fetchSearchRecordsArraySorted_searchId";s:42:"l'id renvoyé par la fonction de recherche";s:32:"fetchSearchRecordsArray_searchId";s:42:"l'id renvoyé par la fonction de recherche";s:30:"listRecordsFromFacets_searchId";s:42:"l'id renvoyé par la fonction de recherche";s:19:"listFacets_searchId";s:42:"l'id renvoyé par la fonction de recherche";s:48:"fetch_search_records_inputs_description_searchId";s:42:"l'id renvoyé par la fonction de recherche";s:49:"advancedSearch_inputs_description_search_operator";s:25:"l'opérateur de recherche";s:46:"advancedSearch_inputs_description_search_inter";s:51:"l'opérateur entre le champ et le champ précédent";s:42:"get_advanced_sfone_inputs_description_lang";s:48:"la langue dans laquelle on souhaite le résultat";s:39:"get_advanced_sf_inputs_description_lang";s:50:"la langue dans laquelle on souhaite les résultats";s:54:"fetch_search_records_outputs_description_noticeContent";s:33:"la notice dans le format demandé";s:46:"fetchSearchRecordsSorted_results_noticeContent";s:33:"la notice dans le format demandé";s:40:"advancedSearch_inputs_description_search";s:53:"la recherche: un tableau d'une structure de recherche";s:37:"fetchSearchRecordsArray_recordCharset";s:52:"le charset dans le lequel on souhaite les résultats";s:38:"fetchSearchRecordsSorted_recordCharset";s:52:"le charset dans le lequel on souhaite les résultats";s:43:"fetchSearchRecordsArraySorted_recordCharset";s:49:"le charset dans lequel on souhaite les résultats";s:53:"fetch_search_records_inputs_description_recordCharset";s:49:"le charset dans lequel on souhaite les résultats";s:35:"get_sort_types_results_sort_caption";s:15:"Le nom d'un tri";s:38:"fetchSearchRecordsArraySorted_sortType";s:34:"le tri à appliquer aux résultats";s:33:"fetchSearchRecordsSorted_sortType";s:34:"le tri à appliquer aux résultats";s:52:"simple_search_localise_inputs_description_searchType";s:234:"Le type de la recherche:  
+  0 (SEARCH_ALL)=tous les champs,
+  1 (SEARCH_TITLE)=titre, 
+  2 (SEARCH_AUTHOR)=auteur, 
+  3 (SEARCH_EDITOR)=éditeur, 
+  4 (SEARCH_COLLECTION)=collection,
+  6 (SEARCH_CATEGORIES)=catégories/mots matières";s:43:"simple_search_inputs_description_searchType";s:234:"Le type de la recherche:  
+  0 (SEARCH_ALL)=tous les champs,
+  1 (SEARCH_TITLE)=titre, 
+  2 (SEARCH_AUTHOR)=auteur, 
+  3 (SEARCH_EDITOR)=éditeur, 
+  4 (SEARCH_COLLECTION)=collection,
+  6 (SEARCH_CATEGORIES)=catégories/mots matières";s:22:"get_sort_types_results";s:8:"Les tris";s:46:"advancedSearch_inputs_description_search_value";s:24:"les valeurs de recherche";s:18:"listFacets_results";s:29:"Liste des facettes calculées";s:29:"listRecordsFromFacets_results";s:17:"Liste des notices";s:54:"simple_search_localise_inputs_description_localisation";s:12:"Localisation";s:42:"simple_search_outputs_description_searchId";s:29:"nom de la ressource résultat";s:43:"advancedSearch_outputs_description_searchId";s:29:"nom de la ressource résultat";s:51:"simple_search_localise_outputs_description_searchId";s:29:"nom de la ressource résultat";s:41:"fetchSearchRecordsArraySorted_recordCount";s:32:"nombre de notices à récupérer";s:36:"fetchSearchRecordsSorted_recordCount";s:32:"nombre de notices à récupérer";s:51:"fetch_search_records_inputs_description_recordCount";s:32:"nombre de notices à récupérer";s:35:"fetchSearchRecordsArray_recordCount";s:32:"nombre de notices à récupérer";s:24:"listFacets_results_count";s:28:"Nombre de notices associées";s:44:"advancedSearch_outputs_description_nbResults";s:29:"nombre de résultats trouvés";s:52:"simple_search_localise_outputs_description_nbResults";s:29:"nombre de résultats trouvés";s:43:"simple_search_outputs_description_nbResults";s:29:"nombre de résultats trouvés";s:41:"fetchSearchRecordsArraySorted_firstRecord";s:45:"numéro de la première notice à récupérer";s:51:"fetch_search_records_inputs_description_firstRecord";s:45:"numéro de la première notice à récupérer";s:35:"fetchSearchRecordsArray_firstRecord";s:45:"numéro de la première notice à récupérer";s:36:"fetchSearchRecordsSorted_firstRecord";s:45:"numéro de la première notice à récupérer";s:27:"get_advanced_sf_description";s:67:"Récupérer la liste des champs recherchables en recherche avancée";s:22:"listFacets_description";s:47:"Récupérer les facettes issues d'une recherche";s:30:"get_advanced_sfone_description";s:52:"Récupérer les informations d'un champ de recherche";s:33:"listRecordsFromFacets_description";s:58:"Récupérer les notices issues d'une ou plusieurs facettes";s:32:"fetch_search_records_description";s:46:"Récupérer les notices issues d'une recherche";s:35:"fetchSearchRecordsArray_description";s:46:"Récupérer les notices issues d'une recherche";s:41:"fetchSearchRecordsArraySorted_description";s:68:"Récupérer les notices issues d'une recherche, en appliquant un tri";s:36:"fetchSearchRecordsSorted_description";s:68:"Récupérer les notices issues d'une recherche, en appliquant un tri";s:26:"get_sort_types_description";s:47:"Renvoie la liste des différents tris possibles";s:49:"simple_search_localise_inputs_description_section";s:7:"Section";s:47:"get_advanced_sf_inputs_description_fetch_values";s:111:"si l'on souhaite également les différentes valeurs possibles des champs, (pour les champs select par exemple)";s:50:"get_advanced_sfone_inputs_description_fetch_values";s:109:"si l'on souhaite également les différentes valeurs possibles du champ, (pour les champs select par exemple)";s:51:"get_advanced_sfone_outputs_description_search_field";s:21:"un champ de recherche";s:43:"get_advanced_sf_outputs_description_results";s:33:"Un tableau de champs de recherche";s:36:"listFacets_inputs_description_fields";s:34:"Un tableau de facettes à calculer";s:37:"listFacets_inputs_description_filters";s:66:"Un tableau de filtres (affinage : facettes déjà sélectionnées)";s:48:"listRecordsFromFacets_inputs_description_filters";s:66:"Un tableau de filtres (affinage : facettes déjà sélectionnées)";s:32:"fetchSearchRecordsSorted_results";s:24:"Un tableau de résultats";s:48:"fetch_search_records_outputs_description_results";s:24:"Un tableau de résultats";s:31:"fetchSearchRecordsArray_results";s:24:"Un tableau de résultats";s:37:"fetchSearchRecordsArraySorted_results";s:24:"Un tableau de résultats";s:42:"listFacets_inputs_description_filter_value";s:6:"Valeur";s:53:"listRecordsFromFacets_inputs_description_filter_value";s:6:"Valeur";}i:1;a:0:{}i:2;a:0:{}i:3;a:0:{}}

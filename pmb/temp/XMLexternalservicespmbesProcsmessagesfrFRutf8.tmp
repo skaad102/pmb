@@ -1,0 +1,4 @@
+a:4:{i:0;a:8:{s:23:"executeProc_description";s:27:"Exécution d'une procédure";s:27:"Procs_functions_description";s:35:"Fonctions relatives aux procédures";s:18:"executeProc_idProc";s:28:"Identifiant de la procédure";s:21:"listProcs_description";s:21:"Liste des procédures";s:21:"executeProc_procedure";s:66:"Procédure interne ou distante :
+  	1 : Interne
+  	2 : Distante
+  ";s:18:"executeProc_result";s:25:"Résultat de l'exécution";s:16:"listProcs_result";s:17:"Retourne la liste";s:19:"executeProc_tparams";s:22:"Tableau de paramètres";}i:1;a:0:{}i:2;a:0:{}i:3;a:0:{}}

@@ -1,0 +1,9 @@
+a:4:{i:0;a:5:{s:25:"pmbesAutLinks_description";s:45:"Fonctions pour les liens entre les autorités";s:15:"getLinks_authId";s:26:"Identifiant de l'autorité";s:14:"getLinks_links";s:38:"Informations sur les autorités liées";s:8:"getLinks";s:43:"Permet de récupérer les autorités liées";s:18:"getLinks_authTable";s:159:"Type d'autorité:
+1 -> Auteur,
+2 -> Catégorie,
+3 -> Editeur,
+4 -> Collection,
+5 -> Sous-collection,
+6 -> Titre de série,
+7 -> Titre uniforme,
+8 -> Indexation";}i:1;a:0:{}i:2;a:0:{}i:3;a:0:{}}

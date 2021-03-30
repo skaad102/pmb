@@ -1,0 +1,7 @@
+a:4:{i:0;a:14:{s:23:"makeConsolidation_conso";s:174:"
+  	Mode de consolidation :
+  	1 : Depuis la dernière consolidation
+  	2 : Entre une date de début et une date de fin
+  	3 : Depuis le début jusqu'à une date d'échéance";s:22:"getStatopacView_result";s:85:"
+  Tableau de résultats
+  Les noms de colonnes varient en fonction de la vue choisie";s:24:"makeConsolidation_result";s:40:"Aucun résultat de retour pour le moment";s:26:"makeConsolidation_date_ech";s:17:"Date d'échéance";s:26:"makeConsolidation_date_deb";s:14:"Date de début";s:26:"makeConsolidation_date_fin";s:11:"Date de fin";s:31:"OPACStats_functions_description";s:36:"Fonctions relatives aux statistiques";s:19:"listView_OPACUserId";s:32:"Identifiant de l'utilisateur PMB";s:23:"getStatopacView_id_view";s:21:"Identifiant de la vue";s:29:"makeConsolidation_description";s:29:"Lancement d'une consolidation";s:25:"makeConsolidation_list_ck";s:27:"Liste de vues à consolider";s:20:"listView_description";s:14:"Liste des vues";s:27:"getStatopacView_description";s:44:"Renvoie les informations d'une consolidation";s:15:"listView_result";s:26:"Retourne la liste des vues";}i:1;a:0:{}i:2;a:0:{}i:3;a:0:{}}

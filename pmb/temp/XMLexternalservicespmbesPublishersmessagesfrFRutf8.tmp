@@ -1,0 +1,4 @@
+a:4:{i:0;a:8:{s:27:"pmbesPublishers_description";s:20:"Gestion des editeurs";s:33:"list_publisher_notices_OPACUserId";s:146:"l'id d'un emprunteur, pour filtrer les résultats selon les droits d'accès
+	-1: Ne pas tenir compte
+	0: emprunteur anonyme
+	x: id de l'emprunteur";s:38:"get_publisher_information_publisher_id";s:18:"L'id de l'éditeur";s:35:"list_publisher_notices_publisher_id";s:18:"L'id de l'éditeur";s:33:"list_publisher_notices_notice_ids";s:19:"Les ids des notices";s:32:"get_publisher_information_result";s:16:"Les informations";s:34:"list_publisher_notices_description";s:53:"Renvoie les ids des notices associées à un éditeur";s:37:"get_publisher_information_description";s:49:"Renvoie les informations relatives à un éditeur";}i:1;a:0:{}i:2;a:0:{}i:3;a:0:{}}

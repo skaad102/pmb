@@ -1,0 +1,26 @@
+a:4:{i:0;a:37:{s:41:"retrieve_shelf_content_output_description";s:87:"Cette fonction tient compte des différents droits d'accès applicables à l'emprunteur";s:28:"pmbesOPACGeneric_description";s:82:"Fonctions relatives à l'OPAC, qui s'utilisent aussi bien en anonyme qu'en loggué";s:23:"list_shelves_OPACUserId";s:155:"Id d'un emprunteur, pour vérifier les droits d'accès sur cette étagère.
+    -1: Ne pas tenir compte
+    0: emprunteur anonyme
+    x: id de l'emprunteur";s:33:"retrieve_shelf_content_OPACUserId";s:151:"Id d'un emprunteur, pour vérifier les droits d'accès sur les notices.
+    -1: Ne pas tenir compte
+    0: emprunteur anonyme
+    x: id de l'emprunteur";s:30:"retrieve_shelf_content_self_id";s:17:"Id de l'étagère";s:36:"retrieve_shelf_content_shelf_content";s:15:"Ids des notices";s:44:"also_borrowed_notice_reference_notice_author";s:21:"L'auteur de la notice";s:49:"get_location_information_and_sections_location_id";s:23:"L'id de la localisation";s:36:"get_location_information_location_id";s:23:"L'id de la localisation";s:29:"also_borrowed_input_notice_id";s:17:"L'id de la notice";s:49:"also_borrowed_list_also_borrowed_notice_reference";s:17:"L'id de la notice";s:40:"also_borrowed_notice_reference_notice_id";s:17:"L'id de la notice";s:34:"get_section_information_section_id";s:18:"L'id de la section";s:31:"also_borrowed_input_bulletin_id";s:16:"L'id du bulletin";s:22:"list_sections_location";s:28:"La localisation des sections";s:43:"also_borrowed_notice_reference_notice_title";s:21:"Le titre de la notice";s:30:"also_borrowed_notice_reference";s:32:"Les différentes autres lectures";s:20:"list_shelves_shelves";s:27:"Les différentes étagères";s:24:"list_locations_locations";s:30:"Les différentes localications";s:22:"list_sections_sections";s:25:"Les différentes sections";s:46:"get_location_information_and_sections_sections";s:25:"Les différentes sections";s:33:"get_location_information_location";s:16:"Les informations";s:46:"get_location_information_and_sections_location";s:16:"Les informations";s:31:"get_section_information_section";s:16:"Les informations";s:24:"list_shelves_description";s:54:"Liste les différentes étagères visibles dans l'opac";s:26:"list_locations_description";s:46:"Liste les différentes localisations de l'OPAC";s:34:"retrieve_shelf_content_description";s:59:"Liste les différentes notices contenues dans une étagère";s:25:"list_sections_description";s:50:"Liste les différentes sections visibles de l'OPAC";s:36:"is_also_borrowed_enabled_description";s:67:"Permet de savoir si la fonction "Autre Lecture" est activée ou non";s:26:"get_marc_table_description";s:168:"Récupère les informations contenues dans les fichiers xml de paramètrage de PMB. Permet d'avoir notamment les libellés corespondants à des codes utilisés dans PMB";s:25:"also_borrowed_description";s:52:"Renvoie les autres lectures associées à une notice";s:36:"get_location_information_description";s:55:"Renvoie les informations associées à une localisation";s:35:"get_section_information_description";s:50:"Renvoie les informations associées à une section";s:49:"get_location_information_and_sections_description";s:84:"Renvoie les informations et les différentes sections associées à une localisation";s:31:"is_also_borrowed_enabled_result";s:34:"Si la fonction est activée ou non";s:21:"get_marc_table_result";s:55:"Tableau avec les associations [code] => Libellé/valeur";s:19:"get_marc_table_type";s:823:"Type d'information souhaitée:
+country -> Pays
+icondoc -> Images associées aux notices
+icondoc_big -> Images associées aux notices (grand format)
+lang -> Langues
+doctype -> Types de documents
+recordtype -> Type de notices
+function -> Fonctions d'auteurs
+section_995 -> Section d'exemplaires
+typdoc_995 -> Support d'exemplaires
+codstatdoc_995 -> Code stat d'exemplaire
+diacritique -> Caractères diacritiques
+nivbiblio -> Niveau bibliographique
+relationtypeup -> Lien entre notice fille -> mère
+relationtypedown -> Lien entre notice mère -> fille
+relationtype_aut -> Lien entre autorité mère -> fille
+relationtype_autup -> Lien entre autorité fille -> mère
+relationtypeup_unimarc -> Code unimarc du champ pour les liens fille -> mère
+relationtypedown_unimarc -> Code unimarc du champ pour les liens mère -> fille
+	";}i:1;a:0:{}i:2;a:0:{}i:3;a:0:{}}

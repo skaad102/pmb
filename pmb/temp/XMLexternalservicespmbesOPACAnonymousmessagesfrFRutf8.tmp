@@ -1,0 +1,57 @@
+a:4:{i:0;a:115:{s:33:"get_sort_types_output_description";s:321:"
+    Exemple de retour:
+    Array
+    (
+    [0] => Array
+    (
+    [sort_name] => text_1
+    [sort_caption] => Titre
+    )
+    
+    [1] => Array
+    (
+    [sort_name] => num_2
+    [sort_caption] => Indexation décimale
+    )
+    
+    [2] => Array
+    (
+    [sort_name] => text_3
+    [sort_caption] => Auteur
+    )
+  ...
+)";s:47:"fetchSearchRecordsArraySorted_input_description";s:371:"
+    Le paramètre sortType se construit de la façon suivante:
+    typedutri_nomdutri, avec:
+    -typedutri: d ou c pour un tri croissant ou décroissant
+    -nomdutri: l'id du tri (voir la fonction get_sort_types).
+    
+    exemples:
+    -c_text_1: tri par titre croissant.
+    -d_num_7: tri par année d'édition décroissante.
+    -c_text_5: tri par côte croissante.";s:42:"fetchSearchRecordsSorted_input_description";s:371:"
+    Le paramètre sortType se construit de la façon suivante:
+    typedutri_nomdutri, avec:
+    -typedutri: d ou c pour un tri croissant ou décroissant
+    -nomdutri: l'id du tri (voir la fonction get_sort_types).
+    
+    exemples:
+    -c_text_1: tri par titre croissant.
+    -d_num_7: tri par année d'édition décroissante.
+    -c_text_5: tri par côte croissante.";s:33:"fetchBulletinListFull_description";s:85:"Alias de pmbesNotices_fetchBulletinListFull. Voir cette entrée pour la documentation";s:31:"fetchNoticeListFull_description";s:83:"Alias de pmbesNotices_fetchNoticeListFull. Voir cette entrée pour la documentation";s:33:"fetchNoticeList_input_description";s:176:"Attention, aux exigences des protocoles en matière de charset si vous utilisez cette fonction. Par exemple, si vous utilisez SOAP, vous devez transporter les notices en utf-8.";s:52:"simple_search_localise_inputs_description_searchTerm";s:20:"chaine à rechercher";s:23:"simpleSearch_searchTerm";s:20:"Chaine à rechercher";s:37:"fetchSearchRecordsArray_recordCharset";s:46:"Charset dans lequel on souhaite les résultats";s:32:"fetchSearchRecords_recordCharset";s:46:"Charset dans lequel on souhaite les résultats";s:46:"listFacets_inputs_description_field_code_champ";s:10:"Code champ";s:47:"listFacets_inputs_description_filter_code_champ";s:10:"Code champ";s:58:"listRecordsFromFacets_inputs_description_filter_code_champ";s:10:"Code champ";s:29:"listFacets_results_code_champ";s:10:"Code champ";s:32:"listFacets_results_code_ss_champ";s:15:"Code sous champ";s:61:"listRecordsFromFacets_inputs_description_filter_code_ss_champ";s:15:"Code sous champ";s:50:"listFacets_inputs_description_filter_code_ss_champ";s:15:"Code sous champ";s:49:"listFacets_inputs_description_field_code_ss_champ";s:15:"Code sous champ";s:26:"advancedSearch_description";s:32:"Effectuer une recherche avancée";s:24:"simpleSearch_description";s:30:"Effectuer une recherche simple";s:34:"simple_search_localise_description";s:67:"Effectuer une recherche simple filtrée par localisation et section";s:35:"fetchSearchRecordsArray_description";s:61:"Fonctions pour récupérer les notices issues d'une recherche";s:30:"fetchSearchRecords_description";s:61:"Fonctions pour récupérer les notices issues d'une recherche";s:31:"fetchSearchRecords_recordFormat";s:21:"Format des résultats";s:37:"fetchSearchRecordsSorted_recordFormat";s:21:"format des résultats";s:50:"listRecordsFromFacets_outputs_description_noticeId";s:24:"Identifiant de la notice";s:42:"fetchSearchRecordsArraySorted_includeItems";s:40:"inclure les exemplaires dans la zone 995";s:37:"fetchSearchRecordsSorted_includeItems";s:40:"inclure les exemplaires dans la zone 995";s:42:"fetchSearchRecordsArraySorted_includeLinks";s:54:"inclure les liens entre notices, bulletins et articles";s:37:"fetchSearchRecordsSorted_includeLinks";s:54:"inclure les liens entre notices, bulletins et articles";s:30:"pmbesOPACAnonymous_description";s:46:"Interagit du point de vue d'un lecteur anonyme";s:52:"simple_search_localise_inputs_description_OPACUserId";s:146:"l'id d'un emprunteur, pour filtrer les résultats selon les droits d'accès
+	-1: Ne pas tenir compte
+	0: emprunteur anonyme
+	x: id de l'emprunteur";s:51:"simple_search_localise_inputs_description_pmbUserId";s:114:"l'id d'un utilisateur pmb, pour filtrer les résultats selon les droits d'accès. 
+-1: pour ne pas en tenir compte";s:32:"fetchNoticeList_results_noticeId";s:17:"l'id de la notice";s:27:"fetch_notice_items_noticeid";s:17:"L'id de la notice";s:35:"fetchSearchRecords_results_noticeId";s:17:"L'id de la notice";s:41:"fetchSearchRecordsSorted_results_noticeId";s:17:"l'id de la notice";s:27:"listNoticeExplNums_noticeId";s:28:"L'id de la notice concernée";s:31:"listBulletinExplNums_bulletinId";s:26:"l'id du bulletin concerné";s:27:"advancedSearch_search_field";s:26:"l'id du champ de recherche";s:30:"listRecordsFromFacets_searchId";s:42:"l'id renvoyé par la fonction de recherche";s:32:"fetchSearchRecordsArray_searchId";s:42:"L'id renvoyé par la fonction de recherche";s:33:"fetchSearchRecordsSorted_searchId";s:42:"l'id renvoyé par la fonction de recherche";s:38:"fetchSearchRecordsArraySorted_searchId";s:42:"l'id renvoyé par la fonction de recherche";s:27:"fetchSearchRecords_searchId";s:42:"L'id renvoyé par la fonction de recherche";s:19:"listFacets_searchId";s:42:"l'id renvoyé par la fonction de recherche";s:30:"advancedSearch_search_operator";s:25:"l'opérateur de recherche";s:27:"advancedSearch_search_inter";s:51:"l'opérateur entre le champ et le champ précédent";s:28:"getAdvancedSearchFields_lang";s:9:"La langue";s:46:"fetchSearchRecordsSorted_results_noticeContent";s:33:"la notice dans le format demandé";s:37:"fetchNoticeList_results_noticeContent";s:33:"la notice dans le format demandé";s:40:"fetchSearchRecords_results_noticeContent";s:25:"La notice dans son format";s:21:"advancedSearch_search";s:53:"la recherche: un tableau d'une structure de recherche";s:43:"fetchSearchRecordsArraySorted_recordCharset";s:52:"le charset dans le lequel on souhaite les résultats";s:29:"fetchNoticeList_recordCharset";s:49:"le charset dans lequel on souhaite les résultats";s:34:"fetchNoticeListArray_recordCharset";s:49:"le charset dans lequel on souhaite les résultats";s:38:"fetchSearchRecordsSorted_recordCharset";s:49:"le charset dans lequel on souhaite les résultats";s:28:"fetchNoticeList_recordFormat";s:45:"le format dans lequel on souhaite ces notices";s:26:"fetchNoticeList_session_id";s:21:"Le numéro de session";s:31:"listBulletinExplNums_session_id";s:21:"Le numéro de session";s:29:"fetch_notice_items_session_id";s:21:"Le numéro de session";s:29:"listNoticeExplNums_session_id";s:21:"Le numéro de session";s:33:"fetchSearchRecordsSorted_sortType";s:34:"le tri à appliquer aux résultats";s:38:"fetchSearchRecordsArraySorted_sortType";s:34:"le tri à appliquer aux résultats";s:52:"simple_search_localise_inputs_description_searchType";s:234:"Le type de la recherche:  
+  0 (SEARCH_ALL)=tous les champs,
+  1 (SEARCH_TITLE)=titre, 
+  2 (SEARCH_AUTHOR)=auteur, 
+  3 (SEARCH_EDITOR)=éditeur, 
+  4 (SEARCH_COLLECTION)=collection,
+  6 (SEARCH_CATEGORIES)=catégories/mots matières";s:23:"simpleSearch_searchType";s:229:"Le type de recherche:
+  0 (SEARCH_ALL)=tous les champs,
+  1 (SEARCH_TITLE)=titre, 
+  2 (SEARCH_AUTHOR)=auteur, 
+  3 (SEARCH_EDITOR)=éditeur, 
+  4 (SEARCH_COLLECTION)=collection,
+  6 (SEARCH_CATEGORIES)=catégories/mots matières";s:28:"fetchNoticeListArray_results";s:24:"Les différentes notices";s:23:"fetchNoticeList_results";s:24:"Les différentes notices";s:26:"fetchNoticeList_noticelist";s:29:"Les différentes notices (id)";s:31:"fetchNoticeListArray_noticelist";s:29:"Les différentes notices (id)";s:31:"getAdvancedSearchFields_results";s:22:"Les différents champs";s:26:"listNoticeExplNums_results";s:25:"Les documents numériques";s:28:"listBulletinExplNums_results";s:25:"Les documents numériques";s:24:"fetch_notice_items_items";s:15:"Les exemplaires";s:31:"fetchSearchRecordsArray_results";s:14:"Les résultats";s:26:"fetchSearchRecords_results";s:14:"Les résultats";s:27:"advancedSearch_search_value";s:24:"les valeurs de recherche";s:18:"listFacets_results";s:29:"Liste des facettes calculées";s:29:"listRecordsFromFacets_results";s:17:"Liste des notices";s:32:"listBulletinExplNums_description";s:56:"Liste les documents numériques associés à un bulletin";s:30:"listNoticeExplNums_description";s:55:"Liste les documents numériques associés à une notice";s:58:"msg:simple_search_localise_inputs_description_localisation";s:12:"Localisation";s:21:"simpleSearch_searchId";s:29:"Nom de la ressource résultat";s:51:"simple_search_localise_outputs_description_searchId";s:29:"nom de la ressource résultat";s:23:"advancedSearch_searchId";s:29:"nom de la ressource résultat";s:30:"fetchSearchRecords_recordCount";s:32:"Nombre de notices à récupérer";s:35:"fetchSearchRecordsArray_recordCount";s:32:"Nombre de notices à récupérer";s:36:"fetchSearchRecordsSorted_recordCount";s:32:"nombre de notices à récupérer";s:41:"fetchSearchRecordsArraySorted_recordCount";s:32:"nombre de notices à récupérer";s:24:"listFacets_results_count";s:28:"Nombre de notices associées";s:22:"simpleSearch_nbResults";s:20:"Nombre de résultats";s:24:"advancedSearch_nbResults";s:29:"nombre de résultats trouvés";s:52:"simple_search_localise_outputs_description_nbResults";s:29:"nombre de résultats trouvés";s:30:"fetchSearchRecords_firstRecord";s:45:"Numéro de la première notice à récupérer";s:41:"fetchSearchRecordsArraySorted_firstRecord";s:45:"numéro de la première notice à récupérer";s:36:"fetchSearchRecordsSorted_firstRecord";s:45:"numéro de la première notice à récupérer";s:35:"fetchSearchRecordsArray_firstRecord";s:45:"Numéro de la première notice à récupérer";s:36:"getAdvancedSearchFields_fetch_values";s:95:"Précise s'il faut également chercher les valeurs des champs, pour un champ select par exemple";s:35:"getAdvancedSearchFields_description";s:66:"Récupére la liste des champs recherchables en recherche avancée";s:32:"fetchNoticeListArray_description";s:54:"Récupère une liste de notices à partir de leurs ids";s:27:"fetchNoticeList_description";s:81:"Récupère une liste de notices à partir de leurs ids, sous un format spécifié";s:22:"listFacets_description";s:47:"Récupérer les facettes issues d'une recherche";s:33:"listRecordsFromFacets_description";s:58:"Récupérer les notices issues d'une ou plusieurs facettes";s:41:"fetchSearchRecordsArraySorted_description";s:68:"Récupérer les notices issues d'une recherche, en appliquant un tri";s:36:"fetchSearchRecordsSorted_description";s:68:"Récupérer les notices issues d'une recherche, en appliquant un tri";s:26:"get_sort_types_description";s:47:"Renvoie la liste des différents tris possibles";s:30:"fetch_notice_items_description";s:74:"Renvoie les différents exemplaires associés à une notice s'ils existent";s:53:"msg:simple_search_localise_inputs_description_section";s:7:"Section";s:36:"listFacets_inputs_description_fields";s:34:"Un tableau de facettes à calculer";s:48:"listRecordsFromFacets_inputs_description_filters";s:66:"Un tableau de filtres (affinage : facettes déjà sélectionnées)";s:37:"listFacets_inputs_description_filters";s:66:"Un tableau de filtres (affinage : facettes déjà sélectionnées)";s:32:"fetchSearchRecordsSorted_results";s:24:"Un tableau de résultats";s:37:"fetchSearchRecordsArraySorted_results";s:24:"Un tableau de résultats";s:53:"listRecordsFromFacets_inputs_description_filter_value";s:6:"Valeur";s:42:"listFacets_inputs_description_filter_value";s:6:"Valeur";}i:1;a:0:{}i:2;a:0:{}i:3;a:0:{}}
