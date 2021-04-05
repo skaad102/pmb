@@ -823,7 +823,7 @@ $opac_lien_moteur_recherche &nbsp;
 
 // ACCESSIBILITE
 if ($opac_accessibility) {
-	$accessibility = "<div id='accessibility'>\n
+	$accessibility = "<div style='display: none;' id='accessibility'>\n
 		<ul class='accessibility_font_size'>
 			<li class='accessibility_font_size_small'><a href='javascript:set_font_size(-1);' title='" . $msg["accessibility_font_size_small"] . "'>A-</a></li>
 			<li class='accessibility_font_size_normal'><a href='javascript:set_font_size(0);' title='" . $msg["accessibility_font_size_normal"] . "'>A</a></li>
@@ -836,7 +836,7 @@ if ($opac_accessibility) {
 }
 
 // HOME
-$home_on_left = "<div id=\"accueil\">\n
+$home_on_left = "<div style='display: none;' id=\"accueil\">\n
 <h3><span onclick='document.location=\"./index.php?\"' style='cursor: pointer;'>!!welcome_page!!</span></h3>\n";
 
 if ($opac_logosmall <> "") $home_on_left .= "<p class=\"centered\"><a href='./index.php?'><img src='" . $opac_logosmall . "' alt='" . $msg["welcome_page"] . "'  style='border:0px' class='center'/></a></p>\n";
@@ -858,7 +858,7 @@ $home_on_top = "<div id='home_on_top'>
 // Si le login est autoris�, alors afficher le formulaire de saisie utilisateur/mot de passe ou le code de l'utilisateur connect�
 $loginform = '';
 if ($opac_show_loginform) {
-	$loginform = "<div id=\"connexion\">\n
+	$loginform = "<div style='padding-top: 1.5rem;' id=\"connexion\">\n
 			<!-- common_tpl_login_invite --><div id='login_form'>!!login_form!!</div>\n
 			</div><!-- fermeture #connexion -->\n";
 } else {
