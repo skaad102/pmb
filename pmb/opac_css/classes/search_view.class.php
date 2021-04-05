@@ -167,7 +167,7 @@ class search_view {
 		global $opac_search_other_function;
 		global $opac_recherches_pliables, $charset;
 
-		$form = "<form name='search_input' style='display:none' action='".($opac_autolevel2 ? static::format_url("lvl=more_results&autolevel1=1") : static::format_url("lvl=search_result"))."' method='post' onSubmit=\"if (search_input.user_query.value.length == 0) { search_input.user_query.value='*'; return true; }\" autocomplete='off'>
+		$form = "<form name='search_input'  action='".($opac_autolevel2 ? static::format_url("lvl=more_results&autolevel1=1") : static::format_url("lvl=search_result"))."' method='post' onSubmit=\"if (search_input.user_query.value.length == 0) { search_input.user_query.value='*'; return true; }\" autocomplete='off'>
 			".static::get_typdoc_field()."
 			".($opac_search_other_function ? search_other_function_filters() : '')."
 			<br />
@@ -237,7 +237,7 @@ class search_view {
 		if($external_type=="multi"){
         	$form .= sprintf($msg["connecteurs_search_simple"], static::format_url("search_type_asked=external_search&external_type=simple"));
 		}
-		$form .= "<form class='form-$current_module' name='search_form' id='search_form' action='!!url!!' method='post'  onsubmit='enable_operators();valid_form_extented_search();'>
+		$form .= "<form class='form-$current_module' name='search_form' id='search_form' action='!!url!!' method='post'  onsubmit='enable_operators();valid_form_extented_search();' autocomplete='off'>
 			<div class='form-contenu'>";
 		if(!$limitsearch) {
 			$form .= "<div id='choose_criteria'>".$msg["search_add_field"]."</div> !!field_list!!";

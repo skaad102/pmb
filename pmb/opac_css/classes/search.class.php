@@ -3518,7 +3518,7 @@ class search {
 				document.search_form.action='!!result_url!!';
 				document.search_form.page.value='';
 				!!target_js!!
-				// pour retrouver les valeurs des champs si retour par la barre de navigation
+				// para encontrar los valores de los campos si regresa a través de la barra de navegación
 				active_autocomplete();
 				document.search_form.submit();
 			}

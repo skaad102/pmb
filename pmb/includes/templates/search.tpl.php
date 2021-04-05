@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: search.tpl.php,v 1.50 2018-07-13 06:58:05 dgoron Exp $
 
@@ -14,7 +14,7 @@ if(!isset($categ)) $categ = '';
 if(!isset($sub)) $sub = '';
 if(!isset($pmb_extended_search_auto)) $pmb_extended_search_auto = 0;
 
-//Template du formulaire de recherches avancées
+//Template du formulaire de recherches avancï¿½es
 $search_form="
 <script src=\"javascript/ajax.js\"></script>
 <script>var operators_to_enable = new Array();</script>

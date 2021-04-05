@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: catal_form.tpl.php,v 1.194 2019-08-05 09:55:19 btafforeau Exp $
 
@@ -44,7 +44,7 @@ $ptab[0] = "
         </div>
 	</div>
     <div id='el0Child_1' title='".htmlentities($msg[238],ENT_QUOTES, $charset)."' movable='yes'>
-	    <!--    Titre propre d'un auteur différent    -->
+	    <!--    Titre propre d'un auteur diffï¿½rent    -->
 	    <div id='el0Child_1a' class='row'>
 	        <label for='f_tit2' class='etiquette'>$msg[238]</label>
         </div>
@@ -53,7 +53,7 @@ $ptab[0] = "
         </div>
 	</div>
     <div id='el0Child_2' title='".htmlentities($msg[239],ENT_QUOTES, $charset)."' movable='yes'>
-	    <!--    Titre parallèle    -->
+	    <!--    Titre parallï¿½le    -->
 	    <div id='el0Child_2a' class='row'>
 	        <label for='f_tit3' class='etiquette'>$msg[239]</label>
         </div>
@@ -62,7 +62,7 @@ $ptab[0] = "
         </div>
 	</div>
     <div id='el0Child_3' title='".htmlentities($msg[240],ENT_QUOTES, $charset)."' movable='yes'>
-	    <!--    Complément du titre    -->
+	    <!--    Complï¿½ment du titre    -->
 	    <div id='el0Child_3a' class='row'>
 	        <label for='f_tit4' class='etiquette'>$msg[240]</label>
         </div>
@@ -118,8 +118,8 @@ if ($pmb_use_uniform_title) {
 } else $notice_tab_uniform_title_form_tpl = "";
 
 //    ----------------------------------------------------
-//    Mention de responsabilité
-//       $notice_tab_responsabilities_form_tpl : contenu de l'onglet 1 (mention de responsabilité)
+//    Mention de responsabilitï¿½
+//       $notice_tab_responsabilities_form_tpl : contenu de l'onglet 1 (mention de responsabilitï¿½)
 //    ----------------------------------------------------
 $aut_fonctions= marc_list_collection::get_instance('function');
 if($pmb_authors_qualification){
@@ -128,7 +128,7 @@ if($pmb_authors_qualification){
 	        <div  id='el1Child_2a_vedettes' style='float:left;'>
 	            <label for='f_aut0' class='etiquette'>".$msg['notice_vedette_composee_author']."</label>
 				<div class='row'>
-					<img class='img_plus' hspace='3' border='0' onclick=\"expand_vedette(this,'vedette0'); return false;\" title='détail' name='imEx' src='".get_url_icon('plus.gif')."'>
+					<img class='img_plus' hspace='3' border='0' onclick=\"expand_vedette(this,'vedette0'); return false;\" title='dï¿½tail' name='imEx' src='".get_url_icon('plus.gif')."'>
 					<input type='text' class='saisie-30emr'  readonly='readonly'  name='notice_role_composed_0_vedette_composee_apercu_autre' id='notice_role_composed_0_vedette_composee_apercu_autre'  data-form-name='vedette_composee' value=\"!!vedette_apercu!!\" />
 					<input type='button' class='bouton' value='$msg[raz]' onclick=\"del_vedette('role',!!iaut!!);\" />
 				</div>
@@ -585,7 +585,7 @@ if($pmb_authors_qualification){
 	$authors_qualification_tpl="
 		<!--    Vedettes    -->
         <div id='el1Child_2b_others_vedettes' style='float:left;'>
-			<img class='img_plus' hspace='3' border='0' onclick=\"expand_vedette(this,'vedette!!iaut!!_autre'); return false;\" title='détail' name='imEx' src='".get_url_icon('plus.gif')."'>
+			<img class='img_plus' hspace='3' border='0' onclick=\"expand_vedette(this,'vedette!!iaut!!_autre'); return false;\" title='dï¿½tail' name='imEx' src='".get_url_icon('plus.gif')."'>
 			<input type='text' class='saisie-30emr'  readonly='readonly'  name='notice_role_autre_composed_!!iaut!!_vedette_composee_apercu_autre' id='notice_role_autre_composed_!!iaut!!_vedette_composee_apercu_autre'  data-form-name='vedette_composee_autre' value=\"!!vedette_apercu!!\" />
 			<input type='button' class='bouton' value='$msg[raz]' onclick=\"del_vedette('role_autre',!!iaut!!);\" />
 			<input class='bouton' type='button' onclick='duplicate(1,!!iaut!!);' value='".$msg['duplicate']."'>
@@ -633,7 +633,7 @@ if (!empty($pmb_authors_qualification)) {
 	$authors_qualification_tpl = "
         <!--    Vedettes    -->
         <div id='el1Child_3b_others_vedettes' style='float:left;'>
-			<img class='img_plus' hspace='3' border='0' onclick=\"expand_vedette(this,'vedette!!iaut!!_secondaire'); return false;\" title='détail' name='imEx' src='".get_url_icon('plus.gif')."'>
+			<img class='img_plus' hspace='3' border='0' onclick=\"expand_vedette(this,'vedette!!iaut!!_secondaire'); return false;\" title='dï¿½tail' name='imEx' src='".get_url_icon('plus.gif')."'>
 			<input type='text' class='saisie-30emr'  readonly='readonly'  name='notice_role_secondaire_composed_!!iaut!!_vedette_composee_apercu_autre' id='notice_role_secondaire_composed_!!iaut!!_vedette_composee_apercu_autre'  data-form-name='vedette_composee' value=\"!!vedette_apercu!!\" />
 			<input type='button' class='bouton' value='$msg[raz]' onclick=\"del_vedette('role_secondaire',!!iaut!!);\" />
 			<input class='bouton' type='button' onclick='duplicate(2,!!iaut!!);' value='".$msg['duplicate']."'>
@@ -674,7 +674,7 @@ $notice_responsabilities_secondary_form_tpl = "
     " ;
 
 //    ----------------------------------------------------
-//    Adresse, éditeurs, collection
+//    Adresse, ï¿½diteurs, collection
 //    ----------------------------------------------------
 $ptab[2] = "
 <!-- onglet 2 -->
@@ -749,7 +749,7 @@ $ptab[2] = "
 		<div id='el2Child_4' title='".htmlentities($msg[252],ENT_QUOTES, $charset)."' movable='yes'>
 			<div id='el2Child_4a' class='row'>&nbsp;</div>
 			<div class='row'>
-			    <!--    Année    -->
+			    <!--    Annï¿½e    -->
 			    <div id='el2Child_5a' class='colonne2'>
 			        <label for='f_year' class='etiquette'>$msg[252]</label>
 			        <div class='row'>
@@ -766,7 +766,7 @@ $ptab[2] = "
 	    </div>
 	</div>
 	<div id='el2Child_7' title='".htmlentities($msg[254],ENT_QUOTES, $charset)."' movable='yes'>
-		<!--    Autre éditeur    -->
+		<!--    Autre ï¿½diteur    -->
 		<div id='el2Child_7a' class='row'>
 		    <label for='f_ed2' class='etiquette'>$msg[254]</label>
 		</div>
@@ -823,7 +823,7 @@ $ptab[4] = "
 </div>
 <div id='el4Child' class='child' etirable='yes' title='".htmlentities($msg[258],ENT_QUOTES, $charset)."'>
 	<div id='el4Child_0' title='".htmlentities($msg[259],ENT_QUOTES, $charset)."' movable='yes'>
-		<!--    Importance matérielle (nombre de pages, d'éléments...)    -->
+		<!--    Importance matï¿½rielle (nombre de pages, d'ï¿½lï¿½ments...)    -->
 		<div id='el4Child_0a' class='row'>
 		    <label for='f_npages' class='etiquette'>$msg[259]</label>
 		</div>
@@ -832,7 +832,7 @@ $ptab[4] = "
 		</div>
 	</div>
 	<div id='el4Child_1' title='".htmlentities($msg[260],ENT_QUOTES, $charset)."' movable='yes'>
-		<!--    Autres caractèristiques matérielle (ill., ...)    -->
+		<!--    Autres caractï¿½ristiques matï¿½rielle (ill., ...)    -->
 		<div id='el4Child_1a' class='row'>
 		    <label for='f_ill' class='etiquette'>$msg[260]</label>
 		</div>
@@ -859,7 +859,7 @@ $ptab[4] = "
 		</div>
 	</div>
 	<div id='el4Child_4' title='".htmlentities($msg[262],ENT_QUOTES, $charset)."' movable='yes'>
-		<!--    Matériel d'accompagnement    -->
+		<!--    Matï¿½riel d'accompagnement    -->
 		<div id='el4Child_4a' class='row'>
 		    <label for='f_accomp' class='etiquette'>$msg[262]</label>
 		</div>
@@ -883,7 +883,7 @@ $notice_tab_notes_form_tpl = "
 </div>
 <div id='el5Child' class='child' etirable='yes' title='".htmlentities($msg[264],ENT_QUOTES, $charset)."'>
 	<div id='el5Child_0' title='".htmlentities($msg[265],ENT_QUOTES, $charset)."' movable='yes'>
-		<!--    Note générale    -->
+		<!--    Note gï¿½nï¿½rale    -->
 		<div id='el5Child_0a' class='row'>
 		    <label for='f_n_gen' class='etiquette'>$msg[265]</label>
 		</div>
@@ -901,7 +901,7 @@ $notice_tab_notes_form_tpl = "
 		</div>
 	</div>
 	<div id='el5Child_2' title='".htmlentities($msg[267],ENT_QUOTES, $charset)."' movable='yes'>
-		<!--    Résumé/extrait    -->
+		<!--    Rï¿½sumï¿½/extrait    -->
 		<div id='el5Child_2a' class='row'>
 		    <label for='f_n_resume' class='etiquette'>$msg[267]</label>
 		</div>
@@ -926,7 +926,7 @@ $notice_tab_indexation_form_tpl = "
 </div>
 <div id='el6Child' class='child' etirable='yes' title='".htmlentities($msg[269],ENT_QUOTES, $charset)."'>
 	<div id='el6Child_0' title='".htmlentities($msg[134],ENT_QUOTES, $charset)."' movable='yes'>
-	    <!--    Catégories    -->
+	    <!--    Catï¿½gories    -->
 	    <div id='el6Child_0a' class='row'>
 	        <label for='f_categ' class='etiquette'>".$msg['categories_catal_title']."</label>
 	    </div>
@@ -964,7 +964,7 @@ $notice_tab_indexation_form_tpl = "
 ";
 
 //    ----------------------------------------------------
-//     Catégories répétables
+//     Catï¿½gories rï¿½pï¿½tables
 //       $ptab[60]
 //    ----------------------------------------------------
 $notice_indexation_first_form_tpl = "
@@ -1035,7 +1035,7 @@ $notice_tab_lang_form_tpl = "
 ";
 
 //    ----------------------------------------------------
-//     Langues répétables
+//     Langues rï¿½pï¿½tables
 //    ----------------------------------------------------
 $notice_lang_first_form_tpl = "
     <div id='el7Child_0a' class='row'>
@@ -1058,7 +1058,7 @@ $notice_lang_next_form_tpl = "
     ";
 
 //    ----------------------------------------------------
-//     Langues originales répétables
+//     Langues originales rï¿½pï¿½tables
 //    ----------------------------------------------------
 $notice_langorg_first_form_tpl = "
     <div id='el7Child_0b' class='row'>
@@ -1108,7 +1108,7 @@ function chklnk_f_lien(element){
 					//impec, on print un petit message de confirmation
 					src = '".get_url_icon('tick.gif')."';
 				}else{
-			      //problème...
+			      //problï¿½me...
 					src = '".get_url_icon('error.png')."';
 					img.setAttribute('style','height:1.5em;');
 			    }
@@ -1133,7 +1133,7 @@ function chklnk_f_lien(element){
 </div>
 <div id='el8Child' class='child' etirable='yes' title='".htmlentities($msg[274],ENT_QUOTES, $charset)."'>
 	<div id='el8Child_0' title='".htmlentities($msg[275],ENT_QUOTES, $charset)."' movable='yes'>
-		<!--    URL associée    -->
+		<!--    URL associï¿½e    -->
 		<div id='el8Child_0a' class='row'>
 		    <label for='f_l' class='etiquette'>$msg[275]</label>
 		</div>
@@ -1144,7 +1144,7 @@ function chklnk_f_lien(element){
 		</div>
 	</div>
 	<div id='el8Child_1' title='".htmlentities($msg[276],ENT_QUOTES, $charset)."' movable='yes'>
-		<!--    Format électronique de la ressource    -->
+		<!--    Format ï¿½lectronique de la ressource    -->
 		<div id='el8Child_1a' class='row'>
 		    <label for='f_eformat' class='etiquette'>$msg[276]</label>
 		</div>
@@ -1209,8 +1209,8 @@ $ptab[15] = "
 ";
 
 //    ----------------------------------------------------
-//    Champs personalisés
-//       $notice_tab_customs_perso_form_tpl : Contenu de l'onglet 9 (champs personalisés)
+//    Champs personalisï¿½s
+//       $notice_tab_customs_perso_form_tpl : Contenu de l'onglet 9 (champs personalisï¿½s)
 //    ----------------------------------------------------
 
 $notice_tab_customs_perso_form_tpl = "
@@ -1245,7 +1245,7 @@ $notice_tab_gestion_fields_form_tpl = "
 	    </div>
 	</div>
 	<div id='el10Child_7' title='".htmlentities($msg["notice_is_new_gestion"],ENT_QUOTES, $charset)."' movable='yes'>
-		<!--    Nouveauté    -->
+		<!--    Nouveautï¿½    -->
 		<div id='el10Child_7a' class='row'>
 		    <label for='f_new_gestion' class='etiquette'>".$msg["notice_is_new_gestion"]."</label>
 		</div>
@@ -1274,7 +1274,7 @@ $notice_tab_gestion_fields_form_tpl = "
 		</div>
 	</div>
 	<div id='el10Child_3' title='".htmlentities($msg["numeric_record"],ENT_QUOTES, $charset)."' movable='yes'>
-		<!--    Notice numérique ?    -->
+		<!--    Notice numï¿½rique ?    -->
 		<div id='el10Child_3a' class='row'>
 		    <label for='f_is_numeric' class='etiquette'>".$msg["numeric_record"]."</label>
 		</div>
@@ -1424,7 +1424,7 @@ $form_notice.= "
 	     });
 	});
 </script>
-<form data-advanced-form='true' class='form-$current_module' id='notice' name='notice' method='post' action='!!action!!' enctype='multipart/form-data' >
+<form  data-advanced-form='true' class='form-$current_module' id='notice' name='notice' method='post' action='!!action!!' enctype='multipart/form-data' autocomplete='off' >
 <div class='row'>
 <div class='left'><h3>!!libelle_form!!</h3></div><div class='right'>";
 if ($PMBuserid==1 && $pmb_form_editables==1) $form_notice.="<input type='button' class='bouton_small' value='".$msg["catal_edit_format"]."' onClick=\"expandAll(); move_parse_dom(relative)\" id=\"bt_inedit\"/><input type='button' class='bouton_small' value='Relatif' onClick=\"expandAll(); move_parse_dom((!relative))\" style=\"display:none\" id=\"bt_swap_relative\"/>";
