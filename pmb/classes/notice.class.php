@@ -117,9 +117,9 @@ require_once($class_path.'/event/events/event_record.class.php');
 		public $thumbnail_url = '' ;
 		public $notice_link=array();
 		public $date_parution;
-		public $is_new=0; // nouveauté
-		public $date_is_new="0000-00-00 00:00:00"; // date nouveauté
-		public $create_date="0000-00-00 00:00:00"; // date création
+		public $is_new=0; // nouveautï¿½
+		public $date_is_new="0000-00-00 00:00:00"; // date nouveautï¿½
+		public $create_date="0000-00-00 00:00:00"; // date crï¿½ation
 		public $update_date="0000-00-00 00:00:00"; // date modification
 		public $num_notice_usage = 0; // droit d'usage
 		public $concepts_ids;
@@ -132,17 +132,17 @@ require_once($class_path.'/event/events/event_record.class.php');
 		public $is_numeric = 0;
 		
 		/**
-		 * Affichage des éléments contenu dans les onglets
+		 * Affichage des ï¿½lï¿½ments contenu dans les onglets
 		 * @var elements_list_ui
 		 */
 		private $records_list_ui = null;
 		/**
-		 * Onglets à afficher
+		 * Onglets ï¿½ afficher
 		 * @var records_tabs
 		 */
 		private $record_tabs = null;
 		/**
-		 * Nomenclatures associées
+		 * Nomenclatures associï¿½es
 		 * @var nomenclature_record_formations
 		 */
 		private $nomenclature_record_formations = null;
@@ -318,7 +318,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 				$this->date_is_new = $notice->notice_date_is_new;				
 				$this->num_notice_usage = $notice->num_notice_usage;
 				
-				//La notice est une notice numérique ? 
+				//La notice est une notice numï¿½rique ? 
 				$this->is_numeric = $notice->is_numeric;
 					
 				//liens vers autres notices
@@ -335,7 +335,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 				// Montrer ou pas le bulletinage en opac
 				$this->opac_visible_bulletinage = $notice->opac_visible_bulletinage;
 				
-				// Autoriser la demande d'abonnement à l'OPAC
+				// Autoriser la demande d'abonnement ï¿½ l'OPAC
 				$this->opac_serialcirc_demande = $notice->opac_serialcirc_demande;
 			} else {
 				require_once("$include_path/user_error.inc.php");
@@ -371,7 +371,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 			return 0;
 		}
 		
-		//Récupération d'un titre de notice
+		//Rï¿½cupï¿½ration d'un titre de notice
 		public static function get_notice_title($notice_id) {
 // 			$requete="select serie_name, tnvol, tit1, code from notices left join series on serie_id=tparent_id where notice_id=".$notice_id;
 // 			$resultat=pmb_mysql_query($requete);
@@ -392,7 +392,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 				$header_perio='';
 				$r = pmb_mysql_fetch_object($fetch);
 				if($r->niveau_biblio == 's'){
-					// périodique
+					// pï¿½riodique
 					$link = './catalog.php?categ=serials&sub=view&serial_id='.$notice_id;					
 				}elseif($r->niveau_biblio == 'b') {
 					// notice de bulletin
@@ -418,7 +418,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 			return '';						
 		}	
 		
-		//Récupérer une date au format AAAA-MM-JJ
+		//Rï¿½cupï¿½rer une date au format AAAA-MM-JJ
 		public static function get_date_parution($annee) {
 			return detectFormatDate($annee);
 		}
@@ -685,7 +685,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 				foreach ($this->categories as $key => $value) {
 					$tmp[$key] = strip_tags($value['categ_libelle']);
 				}
-				$tmp = array_map("convert_diacrit", $tmp);//On enlève les accents
+				$tmp = array_map("convert_diacrit", $tmp);//On enlï¿½ve les accents
 				$tmp = array_map("strtoupper", $tmp);//On met en majuscule
 				asort($tmp);//Tri sur les valeurs en majuscule sans accent
 				foreach ($tmp as $key => $value) {
@@ -1062,7 +1062,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 			
 			$form_notice = str_replace('!!indexation_lang_sel!!', ($this->indexation_lang ? $this->indexation_lang : $xmlta_indexation_lang), $form_notice);
 			
-			// autorité personnalisées
+			// autoritï¿½ personnalisï¿½es
 			if($this->duplicate_from_id) {
 				$authperso = new authperso_notice($this->duplicate_from_id);
 			} else {
@@ -1081,7 +1081,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 			// definition de la page cible du form
 			$form_notice = str_replace('!!action!!', $this->action, $form_notice);
 		
-			// ajout des selecteurs
+			// agregando selectores
 			$select_doc = new marc_select('doctype', 'typdoc', $this->type_doc, "get_pos(); expandAll(); ajax_parse_dom(); if (inedit) move_parse_dom(relative); else initIt();", '', '', array(array("name"=> "data-form-name", "value"=>"doctype")));
 			$form_notice = str_replace('!!doc_type!!', $select_doc->display, $form_notice);
 				
@@ -1472,7 +1472,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 			$this->responsabilites['responsabilites'] = array();
 			$this->responsabilites['auteurs'] = array();
 			
-			//Ajout d'un test sur la précense d'un auteur
+			//Ajout d'un test sur la prï¿½cense d'un auteur
 			if(isset($f_aut0_id) && ($f_aut0_id != 0)){
 				// auteur principal
 				$this->responsabilites['responsabilites'][] = '0';
@@ -1686,7 +1686,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 					if($r=pmb_mysql_fetch_object($res_new)){
 						if($r->notice_is_new==$this->is_new){ // pas de changement du flag
 							$req_notice_date_is_new= "";
-						}elseif($this->is_new){ // Changement du flag et affecté comme new
+						}elseif($this->is_new){ // Changement du flag et affectï¿½ comme new
 							$req_notice_date_is_new= ", notice_date_is_new =now() ";
 						}else{// raz date
 							$req_notice_date_is_new= ", notice_date_is_new ='' ";
@@ -1694,12 +1694,12 @@ require_once($class_path.'/event/events/event_record.class.php');
 					}
 				}
 			}else{
-				if($this->is_new){ // flag affecté comme new en création
+				if($this->is_new){ // flag affectï¿½ comme new en crï¿½ation
 					$req_notice_date_is_new= ", notice_date_is_new =now() ";
 				}
 			}
 			
-			// clean des vieilles nouveautés
+			// clean des vieilles nouveautï¿½s
 			static::cleaning_is_new();
 			
 			$date_parution_notice = static::get_date_parution($this->year);
@@ -1756,7 +1756,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 				$sav_id=$this->id;
 				audit::insert_modif (AUDIT_NOTICE, $this->id) ;
 			}
-			// autorité personnalisées
+			// autoritï¿½ personnalisï¿½es
 			$authperso = new authperso_notice($this->id);
 			$authperso->save_form();
 			
@@ -1769,7 +1769,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 				$map_info->save_form();
 			}
 			
-			// vignette de la notice uploadé dans un répertoire
+			// vignette de la notice uploadï¿½ dans un rï¿½pertoire
 			$uploaded_thumbnail_url = thumbnail::create($this->id);
 			if($uploaded_thumbnail_url) {
 				$query = "update notices set thumbnail_url='".$uploaded_thumbnail_url."' where notice_id ='".$this->id."'";
@@ -1914,9 +1914,9 @@ require_once($class_path.'/event/events/event_record.class.php');
 			global $opac_enrichment_bnf_sparql;
 			//$opac_enrichment_bnf_sparql=1;
 			
-			$titre_uniforme = static::getAutomaticTu($this->id);//ATTENTION si on récupère le titre uniforme ici alors il est bien ajouté à la notice mais pas affiché
+			$titre_uniforme = static::getAutomaticTu($this->id);//ATTENTION si on rï¿½cupï¿½re le titre uniforme ici alors il est bien ajoutï¿½ ï¿½ la notice mais pas affichï¿½
 			
-			// Mise à jour de tous les index de la notice
+			// Mise ï¿½ jour de tous les index de la notice
 			static::majNoticesTotal($this->id);
 			
 			//synchro_rdf
@@ -1976,9 +1976,9 @@ require_once($class_path.'/event/events/event_record.class.php');
 				if ($data["value"]) {
 					$vedette_composee->set_label($data["value"]);
 				}
-				// On commence par réinitialiser le tableau des éléments de la vedette composée
+				// On commence par rï¿½initialiser le tableau des ï¿½lï¿½ments de la vedette composï¿½e
 				$vedette_composee->reset_elements();
-				// On remplit le tableau des éléments de la vedette composée
+				// On remplit le tableau des ï¿½lï¿½ments de la vedette composï¿½e
 				$vedette_composee_id=0;
 				$tosave=false;
 				foreach ($data["elements"] as $subdivision => $elements) {
@@ -2029,7 +2029,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 				return $msg['catal_rep_not_err1'];
 			}
 			
-			// traitement des catégories (si conservation cochée)
+			// traitement des catï¿½gories (si conservation cochï¿½e)
 			if ($keep_categories) {
 				update_notice_categories_from_form($by);
 			}
@@ -2038,10 +2038,10 @@ require_once($class_path.'/event/events/event_record.class.php');
 			notice_relations::replace_links($this->id, $by, $notice_replace_links);
 			
 			vedette_composee::replace(TYPE_NOTICE, $this->id, $by);
-			// Mise à jour des vedettes composées contenant cette notice
+			// Mise ï¿½ jour des vedettes composï¿½es contenant cette notice
 			vedette_composee::update_vedettes_built_with_element($by, TYPE_NOTICE);
 			
-			// remplacement dans les exemplaires numériques
+			// remplacement dans les exemplaires numï¿½riques
 			$requete = "UPDATE explnum SET explnum_notice='$by' WHERE explnum_notice='$this->id' ";
 			pmb_mysql_query($requete);
 			
@@ -2076,10 +2076,10 @@ require_once($class_path.'/event/events/event_record.class.php');
 			global $class_path,$pmb_synchro_rdf;
 			global $sphinx_active;
 			
-			//Suppression de la vignette de la notice si il y en a une d'uploadée
+			//Suppression de la vignette de la notice si il y en a une d'uploadï¿½e
 			thumbnail::delete($id);
 			
-			//synchro_rdf (à laisser en premier : a besoin des éléments de la notice pour retirer du graphe rdf)
+			//synchro_rdf (ï¿½ laisser en premier : a besoin des ï¿½lï¿½ments de la notice pour retirer du graphe rdf)
 			if($pmb_synchro_rdf){				
 				$synchro_rdf = new synchro_rdf();
 				$synchro_rdf->delRdf($id,0);
@@ -2181,15 +2181,15 @@ require_once($class_path.'/event/events/event_record.class.php');
 			$requete = "DELETE FROM notices_titres_uniformes WHERE ntu_num_notice='$id'" ;			
 			@pmb_mysql_query($requete);	
 			
-			//Suppression dans les listes de lecture partagées
+			//Suppression dans les listes de lecture partagï¿½es
 			$query = "delete from opac_liste_lecture_notices where opac_liste_lecture_notice_num=" . $id;
 			pmb_mysql_query($query);
 			
-			// Suppression des résas 
+			// Suppression des rï¿½sas 
 			$requete = "DELETE FROM resa WHERE resa_idnotice=".$id;
 			pmb_mysql_query($requete);
 			
-			// Suppression des résas planifiées
+			// Suppression des rï¿½sas planifiï¿½es
 			$requete = "DELETE FROM resa_planning WHERE resa_idnotice=".$id;
 			pmb_mysql_query($requete);
 			
@@ -2200,14 +2200,14 @@ require_once($class_path.'/event/events/event_record.class.php');
 			$requete = "DELETE FROM transferts WHERE num_notice=".$id;
 			pmb_mysql_query($requete);
 			
-			//si intégré depuis une source externe, on supprime aussi la référence
+			//si intï¿½grï¿½ depuis une source externe, on supprime aussi la rï¿½fï¿½rence
 			$query="delete from notices_externes where num_notice=".$id;
 			@pmb_mysql_query($query);
 			
 			$req="delete from notices_authperso where notice_authperso_notice_num=".$id;
 			pmb_mysql_query($req);
 			
-			//Suppression des emprises liées à la notice
+			//Suppression des emprises liï¿½es ï¿½ la notice
 			$req = "select map_emprise_id from map_emprises where map_emprise_type=11 and map_emprise_obj_num=".$id;
 			$result = pmb_mysql_query($req);
 			if (pmb_mysql_num_rows($result)) {
@@ -2300,7 +2300,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 		}	
 
 		
-		// Donne les id des notices liés a une notice		
+		// Donne les id des notices liï¿½s a une notice		
 		public static function get_list_child($notice_id,$liste=array()){
 			$tab=array();
 			$liste[]=$notice_id;
@@ -2313,7 +2313,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 						$tab_tmp=static::get_list_child($child->get_linked_notice(),$liste);
 						$tab=array_merge($tab,$tab_tmp);
 					}else {
-						// cas de rebouclage d'une fille sur une mère: donc on sort.
+						// cas de rebouclage d'une fille sur une mï¿½re: donc on sort.
 						$tab[]=$notice_id;
 						return	$tab;
 					}
@@ -2334,7 +2334,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 					$val=clean_tags($r->index_l);
 					$requete = "update notices set index_l='".addslashes($val)."', update_date=update_date where notice_id=".$r->notice_id;
 					pmb_mysql_query($requete);
-					if($with_reindex && ($val != $r->index_l)){//On réindexe la notice si le nettoyage à réalisé des changements
+					if($with_reindex && ($val != $r->index_l)){//On rï¿½indexe la notice si le nettoyage ï¿½ rï¿½alisï¿½ des changements
 						static::majNoticesTotal($r->notice_id);
 					}
 				}
@@ -2572,7 +2572,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 			$infos_global_index = $infos_notice_global_index.strip_empty_words($infos_global).' ';
 			$infos_global = $infos_notice_global.$infos_global;
 			
-			// flux RSS éventuellement
+			// flux RSS ï¿½ventuellement
 			$eformat=array();
 			$eformat = explode(' ', $eformatlien) ;
 			if ($eformat[0]=='RSS' && $eformat[3]=='1') {
@@ -2610,10 +2610,10 @@ require_once($class_path.'/event/events/event_record.class.php');
 			if($notice){
 				$query = pmb_mysql_query("SELECT notice_id,tparent_id,tit1,tit2,tit3,tit4,index_l, n_gen, n_contenu, n_resume, tnvol, indexation_lang FROM notices WHERE notice_id='".$notice."'");
 				if(pmb_mysql_num_rows($query)) {
-					//Nettoyage des mots clès
+					//Nettoyage des mots clï¿½s
 					static::majNotices_clean_tags($notice,false);
 					$row = pmb_mysql_fetch_object($query);
-					// titre de série
+					// titre de sï¿½rie
 					if ($row->tparent_id) {
 						$tserie = new serie($row->tparent_id);
 						$ind_serie = ' '.strip_empty_words($tserie->name).' ';
@@ -2641,7 +2641,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 					$update = pmb_mysql_query($req_update);
 
 					pmb_mysql_free_result($query);
-					// Mise à jour des vedettes composées contenant cette notice
+					// Mise ï¿½ jour des vedettes composï¿½es contenant cette notice
 					vedette_composee::update_vedettes_built_with_element($notice, TYPE_NOTICE);
 				}
 			}		
@@ -2694,7 +2694,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 			//$flag_lang_change=0;
 		}
 		
-		//Met à jour toutes les informations liées une notice
+		//Met ï¿½ jour toutes les informations liï¿½es une notice
 		public static function majNoticesTotal($notice){	
 			$info=static::indexation_prepare($notice);
 			indexation_stack::push($notice, TYPE_NOTICE);
@@ -2717,7 +2717,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 			if (isISBN($code)) {
 				$uri=titre_uniforme::get_data_bnf_uri($code);
 				if ($uri) {
-					//Recherche du titre uniforme déjà existant ?
+					//Recherche du titre uniforme dï¿½jï¿½ existant ?
 					$requete="select tu_id from titres_uniformes where tu_databnf_uri='".addslashes($uri)."'";
 					$resultat=pmb_mysql_query($requete);
 					if ($resultat && pmb_mysql_num_rows($resultat)) 
@@ -2738,7 +2738,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 						  OPTIONAL { <".$uri."> dc:description ?description. }
 						}";
 						$rows = $storebnf->query($sparql, 'rows');
-						// On vérifie qu'il n'y a pas d'erreur sinon on stoppe le programme et on renvoi une chaine vide
+						// On vï¿½rifie qu'il n'y a pas d'erreur sinon on stoppe le programme et on renvoi une chaine vide
 						$err = $storebnf->getErrors();
 						if (!$err) {
 							$value=array(
@@ -2885,7 +2885,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 			if (pmb_mysql_num_rows($fetch)) {
 				$r = pmb_mysql_fetch_object($fetch);
 				if($r->niveau_biblio == 's'){
-					// périodique
+					// pï¿½riodique
 					$link = './catalog.php?categ=serials&sub=view&serial_id='.$notice_id;
 				}elseif($r->niveau_biblio == 'b') {
 					// notice de bulletin
@@ -2917,7 +2917,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 		}
 		
 		/**
-		 * Retourne les identifiants de concepts associés à la notice 
+		 * Retourne les identifiants de concepts associï¿½s ï¿½ la notice 
 		 */
 		public function get_concepts_ids(){
 			if (!isset($this->concepts_ids)) {
@@ -2971,7 +2971,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 			}
 		}
 		
-		//Récupération de la no_image
+		//Rï¿½cupï¿½ration de la no_image
 		public static function get_picture_url_no_image($niveau_biblio, $typdoc) {
 			$picture_url = get_url_icon("no_image_".$niveau_biblio.$typdoc.".jpg");
 			if(!file_exists($picture_url)) {
@@ -3023,7 +3023,7 @@ require_once($class_path.'/event/events/event_record.class.php');
 					break;
 				case 's' :
 				case 'a' :
-					// on a affaire à un périodique ou à un article
+					// on a affaire ï¿½ un pï¿½riodique ou ï¿½ un article
 					$display = new serial_display($this->id);
 					$this->detail = $display->isbd;
 					break;

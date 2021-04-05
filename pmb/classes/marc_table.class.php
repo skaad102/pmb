@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2005 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2005 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: marc_table.class.php,v 1.48 2019-07-11 14:17:15 btafforeau Exp $
 
@@ -11,20 +11,20 @@ if (stristr($_SERVER['REQUEST_URI'], ".class.php")) die("no access");
 if ( ! defined( 'MARC_TABLE_CLASS' ) ) {
   define( 'MARC_TABLE_CLASS', 1 );
 
-// pas bon, à remonter dans les fichiers appelants
+// pas bon, ï¿½ remonter dans les fichiers appelants
 require_once($class_path.'/XMLlist.class.php');
 require_once($class_path.'/XMLlist_links.class.php');
 
 class marc_list {
 
-// propriétés
+// propriï¿½tï¿½s
 	public $table;
 	public $tablefav;
 	public $parser;
 	public $inverse_of = array();
 	public $attributes = array();
 
-// méthodes
+// mï¿½thodes
 
 	// constructeur
 	public function __construct($type) {
@@ -197,17 +197,23 @@ class marc_list {
 
 class marc_select {
 
-// propriétés
+// propriï¿½tï¿½s
 
 	public $table;
 	public $name;
 	public $selected;
 	public $onchange;
 	public $display;
-	public $libelle; // libellé du selected
+	public $libelle; // libellï¿½ du selected
 	public $attributes=array();
+    
+	public function _printTable($t){
+		echo $t.'nooo';
+	}
 
-// méthodes
+
+
+// mï¿½thodes
 
 	// constructeur
 	public function __construct($type, $name='mySelector', $selected='', $onchange='', $option_premier_code='', $option_premier_info='', $attributes=array()){
@@ -222,6 +228,7 @@ class marc_select {
 		$this->onchange = $onchange;
 		$this->attributes = $attributes;
 		$this->get_selector();
+
 	}
 
 	public function get_selector(){
@@ -230,6 +237,7 @@ class marc_select {
 		$attribute_fields=' ';
 		foreach ($this->attributes as $attribute){
 			$attribute_fields.=$attribute['name'].'="'.$attribute['value'].'" ';
+			// $this->_printTable($attribute);
 		}
 		if ($this->onchange) $onchange=" onchange=\"".$this->onchange."\" ";
 		else $onchange="";
@@ -307,4 +315,4 @@ class marc_list_collection {
 	}
 }
 
-} # fin de déclaration
+} # fin de dï¿½claration

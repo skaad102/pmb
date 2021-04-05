@@ -1,21 +1,22 @@
-<?xml version="1.0" encoding="iso-8859-1" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE XMLlist SYSTEM "../../XMLlist.dtd">
 
-<!-- liste des type de documents en UNIMARC (franÁais)
+<!-- liste des type de documents en UNIMARC (franï¿½ais)
 $Id: doctype.xml,v 1.2 2006-03-07 23:12:25 touraine37 Exp $ -->
 
 <XMLlist>
-	<entry code="a">texto impreso</entry>
-	<entry code="b">texto manuscrito</entry>
-	<entry code="c">partitura musical impresa</entry>
-	<entry code="d">partitura musical manuscrita</entry>
-	<entry code="e">documento cartográfico impreso</entry>
-	<entry code="f">documento cartográfico manuscrito</entry>
-	<entry code="g">documento proyectable o vídeo</entry>
-	<entry code="i">grabación sonora no musical</entry>
-	<entry code="j">grabación musical</entry>
-	<entry code="k">documento gráfico bidimensional</entry>
-	<entry code="l">documento electrónico</entry>
-	<entry code="m">documento multimedia</entry>
-	<entry code="r">objeto tridimensional, aparatos, ...</entry>
+	<entry code="a">Texto impreso</entry>
+	<entry code="b">Texto manuscrito</entry>
+	<entry code="o">Trabajo de grado inedito</entry>
+	<entry code="c">Partitura musical impresa</entry>
+	<entry code="d">Partitura musical manuscrita</entry>
+	<entry code="e">Documento cartogrÃ¡fico impreso</entry>
+	<entry code="f">Documento cartogrÃ¡fico manuscrito</entry>
+	<entry code="g">Documento proyectable o vÃ­deo</entry>
+	<entry code="i">GrabaciÃ³n sonora no musical</entry>
+	<entry code="j">GrabaciÃ³n musical</entry>
+	<entry code="k">Documento grÃ¡fico bidimensional</entry>
+	<entry code="l">Documento electrÃ³nico</entry>
+	<entry code="m">Documento multimedia</entry>
+	<entry code="r">Objeto tridimensional, aparatos, ...</entry>
 </XMLlist>

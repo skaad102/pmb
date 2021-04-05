@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE XMLlist SYSTEM "../XMLlist.dtd" [<!ENTITY nbsp "&amp;nbsp;">]>
 
 <!-- messages localis�s en fran�ais pour PMB
@@ -515,7 +515,7 @@ $Id: fr_FR.xml,v 1.1946 2019-08-29 12:25:40 moble Exp $ -->
 <entry code="537">Langues</entry>
 <entry code="538">Liste des erreurs constat�es :</entry>
 <entry code="539">Origine erreur</entry>
-<entry code="540">Erreur</entry>
+<entry code="540">Error</entry>
 <entry code="541">Nb erreur</entry>
 <entry code="542">Notice : existe d�j�</entry>
 <entry code="543">Notice : ISBN vide</entry>
@@ -1446,7 +1446,7 @@ $Id: fr_FR.xml,v 1.1946 2019-08-29 12:25:40 moble Exp $ -->
 <entry code="parperso_options_comment_larg">Largeur du champ commentaire</entry>
 <entry code="parperso_options_comment_lines">Nombre de lignes du champ commentaire</entry>
 <entry code="checkuser_no_session">Pas de session ouverte, vous devez vous connecter.</entry>
-<entry code="checkuser_session_depassee">Votre session est rest�e inactive trop longtemps, vous devez vous reconnecter.</entry>
+<entry code="checkuser_session_depassee">Su sesión ha estado inactiva durante demasiado tiempo, debe volver a conectarse.</entry>
 <entry code="checkuser_session_invalide">Votre session est invalide, vous devez vous reconnecter.</entry>
 <entry code="checkuser_aucun_droit">Vous n'avez pas acc�s � cette fonctionnalit�.</entry>
 <entry code="checkuser_pb_enreg_session">Probl�me d'enregistrement de session, contactez l'administrateur.</entry>

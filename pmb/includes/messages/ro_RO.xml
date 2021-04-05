@@ -1446,7 +1446,7 @@ $Id: ro_RO.xml,v 1.1436 2019-08-29 12:25:40 moble Exp $ -->
 <entry code="parperso_options_comment_larg">Largeur du champ commentaire</entry>
 <entry code="parperso_options_comment_lines">Nombre de lignes du champ commentaire</entry>
 <entry code="checkuser_no_session">Pas de session ouverte, vous devez vous connecter.</entry>
-<entry code="checkuser_session_depassee">Votre session est restée inactive trop longtemps, vous devez vous reconnecter.</entry>
+<entry code="checkuser_session_depassee">Su sesión ha estado inactiva durante demasiado tiempo, debe volver a conectarse.</entry>
 <entry code="checkuser_session_invalide">Votre session est invalide, vous devez vous reconnecter.</entry>
 <entry code="checkuser_aucun_droit">Vous n'avez pas accès à cette fonctionnalité.</entry>
 <entry code="checkuser_pb_enreg_session">Problème d'enregistrement de session, contactez l'administrateur.</entry>
