@@ -133,7 +133,7 @@ class search_view {
 		if ($opac_search_show_typdoc) {
 			$query = "SELECT typdoc FROM notices where typdoc!='' GROUP BY typdoc";
 			$result = pmb_mysql_query($query);
-			$toprint_typdocfield = " <select name='typdoc'>";
+			$toprint_typdocfield = " <select class='form-select' name='typdoc'>";
 			$toprint_typdocfield .= "  <option ";
 			$toprint_typdocfield .=" value=''";
 			if ($typdoc=='') $toprint_typdocfield .=" selected";
@@ -177,12 +177,15 @@ class search_view {
 				<input type='text' name='user_query' id='user_query_lib' class='text_query' value=\"" . htmlentities(stripslashes(static::$user_query),ENT_QUOTES,$charset) . "\" size='65' expand_mode='2' completion='suggestions' word_only='no'/>\n";
 		}else{
 			$form .= "
-				<input type='text' name='user_query' class='text_query' value=\"". htmlentities(stripslashes(static::$user_query),ENT_QUOTES,$charset) ."\" size='65' />\n";
+				<div class='uk-search uk-search-navbar'>
+					<span uk-search-icon></span>
+					<input type='text' name='user_query' class='uk-search-input' type='search' placeholder='Buscar' value=\"". htmlentities(stripslashes(static::$user_query),ENT_QUOTES,$charset) ."\" size='65' />\n
+				</div>";
 		}
 		$form .= "
-				<input type='submit' name='ok' value='".$msg["142"]."' class='boutonrechercher'/>\n";
+				<input type='submit' style='display:none;' name='ok' value='".$msg["142"]."' class='boutonrechercher'/>\n";
 		if ($opac_show_help) {
-			$form .= "<input type='button' value='$msg[search_help]' class='bouton' onClick='window.open(\"$base_path/help.php?whatis=simple_search\", \"search_help\", \"scrollbars=yes, toolbar=no, dependent=yes, width=400, height=400, resizable=yes\"); return false' />\n";
+			$form .= "<input type='button' value='$msg[search_help]' class='btn btn-warning' onClick='window.open(\"$base_path/help.php?whatis=simple_search\", \"search_help\", \"scrollbars=yes, toolbar=no, dependent=yes, width=400, height=400, resizable=yes\"); return false' />\n";
 		}
 		
 		

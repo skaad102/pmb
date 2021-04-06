@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: marguerite_browser.inc.php,v 1.14 2017-11-07 15:51:41 ngantier Exp $
 
@@ -127,7 +127,8 @@ if (js > 1.0) {
    onMouseOver='changeImagemap(\"map0\");self.status=\"".$msg["put_mouse_over_petals"]."\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"!!000!!\";return true'
    onMouseOut='changeImagemap(\"mapMarg\");self.status=\"\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"".$msg["put_mouse_over_petals"]."\";return true'>
 </map>
-<img NAME=\"boxImage\" src=\"images/marg.gif\" style='border:0px; width:348px; height:341px;' USEMAP=\"#image-map\">";
+<div class='uk-margin-auto-left uk-margin-auto-vertical'>
+<img NAME=\"boxImage\" src=\"images/marg.gif\" style='border:0px; width:348px; height:341px;' USEMAP=\"#image-map\"> </div>";
 
 $rqt = " select indexint_id, indexint_comment, indexint_name from indexint where indexint_name in ('000','100','200','300','400','500','600','700','800','900') ";
 $res = pmb_mysql_query($rqt, $dbh);
