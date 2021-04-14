@@ -487,7 +487,7 @@ class avis {
 		$display = '';
 		if($this->number) {
 			if ($action=="print" || ($opac_avis_allow==1 && !$_SESSION["user_code"] )) {
-				$display .= "<h3 class='avis_detail'>".$msg['avis_detail']." :
+				$display .= "<h3 class='avis_detail '>".$msg['avis_detail']." :
 						".str_replace("!!nb_avis!!",$this->number,$msg['avis_detail_nb_auth_ajt'])."
 						</h3>";
 			} else {
@@ -502,7 +502,10 @@ class avis {
 			}
 		} else {
 			if ($action=="print" || ($opac_avis_allow==1 && !$_SESSION["user_code"] )) {
-				$display .= "<h3 class='avis_detail'>".$msg['avis_detail_aucun_auth_ajt']."</h3>";
+				$display .= "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+					<h3 class='avis_detail'>".$msg['avis_detail_aucun_auth_ajt']."</h3> 
+					<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>	
+				</div>";
 			} else {
 			
 				$display .= "<h3 class='avis_detail'>".$msg['avis_detail']."
