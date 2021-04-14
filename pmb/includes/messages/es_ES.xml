@@ -3209,7 +3209,7 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code="del_expl_noti_child">Hay ejemplares asociados a esta noticia. �Seguro desea suprimirla?</entry>
 <entry code="no_search_selected">Debe indicar al menos una búsqueda</entry>
 <entry code="empr_short_no_allow_loan_hist">Hist.</entry>
-<entry code="empr_allow_loan_hist">Autorizar el hist�rico de préstamos</entry>
+<entry code="empr_allow_loan_hist">Autorizar el histírico de préstamos</entry>
 <entry code="empr_short_no_allow_avis">Aviso</entry>
 <entry code="empr_allow_avis">Autorizar al abonado a dejar su aviso</entry>
 <entry code="empr_short_no_allow_tag">Tag</entry>
@@ -4180,14 +4180,14 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code="upload_repertoire">Lista de repertorio de carga</entry>
 <entry code="upload_repertoire_nom">Nombre de repertorio</entry>
 <entry code="upload_repertoire_url">Url asociada</entry>
-<entry code="upload_repertoire_path">Camino del repertorio</entry>
+<entry code="upload_repertoire_path">URL del repertorio</entry>
 <entry code="upload_repertoire_navig">Navegación</entry>
 <entry code="upload_repertoire_hash">Hachage</entry>
 <entry code="upload_repertoire_subfolder">Número de sub repertorios</entry>
 <entry code="upload_repertoire_add">Agregar un repertorio</entry>
 <entry code="upload_repertoire_sql">Guardar en la base</entry>
 <entry code="upload_repertoire_server">Actualizar en</entry>
-<entry code="upload_repertoire_yes">S�</entry>
+<entry code="upload_repertoire_yes">Sí</entry>
 <entry code="upload_repertoire_no">No</entry>
 <entry code="upload_repertoire_modify">Modificar el repertorio de actualización</entry>
 <entry code="upload_repertoire_my_folder">Repertorio(s) disponible(s)</entry>
@@ -5718,7 +5718,7 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code = "import_authorities_log_authority_locked"> Autoridad en PMB bloqueada en la importación </entry>
 <entry code = "nb_authorities_already_imported">%s registros procesados ​​en%s ... </entry>
 <entry code = "end_authorities_import"> Importar termid! Se han procesado% d registros. </entry>
-<entry code = "import_authorities_error">% d aviso (s) error (s)! </entry>
+<entry code = "import_authorities_error">%d aviso (s) error (s)! </entry>
 <entry code = "download"> Descargar </entry>
 <entry code = "import_authorities_type"> Importar un tipo de autoridad </entry>
 <entry code = "import_authorities_type_author"> Autores </entry>
