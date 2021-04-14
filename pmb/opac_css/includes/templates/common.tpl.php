@@ -423,7 +423,30 @@ $std_header .= "
 <script type='text/javascript' src='" . $base_path . "/includes/javascript/tablist.js'></script>
 <script type='text/javascript' src='" . $base_path . "/includes/javascript/misc.js'></script>
 	<div id='att' style='z-Index:1000'></div>
-	<div id=\"container\" class='uk-container'><div id=\"main\"><div id='main_header'>!!main_header!!</div><div id=\"main_hors_footer\">!!home_on_top!!
+	<div id=\"container\" class='uk-container'>
+
+	<!-- NAVOCULTO  -->
+		<nav class='uk-navbar-container uk-navbar-transparent' uk-navbar>
+			<div class='uk-navbar-right'>
+		<!-- BTN HABURGER  -->
+				<a uk-navbar-toggle-icon href='#logsd' uk-toggle='target: #logsd' class='uk-navbar-toggle uk-hidden@m uk-icon uk-navbar-toggle-icon' aria-expanded='false'><svg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><rect y='9' width='20' height='2'></rect><rect y='3' width='20' height='2'></rect><rect y='15' width='20' height='2'></rect></svg>
+				</a>
+			</div>
+		</nav>
+
+		<!-- offCanbas login -->
+		<div id='logsd' uk-offcanvas='mode: push; overlay: true'>
+		<div class='uk-offcanvas-bar'>
+		<button class='uk-offcanvas-close' type='button' uk-close></button>
+
+		</div>
+		</div> 
+
+
+		
+	<div id=\"main\">
+	
+	<div id='main_header' class='uk-visible@m uk-margin-remove'>!!main_header!!</div><div id=\"main_hors_footer\">!!home_on_top!!
 						\n";
 $std_header .= "<script type='text/javascript' src='" . $include_path . "/javascript/auth_popup.js'></script>	\n";
 
@@ -795,8 +818,6 @@ function show_what(quoi, id) {
 
 $popup_footer = "</body></html>";
 
-
-
 // liens du bas de la page
 $liens_bas = "</div><!-- fin DIV main_hors_footer --><div id=\"footer\">
 
@@ -930,9 +951,10 @@ if ($lvl == "search_segment") {
 
 // le footer clos le <div id=\"supportingText\"><span>, reste ouvert le <div id=\"container\">
 $footer = "	
+
 		!!div_liens_bas!! \n
 		</div><!-- /div id=main -->\n
-		<div id=\"intro\">\n";
+		<div class='uk-visible@m uk-margin-remove' id=\"intro\">\n";
 
 $inclus_footer = "	
 		</span>
@@ -970,8 +992,9 @@ $footer_suite = "<div id=\"intro_bibli\">
 $footer .= $footer_suite;
 $inclus_footer .= $footer_suite;
 
-$footer .= "		
-		!!contenu_bandeau!!";
+$footer .= "
+<div id='loginMod' class=' uk-container uk-visible@m'>		
+		!!contenu_bandeau!! </div>" ;
 
 $footer .= "</div><!-- /div id=container -->
 <!--Start of Tawk.to Script-->

@@ -27,7 +27,7 @@ class avis {
 	protected $object_type;
 	
 	/**
-	 * Moyenne des notes publiques et privées
+	 * Moyenne des notes publiques et privï¿½es
 	 * @var float
 	 */
 	protected $average = 0.00;
@@ -53,7 +53,7 @@ class avis {
 	protected $nb_by_note = array();
 	
 	/**
-	 * Chaîne de caractère du type de l'objet
+	 * Chaï¿½ne de caractï¿½re du type de l'objet
 	 * @var string
 	 */
 	protected $object_string_type;
@@ -165,7 +165,7 @@ class avis {
 	}
 	
 	/**
-	 * Sélecteur des listes de lecture privées
+	 * Sï¿½lecteur des listes de lecture privï¿½es
 	 */
 	public function gen_selector_private_reading_lists($id_avis = 0, $selected = 0) {
 		global $msg;
@@ -182,7 +182,7 @@ class avis {
 			while ($row = pmb_mysql_fetch_object($result)) {				    
 			    $liste = new liste_lecture($row->id_liste);
 			    $notices = $liste->notices;				   
-				// Pour ne sélectionner que les listes de lecture qui intégrent cette notice
+				// Pour ne sï¿½lectionner que les listes de lecture qui intï¿½grent cette notice
 				if (in_array($this->object_id, $notices)) {
 					$listes[] = $row->id_liste;
 				}
@@ -200,7 +200,7 @@ class avis {
 	}
 	
 	/**
-	 * Retourne l'affichage des étoiles
+	 * Retourne l'affichage des ï¿½toiles
 	 */
 	protected function get_stars() {
 		
@@ -283,7 +283,7 @@ class avis {
 					break;
 				case 4 :
 					$note_form .= "
-					<span class='echelle_avis'>
+					<span class='echelle_avis m-1'>
 						<span class='echelle_avis_text'>".$msg["avis_note_1"]."</span>
 						<span class='echelle_avis_stars'>
 							<span class='echelle_avis_star'>";
@@ -298,7 +298,7 @@ class avis {
 					break;
 				case 5 :
 					$note_form .= "
-					<span class='echelle_avis'>
+					<span class='echelle_avis m-1'>
 						<span class='echelle_avis_stars'>
 							<span class='echelle_avis_star'>
 					";
@@ -314,7 +314,7 @@ class avis {
 				case 1 :
 				case 3 :
 					$note_form .= "
-					<span class='echelle_avis'>
+					<span class='echelle_avis m-1'>
 						".$msg['avis_note_1'];
 					for($note = 1; $note <= 5; $note++) {
 						$note_form .= "<input type='radio' name='avis_".$id_avis."_note_".$this->get_object_string_type()."_".$this->object_id."' id='avis_".$id_avis."_note_".$note."_".$this->get_object_string_type()."_".$this->object_id."' value='".$note."' ".($note == $note_avis ? "checked" : "")." />";
@@ -331,7 +331,7 @@ class avis {
 	}
 	
 	/**
-	 * Formulaire d'édition d'un avis
+	 * Formulaire d'ï¿½dition d'un avis
 	 */
 	public function get_form($id_avis = 0) {
 		global $msg;
@@ -376,7 +376,7 @@ class avis {
 	}
 	
 	/**
-	 * Affichage de l'entête de liste
+	 * Affichage de l'entï¿½te de liste
 	 */
 	protected function get_display_header_detail($node_id, $label) {
 		global $msg;
@@ -392,7 +392,7 @@ class avis {
 	}
 	
 	/**
-	 * Affichage du détail d'un avis
+	 * Affichage du dï¿½tail d'un avis
 	 */
 	protected function get_display_line_detail($data, $node_id, $order) {
 		global $msg, $charset;
@@ -475,11 +475,11 @@ class avis {
 	}
 	
 	/**
-	 * Affichage du détail des avis
+	 * Affichage du dï¿½tail des avis
 	 */
 	public function get_display_detail() {
 		global $msg, $charset;
-		global $action; // pour gérer l'affichage des avis en impression de panier
+		global $action; // pour gï¿½rer l'affichage des avis en impression de panier
 		global $allow_avis_ajout;
 		global $opac_avis_allow;
 		global $opac_avis_note_display_mode;
@@ -546,7 +546,7 @@ class avis {
 	}
 	
 	/**
-	 * Affichage des étoiles uniquement
+	 * Affichage des ï¿½toiles uniquement
 	 * @return string
 	 */
 	public function get_display_only_stars() {
@@ -568,7 +568,7 @@ class avis {
 				$valide = 1;
 			} else {
 				$valide = 0;
-				$num_liste_lecture = 0; // un avis public ne sera pas associé à une liste de lecture
+				$num_liste_lecture = 0; // un avis public ne sera pas associï¿½ ï¿½ une liste de lecture
 			}
 			$id_avis += 0;
 			if($id_avis) {

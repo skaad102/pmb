@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: avis.tpl.php,v 1.17 2019-05-27 13:47:15 btafforeau Exp $
 
@@ -91,7 +91,7 @@ if($pmb_avis_note_display_mode==2)
 else if($pmb_avis_note_display_mode==4)
 	$avis_detail_note_msg="
 		<div class='row'><label>".$msg["avis_appreciation"]."</label>
-			<span class='echelle_avis'>
+			<span class='echelle_avis m-1'>
 				<span class='echelle_avis_text'>".$msg["avis_note_1"]."</span>
 					<span class='echelle_avis_stars'>
 						<span class='echelle_avis_star'>
@@ -109,7 +109,7 @@ else if($pmb_avis_note_display_mode==4)
 else if($pmb_avis_note_display_mode==5)
 	$avis_detail_note_msg="
 		<div class='row'><label>".$msg["avis_appreciation"]."</label>
-			<span class='echelle_avis'>
+			<span class='echelle_avis m-1'>
 				<span class='echelle_avis_stars'>
 					<span class='echelle_avis_star'>
 						<input type='radio' name='avis_note' id='note_1_!!notice_id!!' value='1' title='".$msg["avis_detail_note_1"]."' onClick=\"avis_checked(!!notice_id!!);\" /><label for='note_1_!!notice_id!!'></label>
@@ -137,7 +137,7 @@ else if($pmb_avis_note_display_mode==5)
 else if($pmb_avis_note_display_mode!=0)
 	$avis_detail_note_msg="
 		<div class='row'><label>".$msg["avis_appreciation"]."</label>
-			<span class='echelle_avis'>
+			<span class='echelle_avis m-1'>
 				$msg[avis_note_1]
 				<input type='radio' name='avis_note' id='note_1_!!notice_id!!' value='1' />
 				<input type='radio' name='avis_note' id='note_2_!!notice_id!!' value='2' />
@@ -204,6 +204,6 @@ else {
 		</div>
 	";
 }
-// si paramétrage formulaire particulier
+// si paramï¿½trage formulaire particulier
 if (file_exists($base_path.'/includes/templates/avis_subst.tpl.php')) require_once($base_path.'/includes/templates/avis_subst.tpl.php');
 

@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: avis.tpl.php,v 1.28 2019-05-29 11:23:32 btafforeau Exp $
 
@@ -32,13 +32,13 @@ $avis_tpl_form = "
 	$avis_tpl_form_script
 	<div id='avis_!!id!!_!!object_type!!_!!object_id!!' class='avis_form_edit' style='display: none;'>
 		!!note!!
-		<div class='avis_form_edit_content'>
+		<div class='avis_form_edit_content uk-hidden'>
 			<label>".$msg["avis_sujet"]."</label><br />
 			<input type='text' name='sujet' id='avis_!!id!!_sujet_!!object_type!!_!!object_id!!' size='50' value='!!sujet!!'/>
 		</div>
 		<div class='avis_form_edit_content'>
 			<label>".$msg["avis_avis"]."</label><br />
-			<span class='avis_html_editor'>
+			<span class='avis_html_editor uk-hidden'>
 				<input value='".$msg["bbcode_button_label_b"]."' name='B' onclick=\"insert_text('avis_!!id!!_commentaire_!!object_type!!_!!object_id!!','[b]','[/b]')\" type='button' class='bouton'>
 				<input value='".$msg["bbcode_button_label_i"]."' name='I' onclick=\"insert_text('avis_!!id!!_commentaire_!!object_type!!_!!object_id!!','[i]','[/i]')\" type='button' class='bouton'>
 				<input value='".$msg["bbcode_button_label_u"]."' name='U' onclick=\"insert_text('avis_!!id!!_commentaire_!!object_type!!_!!object_id!!','[u]','[/u]')\" type='button' class='bouton'>
@@ -51,7 +51,7 @@ $avis_tpl_form = "
 			</span>
 		</div>
 		<div class='avis_form_edit_content'>
-			<textarea name='commentaire' id='avis_!!id!!_commentaire_!!object_type!!_!!object_id!!' cols='60' rows='4'>!!commentaire!!</textarea>
+			<textarea placeholder='Dejanos tu comentario' name='commentaire' class='form-control' id='avis_!!id!!_commentaire_!!object_type!!_!!object_id!!' cols='60' rows='4'>!!commentaire!!</textarea>
 		</div>
 		<div class='avis_form_edit_content'>";
 if(!empty($_SESSION['id_empr_session'])) {
@@ -84,6 +84,6 @@ $avis_tpl_form .= "
 	</div>
 ";
 
-// si paramétrage formulaire particulier
+// si paramï¿½trage formulaire particulier
 if (file_exists($base_path.'/includes/templates/avis_subst.tpl.php')) require_once($base_path.'/includes/templates/avis_subst.tpl.php');
 
