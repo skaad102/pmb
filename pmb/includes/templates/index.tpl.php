@@ -239,9 +239,12 @@ $nav_bar = $nav_bar."
 	        	<li id='navbar-index' class='current'>
 				<a title='$msg[1913]' class='current' href='./' accesskey='$msg[2008]'>$msg[1913]</a>
 			</li>
-        		<li id='navbar-opac'>
+        <li id='navbar-opac'>
 				<a title='Abrir el catálogo público en una nueva ventana' href='$pmb_opac_url' target=_blank accesskey='$msg[2007]' id='opac_url'>$msg[1026]</a>
 			</li>
+      <li id='navbar-opac' class='tawk'>
+      <a title='Pagína de PQR' href='https://dashboard.tawk.to/login' target=_blank >Tawk.To</a>
+    </li>
 		</ul>
 	</div>";
 
