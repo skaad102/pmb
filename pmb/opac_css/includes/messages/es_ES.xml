@@ -781,8 +781,8 @@ $Id: es_ES.xml,v 1.482 2019-08-21 07:42:07 ccraig Exp $ -->
 <entry code="avis_detail_note_3">Desconcertante</entry>
 <entry code="avis_detail_note_4">Muy bueno</entry>
 <entry code="avis_detail_note_5">Excelente</entry>
-<entry code="avis_detail_nb_ajt">!!nb_avis!! valoración(es), a�ade la tuya</entry>
-<entry code="avis_detail_aucun_ajt">Ninguna valoración, a�ade la tuya</entry>
+<entry code="avis_detail_nb_ajt">!!nb_avis!! valoración(es), añade la tuya</entry>
+<entry code="avis_detail_aucun_ajt">Ninguna valoración, añade la tuya</entry>
 <entry code="avis_detail_add_sujet">Asunto:</entry>
 <entry code="avis_detail_add_comment">Incluye un comentario:</entry>
 <entry code="avis_detail_comment_madatory">La valoración debe contener un sujeto y un comentario</entry>
@@ -1714,7 +1714,7 @@ $Id: es_ES.xml,v 1.482 2019-08-21 07:42:07 ccraig Exp $ -->
 <entry code="show_cart_check_all">Tout cocher</entry>
 <entry code="show_cart_uncheck_all">Tout d�cocher</entry>
 
-<entry code="avis_aucun_popup">Aucun avis sur cette notice.</entry>
+<entry code="avis_aucun_popup">No hay opinión sobre ésta publicación.</entry>
 
 <entry code="aut_link_author">[Auteur] %1s</entry>
 <entry code="aut_link_categ">[Cat�gorie] %1s</entry>
@@ -1847,7 +1847,7 @@ $Id: es_ES.xml,v 1.482 2019-08-21 07:42:07 ccraig Exp $ -->
 <entry code="list_lecture_tag">Classement :</entry>
 <entry code="notice_title_liste_lecture_default_value">Choisissez une liste de lecture</entry>
 <entry code="avis_le">le</entry>
-<entry code="avis_public">Visible par tous</entry>
+<entry code="avis_public">Visible para todos</entry>
 <entry code="notice_title_liste_lecture_added">La notice a �t� ajout�e � la liste de lecture.</entry>
 <entry code="notice_title_liste_lecture_failed">La notice existe d�j� dans la liste de lecture.</entry>
 <entry code="avis_private_list">Avis priv�s</entry>

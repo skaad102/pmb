@@ -636,7 +636,7 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code="768">Gestión de los servidores Z39.50</entry>
 <entry code="769">Gestión de las características de búsqueda Z39.50</entry>
 <entry code="770">Gestión de los servidores Z39.50</entry>
-<entry code="771">Publicaciones periódicas</entry>
+<entry code="771">Publicaciones seriadas</entry>
 <entry code="772">Secciones</entry>
 <entry code="800">Nombre de la biblioteca o del centro de documentación</entry>
 <entry code="801">Código de barras de inicio</entry>
@@ -709,9 +709,9 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code="1141">Generación libre</entry>
 <entry code="1142">Lista de usuarios</entry>
 <entry code="1143">Primeros caracteres del apellido :</entry>
-<entry code="1150">Publicaciones periódicas</entry>
+<entry code="1150">Publicaciones seriadas</entry>
 <entry code="1151">Estado de las colecciones</entry>
-<entry code="1152">Publicaciones periódicas encontradas para la búsqueda</entry>
+<entry code="1152">Publicaciones seriadas encontradas para la búsqueda</entry>
 <entry code="1153">No se ha encontrado ninguna publicación periódica para la búsqueda [!!user_query!!]</entry>
 <entry code="1154">Publicaciones periódicas que faltan</entry>
 <entry code="1300">Imprimir el comprobante de préstamo</entry>
@@ -775,7 +775,7 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code="1917">Se ha introducido un número de ejemplar o ISBN, confirma para iniciar esta búsqueda.</entry>
 <entry code="3000">Puede introducir también algunos caracteres del apellido.</entry>
 <entry code="3001">Puede introducir también algunos caracteres del nombre del grupo.</entry>
-<entry code="4000">Gestión de las publicaciones periódicas</entry>
+<entry code="4000">Gestión de las publicaciones seriadas</entry>
 <entry code="4001">Estado de las colecciones</entry>
 <entry code="4002">Añadir un número</entry>
 <entry code="4003">Nueva publicación en serie</entry>
@@ -784,7 +784,7 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code="4006">Modificar un boletín</entry>
 <entry code="4007">Crear un ejemplar</entry>
 <entry code="4008">Modificar ejemplar</entry>
-<entry code="4010">Publicaciones periódicas</entry>
+<entry code="4010">Publicaciones seriadas</entry>
 <entry code="4011">Números</entry>
 <entry code="4012">Ejemplares:</entry>
 <entry code="4013">Artículos:</entry>
@@ -1732,7 +1732,7 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code="serial_nb_bulletin">Número</entry>
 <entry code="bulletin_nb_ex">Ejemplares</entry>
 <entry code="serial_nb_articles">Artículos catalogados</entry>
-<entry code="serial_bulletinage_etat">Estado de las publicaciones periódicas</entry>
+<entry code="serial_bulletinage_etat">Estado de las publicaciones seriadas</entry>
 <entry code="serial_no_bulletin">Ningún número</entry>
 <entry code="explnum_ou">o bien</entry>
 <entry code="bull_no_expl">Ningún ejemplar</entry>
@@ -2295,7 +2295,7 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code="bt_retour">Devolución</entry>
 <entry code="dsi_no_equation">No se ha encontrado ninguna ecuación...</entry>
 <entry code="panier_num">Cart #</entry>
-<entry code="notices_invalides">registros inválidos (autoridades, publicaciones periódicas en importación, internos de exportación) han sido rechazados.</entry>
+<entry code="notices_invalides">registros inválidos (autoridades, publicaciones seriadas en importación, internos de exportación) han sido rechazados.</entry>
 <entry code="requete_selection">No puedes realizar consultar de selección</entry>
 <entry code="requete_echouee">La ejecución de la consulta ha fallado, el servidor ha respondido :</entry>
 <entry code="expl_prev_empr">Usuario anterior :</entry>
@@ -3000,8 +3000,8 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code="exemplarisation_automatique">Creación automática de ejemplares</entry>
 <entry code="abonnements_modele_lie">Plantilla(s) asociada(s)</entry>
 <entry code="abonnements_edition_serie">Total de números en la serie</entry>
-<entry code="pointage_menu_pointage">Gestión de publicaciones periódicas</entry>
-<entry code="pointage_libelle_form">Gestión de publicaciones periódicas</entry>
+<entry code="pointage_menu_pointage">Gestión de publicaciones seriadas</entry>
+<entry code="pointage_libelle_form">Gestión de publicaciones seriadas</entry>
 <entry code="pointage_titre_filtre">Seleccionar de la lista:</entry>
 <entry code="pointage_label_a_recevoir">Para recibir</entry>
 <entry code="pointage_label_en_retard">Demorado</entry>
@@ -4008,9 +4008,9 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code="deflt_arch_emplacement">Ubicación de los archivos por defecto al crear un nuevo estado de colección</entry>
 <entry code="deflt_arch_statut">Estado de archivos por defecto en la creación de un nuevo estado de colección</entry>
 <entry code="deflt_arch_type">Tipo de rango de archivos por defecto en la creación de un nuevo estado de colección</entry>
-<entry code="bulletinage_opac_show">Mostrar Gestión publicaciones periódicas en Opac</entry>
+<entry code="bulletinage_opac_show">Mostrar Gestión publicaciones seriadas en Opac</entry>
 <entry code="collstate_add_error">Imposible crear un estado de colección habiendo un costado y una localización idéntica.</entry>
-<entry code="opac_show_bulletinage">Mostrar Gestión publicaciones periódicas en Opac</entry>
+<entry code="opac_show_bulletinage">Mostrar Gestión publicaciones seriadas en Opac</entry>
 <entry code="dom_glo_rights_lib">Globalmente</entry>
 <entry code="dom_prf_rights_lib">En función de roles y perfiles</entry>
 <entry code="dom_prf_unknown">Perfil no definido</entry>
@@ -5502,7 +5502,7 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <!-- fr -->
 
 <entry code = "serialcirc_circ_menu"> Periódico </entry>
-<entry code = "serialcirc_circ_title"> Circulación de publicaciones periódicas </entry>
+<entry code = "serialcirc_circ_title"> Circulación de publicaciones seriadas </entry>
 <entry code = "serialcirc_circ_title_form"> Gestión del tráfico </entry>
 <entry code = "serialcirc_circ_cb_doc"> Código de barras del documento </entry>
 <entry code = "serialcirc_circ_cb_first_diff"> Primer destinatario: </entry>
@@ -5533,7 +5533,7 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code = "serialcirc_circ_list_bull_envoyer_alert_bt"> Enviar alertas </entry>
 <entry code = "serialcirc_circ_cb_notfound"> ​​Este documento no está en circulación </entry>
 
-<entry code = "serialcirc_diff_title"> Circulación de publicaciones periódicas </entry>
+<entry code = "serialcirc_diff_title"> Circulación de publicaciones seriadas </entry>
 <entry code = "serialcirc_diff_empr_list_title"> Lista de destinatarios </entry>
 <entry code = "serialcirc_diff_add_empr_button"> Agregar destinatario </entry>
 <entry code = "serialcirc_diff_selection_empr_button"> (De) Seleccionar todo </entry>
@@ -5640,7 +5640,7 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code = "serialcirc_diff_no_selection_caddie"> Seleccione una cesta ... </entry>
 <entry code = "serialcirc_diff_no_selection_group"> Seleccione un grupo ... </entry>
 <entry code = "serialcirc_diff_empr_reponsability"> Resp. Seleccionar lectores </entry>
-<entry code = "empr_short_no_allow_serialcirc"> Circulación de publicaciones periódicas </entry>
+<entry code = "empr_short_no_allow_serialcirc"> Circulación de publicaciones seriadas </entry>
 <entry code = "empr_allow_serialcirc"> Autorizar la circulación periódica de la abundancia </entry>
 
 <entry code = "import_with_authorities_notices"> Considere los avisos de autoridad </entry>
@@ -5984,7 +5984,7 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code = "admin_mailtpl_form_sel_img"> Imágenes </entry>
 <entry code = "admin_mailtpl_form_sel_img_insert"> Insertar </entry>
 
-<entry code = "admin_docs_statut_serialcirc_delete_forbidden"> No se puede eliminar este estado porque se usa en listas de circulación de publicaciones periódicas. </entry>
+<entry code = "admin_docs_statut_serialcirc_delete_forbidden"> No se puede eliminar este estado porque se usa en listas de circulación de publicaciones seriadas. </entry>
 <entry code = "external_search_integer_results"> Incluir todos los registros marcados </entry>
 <entry code = "integer_notices_error"> Debe marcar al menos una entrada. </entry>
 <entry code="caddie_supp_bulletin_linked_expl_num">Eliminar los boletines, incluso si tienen documentos electrónicos</entry>
@@ -6676,7 +6676,7 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code = "admin_empr_list"> Lista de prestatarios </entry>
 <entry code = "admin_abts_list"> Lista de suscripciones periódicas </entry>
 <entry code = "admin_collections_state_list"> Lista de estados de la colección </entry>
-<entry code = "admin_serialcirc_list"> Lista de publicaciones periódicas en circulación </entry>
+<entry code = "admin_serialcirc_list"> Lista de publicaciones seriadas en circulación </entry>
 <entry code = "pclassement_suppr_impossible_protege"> No se puede eliminar este plan de clasificación, está protegido. </entry>
 <entry code = "notice_permalink_opac"> Enlace permanente OPAC: </entry>
 
@@ -8776,7 +8776,7 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code="cms_editorial_form_permalink">Permalien</entry>
 <entry code="cms_editorial_form_social_media_sharing">Partage sur les r�seaux sociaux</entry>
 
-<entry code="abo_date_incorrecte">Les dates de d�but et de fin d'abonnement ne peuvent outrepasser celles du ou des mod�les associ�s.</entry>
+<entry code="abo_date_incorrecte">Las fechas de inicio y finalización de la suscripción no pueden exceder las de los modelos asociados.</entry>
 <entry code="camera_photo_capture">Capture</entry>
 <entry code="camera_photo_upload">Enregistrer</entry>
 <entry code="camera_photo_success_uploaded">Sauvegarde effectu�e</entry>
