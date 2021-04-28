@@ -240,9 +240,19 @@ form {
 	background-image: url("./images/general.jpg");
 }
 
+#navbar ul li.tawk a {
+	background-repeat: repeat-x;
+	background-image: linear-gradient(to top, #50B648 0%, #b6ffb6 100%);
+}
+
+
 #navbar ul li a:hover {
 	background-repeat: repeat-x;
 	background-image: url("./images/general_hover.jpg");
+}
+
+#navbar ul li.tawk a:hover {
+	background-image: #13910a
 }
 
 #navbar ul li#navbar-circ a {
