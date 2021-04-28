@@ -764,7 +764,7 @@ $popup_header = "<!DOCTYPE html>
     </script>
     <script type='text/javascript' src='" . $javascript_path . "/dojo/dojo/dojo.js.uncompressed.js'></script>
 </head>
-<body  id='pmbopac' class='popup tundra'>
+<body class='popup tundra'>
 <script type='text/javascript'>
 var opac_show_social_network =$opac_show_social_network;
 var pmb_img_patience = '" . get_url_icon('patience.gif') . "';
