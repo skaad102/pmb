@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: record_display.class.php,v 1.41 2019-08-01 13:16:35 btafforeau Exp $
 
@@ -22,30 +22,30 @@ if (stristr($_SERVER['REQUEST_URI'], ".class.php")) die("no access");
  *
  */
 class record_display {
-	public $notice_id = 0;					// id de la notice à afficher
-	public $notice;						// objet notice (tel que fetché dans la table 'notices'
-	public $header	= '';					// chaine accueillant le chapeau de notice (peut-être cliquable)
+	public $notice_id = 0;					// id de la notice ï¿½ afficher
+	public $notice;						// objet notice (tel que fetchï¿½ dans la table 'notices'
+	public $header	= '';					// chaine accueillant le chapeau de notice (peut-ï¿½tre cliquable)
 	public $header_texte	= '';			// chaine accueillant le chapeau de notice sans html
 	public $tit1 = '';						// valeur du titre 1
 	public $result = '';					// affichage final
 	public $level = 1;						// niveau d'affichage
-	public $isbd = '';						// isbd de la notice en fonction du level défini
+	public $isbd = '';						// isbd de la notice en fonction du level dï¿½fini
 	public $responsabilites = array("responsabilites" => array(),"auteurs" => array());  // les auteurs
 	public $categories = array();			// les categories
 	public $p_perso;
 	public $expl		= 0;	// flag indiquant si on affiche les infos d'exemplaire
 	public $nb_expl	= 0;	//nombre d'exemplaires
-	public $link_expl	= '';	// lien associé à un exemplaire
+	public $link_expl	= '';	// lien associï¿½ ï¿½ un exemplaire
 	public $show_explnum = 1;
 	public $show_statut = 0;
 	public $childs= array(); 				//Filles de la notice
 	public $print_mode = 0;				// 0 affichage normal
 										// 1 affichage impression sans liens
 										// 2 affichage impression avec liens sur documents numeriques
-										// 4 affichage email : sans lien sauf url associée
+										// 4 affichage email : sans lien sauf url associï¿½e
 	public $langues = array();
 	public $languesorg = array();
-	public $aff_statut = '' ; 				// carré de couleur pour signaler le statut de la notice
+	public $aff_statut = '' ; 				// carrï¿½ de couleur pour signaler le statut de la notice
 	public $show_opac_hidden_fields = true;
 // 	public $drag = 0;
 	public $anti_loop = array();
@@ -67,7 +67,7 @@ class record_display {
 	
 	public static $linked_permalink;
 	
-	// récupération des valeurs en table
+	// rï¿½cupï¿½ration des valeurs en table
 	public function fetch_data() {
 		$query = "SELECT * FROM notices WHERE notice_id='".$this->notice_id."' ";
 		$result = pmb_mysql_query($query);
@@ -78,12 +78,12 @@ class record_display {
 		$this->languesorg	= get_notice_langues($this->notice_id, 1) ; // langues originales
 	}
 	
-	// génération du template javascript---------------------------------------
+	// gï¿½nï¿½ration du template javascript---------------------------------------
 	public function init_javascript() {
 		global $msg, $base_path, $pmb_recherche_ajax_mode;
 		global $caller, $callback, $charset;
 		
-		// propriétés pour le selecteur de panier
+		// propriï¿½tï¿½s pour le selecteur de panier
 		$cart_click = "onClick=\"openPopUp('".$base_path."/cart.php?object_type=NOTI&item=!!notice_id!!', 'cart')\"";
 		$cart_over_out = "onMouseOver=\"show_div_access_carts(event,!!notice_id!!);\" onMouseOut=\"set_flag_info_div(false);\"";
 		$current=$_SESSION["CURRENT"];
@@ -205,13 +205,13 @@ class record_display {
 	
 	protected function get_aff_editeur_reduit() {
 		$aff_editeur_reduit = '';
-		// zone de l'éditeur
+		// zone de l'ï¿½diteur
 		if ($this->notice->ed1_id) {
 			$editeur = new editeur($this->notice->ed1_id);
 			$aff_editeur_reduit = $editeur->display ;
 			if ($this->notice->year) $aff_editeur_reduit .= " (".$this->notice->year.")";
 		} elseif ($this->notice->year) {
-			// année mais pas d'éditeur et si pas un article
+			// annï¿½e mais pas d'ï¿½diteur et si pas un article
 			if($this->notice->niveau_biblio != 'a' && $this->notice->niveau_hierar != 2) 	$aff_editeur_reduit = $this->notice->year." ";
 		}
 		return $aff_editeur_reduit;
@@ -219,13 +219,13 @@ class record_display {
 	protected function get_aff_perso() {
 		global $pmb_notice_reduit_format;
 		
-		// peut-être veut-on des personnalisés ?
+		// peut-ï¿½tre veut-on des personnalisï¿½s ?
 		$perso_voulus_temp = substr($pmb_notice_reduit_format,2) ;
 		$perso_voulus = array();
 		if ($perso_voulus_temp!="") $perso_voulus = explode(",",$perso_voulus_temp);
 		
 		if (!is_object($this->p_perso)) $this->p_perso = new parametres_perso("notices");
-		//Champs personalisés à ajouter au réduit
+		//Champs personalisï¿½s ï¿½ ajouter au rï¿½duit
 		$perso_voulu_aff = '';
 		if (!$this->p_perso->no_special_fields) {
 			if (count($perso_voulus)) {
@@ -379,7 +379,7 @@ class record_display {
 							}
 							$anti_recurse=array();
 						} else $path_table=array();
-						// ceci remet le tableau dans l'ordre général->particulier
+						// ceci remet le tableau dans l'ordre gï¿½nï¿½ral->particulier
 						$path_table = array_reverse($path_table);
 						if (!empty($path_table)) {
 							$temp_table = array();
@@ -413,17 +413,17 @@ class record_display {
 		
 		$tmpcateg_aff = '';
 		foreach ($categ_repetables as $nom_thesaurus => $val_lib) {
-			//c'est un tri par libellé qui est demandé
+			//c'est un tri par libellï¿½ qui est demandï¿½
 			if ($thesaurus_categories_affichage_ordre==0){
 				$tmp=array();
 				foreach ( $val_lib as $key => $value ) {
 					$tmp[$key]=strip_tags($value);
 				}
-				$tmp=array_map("convert_diacrit",$tmp);//On enlève les accents
+				$tmp=array_map("convert_diacrit",$tmp);//On enlï¿½ve les accents
 				$tmp=array_map("strtoupper",$tmp);//On met en majuscule
 				asort($tmp);//Tri sur les valeurs en majuscule sans accent
 				foreach ( $tmp as $key => $value ) {
-					$tmp[$key]=$val_lib[$key];//On reprend les bons couples clé / libellé
+					$tmp[$key]=$val_lib[$key];//On reprend les bons couples clï¿½ / libellï¿½
 				}
 				$val_lib=$tmp;
 			}
@@ -450,7 +450,7 @@ class record_display {
 			$this->isbd.="<br />";
 			$anti_loop=$this->anti_loop;
 			$anti_loop[]=$this->notice_id;
-			//Notices horizontales liées
+			//Notices horizontales liï¿½es
 			if($this->notice_relations->get_nb_pairs()) {
 				$display .= $this->notice_relations->get_display_links('pairs', $this->print_mode, $this->show_explnum, 1, $this->show_opac_hidden_fields, $anti_loop);
 			}
@@ -467,7 +467,7 @@ class record_display {
 			$perso_=$this->p_perso->show_fields($this->notice_id);
 			for ($i=0; $i<count($perso_["FIELDS"]); $i++) {
 				$p=$perso_["FIELDS"][$i];
-				// ajout de && ($p['OPAC_SHOW']||$this->show_opac_hidden_fields) afin de masquer les champs masqué de l'OPAC en diff de bannette.
+				// ajout de && ($p['OPAC_SHOW']||$this->show_opac_hidden_fields) afin de masquer les champs masquï¿½ de l'OPAC en diff de bannette.
 				if ($p["AFF"] !== '' && ($p['OPAC_SHOW'] || $this->show_opac_hidden_fields)) $perso_aff .="<br />".$p["TITRE"]." ".($p["TYPE"]=='html'?$p["AFF"]:nl2br($p["AFF"]));
 			}
 		}
@@ -487,7 +487,7 @@ class record_display {
 		return $display;
 	}
 	
-	// fonction retournant les infos d'exemplaires pour une notice donnée
+	// fonction retournant les infos d'exemplaires pour une notice donnï¿½e
 	public function show_expl_per_notice($no_notice, $link_expl='',$expl_bulletin=0 ) {
 		global $msg, $dbh, $base_path, $class_path;
 		global $explr_invisible, $explr_visible_unmod, $explr_visible_mod, $pmb_droits_explr_localises, $transferts_gestion_transferts;
@@ -499,7 +499,7 @@ class record_display {
 		global $pmb_transferts_actif, $pmb_pret_groupement;
 		// params :
 		// $no_notice= id de la notice
-		// $link_expl= lien associé à l'exemplaire avec !!expl_id!! et !!expl_cb!! à mettre à jour
+		// $link_expl= lien associï¿½ ï¿½ l'exemplaire avec !!expl_id!! et !!expl_cb!! ï¿½ mettre ï¿½ jour
 	
 		if(!$no_notice && !$expl_bulletin) return;
 	
@@ -507,7 +507,7 @@ class record_display {
 		$explr_tab_unmod=explode(",",$explr_visible_unmod);
 		$explr_tab_modif=explode(",",$explr_visible_mod);
 	
-		// récupération du nombre total d'exemplaires
+		// rï¿½cupï¿½ration du nombre total d'exemplaires
 		if($expl_bulletin){
 			$requete = "SELECT COUNT(1) FROM exemplaires WHERE expl_bulletin='$expl_bulletin' ";
 		}else{
@@ -518,8 +518,8 @@ class record_display {
 	
 		if($nb_ex) {
 			$expl_liste = '';
-			// on récupère les données des exemplaires
-			// visibilité des exemplaires:
+			// on rï¿½cupï¿½re les donnï¿½es des exemplaires
+			// visibilitï¿½ des exemplaires:
 			if ($pmb_droits_explr_localises && $explr_invisible) $where_expl_localises = "and expl_location not in ($explr_invisible)";
 			else $where_expl_localises = "";
 	
@@ -531,7 +531,7 @@ class record_display {
 			$total_columns = count($colonnesarray);
 			if ($pmb_pret_groupement || $pmb_transferts_actif) $total_columns++;
 	
-			//Présence de champs personnalisés
+			//Prï¿½sence de champs personnalisï¿½s
 			if (strstr($pmb_expl_data, "#")) {
 				$cp=new parametres_perso("expl");
 			}
@@ -573,7 +573,7 @@ class record_display {
 				if($pmb_transferts_actif) $expl_list_id_transfer = array();
 				while($expl = pmb_mysql_fetch_object($result)) {
 					$expl_list_id[] = $expl->expl_id;
-					//visibilité des exemplaires
+					//visibilitï¿½ des exemplaires
 					if ($pmb_droits_explr_localises) {
 						$as_invis = array_search($expl->idlocation,$explr_tab_invis);
 						$as_unmod = array_search($expl->idlocation,$explr_tab_unmod);
@@ -609,7 +609,7 @@ class record_display {
 						$aff_column = "";
 						$id_column = "";
 						if (substr($colonnesarray[$i],0,1)=="#") {
-							//champs personnalisés
+							//champs personnalisï¿½s
 							$id=substr($colonnesarray[$i],1);
 							$cp->get_values($expl->expl_id);
 							if (!$cp->no_special_fields) {
@@ -647,17 +647,17 @@ class record_display {
 										break;
 								}
 							} else {
-								// tester si réservé
+								// tester si rï¿½servï¿½
 								$result_resa = pmb_mysql_query("select 1 from resa where resa_cb='".addslashes($expl->expl_cb)."' ", $dbh) or die ("<br />".pmb_mysql_error()."<br />".$requete);
 								$reserve = pmb_mysql_num_rows($result_resa);
 			
-								// tester à ranger
+								// tester ï¿½ ranger
 								$result_aranger = pmb_mysql_query(" select 1 from resa_ranger where resa_cb='".addslashes($expl->expl_cb)."' ", $dbh) or die ("<br />".pmb_mysql_error()."<br />".$requete);
 								$aranger = pmb_mysql_num_rows($result_aranger);
 			
-								if ($reserve) $situation = "<strong>".$msg['expl_reserve']."</strong>"; // exemplaire réservé
-								elseif($expl->expl_retloc) $situation = $msg['resa_menu_a_traiter'];  // exemplaire à traiter
-								elseif ($aranger) $situation = "<strong>".$msg['resa_menu_a_ranger']."</strong>"; // exemplaire à ranger
+								if ($reserve) $situation = "<strong>".$msg['expl_reserve']."</strong>"; // exemplaire rï¿½servï¿½
+								elseif($expl->expl_retloc) $situation = $msg['resa_menu_a_traiter'];  // exemplaire ï¿½ traiter
+								elseif ($aranger) $situation = "<strong>".$msg['resa_menu_a_ranger']."</strong>"; // exemplaire ï¿½ ranger
 								elseif ($expl->pret_flag) $situation = "<strong>${msg[359]}</strong>"; // exemplaire disponible
 								else $situation = "";
 							}
@@ -703,7 +703,7 @@ class record_display {
 				
 						global $pmb_transferts_actif;
 				
-						//si les transferts sont activés
+						//si les transferts sont activï¿½s
 						if ($pmb_transferts_actif) {
 							//si l'exemplaire n'est pas transferable on a une image vide
 							$transfer_link = "<img src='".get_url_icon('spacer.gif')."' class='center' height=20 width=20>";
@@ -769,7 +769,7 @@ class record_display {
 				$entry .= "<tr>";
 				for ($i=0; $i<count($colonnesarray); $i++) {
 					if (substr($colonnesarray[$i],0,1)=="#") {
-						//champs personnalisés
+						//champs personnalisï¿½s
 						if (!$cp->no_special_fields) {
 							$id=substr($colonnesarray[$i],1);
 							$entry.="<th>".htmlentities($cp->t_fields[$id]['TITRE'],ENT_QUOTES,$charset)."</th>";
@@ -820,7 +820,7 @@ class record_display {
 							}
 						}
 					}
-					//Au moins une surloc à afficher
+					//Au moins une surloc ï¿½ afficher
 					if (count($array_surloc)) {
 						$tr_surloc="";
 						foreach ($array_surloc as $key => $surloc) {
@@ -876,7 +876,7 @@ class record_display {
 		return $pnb_record_orders->get_display_orders();
 	}
 	
-	// finalisation du résultat (écriture de l'isbd)
+	// finalisation du rï¿½sultat (ï¿½criture de l'isbd)
 	public function finalize() {
 		$this->result = str_replace('!!ISBD!!', $this->isbd, $this->result);
 	}
@@ -911,7 +911,7 @@ class record_display {
 	
 	static public function lookup($name, $object) {
 		$return = null;
-		// Si on le nom commence par record. on va chercher les méthodes
+		// Si on le nom commence par record. on va chercher les mï¿½thodes
 		if (substr($name, 0, 8) == ":record.") {
 			$attributes = explode('.', $name);
 			$notice_id = $object->getVariable('notice_id');
@@ -925,7 +925,7 @@ class record_display {
 				$return = static::look_for_attribute_in_class($record_datas, $attributes[1]);
 			}
 			
-			// On regarde les attributs enfants recherchés
+			// On regarde les attributs enfants recherchï¿½s
 			if ($return && count($attributes) > 2) {
 				for ($i = 2; $i < count($attributes); $i++) {
 					// On regarde si c'est un tableau ou un objet
@@ -980,7 +980,7 @@ class record_display {
 	}
 	
 	/**
-	 * Génère le titre nécessaire à Zotéro
+	 * Gï¿½nï¿½re le titre nï¿½cessaire ï¿½ Zotï¿½ro
 	 * @param int $id_notice Identifiant de la notice
 	 * @return string
 	 */
@@ -989,7 +989,7 @@ class record_display {
 		$record_datas = static::get_record_datas($notice_id);
 		$coins = $record_datas->get_coins();
 		foreach ($coins as $key=>$value) {
-			if(is_array($value)) { //Spécifique rft.aut
+			if(is_array($value)) { //Spï¿½cifique rft.aut
 				foreach ($value as $sub_value) {
 					$display .= "&amp;".$key."=".rawurlencode(encoding_normalize::utf8_normalize($sub_value));
 				}
@@ -1001,7 +1001,7 @@ class record_display {
 	}
 	
 	/**
-	 * Génère le span nécessaire à Zotéro
+	 * Gï¿½nï¿½re le span nï¿½cessaire ï¿½ Zotï¿½ro
 	 * @param int $id_notice Identifiant de la notice
 	 * @return string
 	 */
@@ -1073,8 +1073,8 @@ class record_display {
 				} else { // pas sorti
 					$situation .= "<strong>".$msg['available']."</strong>";
 				}
-			} else { // pas prêtable
-				// exemplaire pas prêtable, on affiche juste "exclu du pret"
+			} else { // pas prï¿½table
+				// exemplaire pas prï¿½table, on affiche juste "exclu du pret"
 				if (($pmb_transferts_actif=="1") && ("".$expl['expl_statut'].""==$transferts_statut_transferts)) {
 					$situation .= "<strong>".$msg['reservation_lib_entransfert']."</strong>";
 				} else {
@@ -1086,7 +1086,7 @@ class record_display {
 	}
 	
 	/**
-	 * Génère la liste des exemplaires
+	 * Gï¿½nï¿½re la liste des exemplaires
 	 * @param int $notice_id Identifiant de la notice
 	 * @return string
 	 */
@@ -1110,7 +1110,7 @@ class record_display {
 		$bull = $record_datas->get_bul_info();
 		$bull_id = $bull['bulletin_id'];
 		
-		// les dépouillements ou périodiques n'ont pas d'exemplaire
+		// les dï¿½pouillements ou pï¿½riodiques n'ont pas d'exemplaire
 		if (($type=="a" && !$opac_show_exemplaires_analysis) || $type=="s") return "" ;
 		if(!$memo_p_perso_expl)	$memo_p_perso_expl=new parametres_perso("expl");
 		$header_found_p_perso=0;
@@ -1143,8 +1143,8 @@ class record_display {
 						} else { // pas sorti
 							$class_statut = "expl_available";
 						}
-					} else { // pas prêtable
-						// exemplaire pas prêtable, on affiche juste "exclu du pret"
+					} else { // pas prï¿½table
+						// exemplaire pas prï¿½table, on affiche juste "exclu du pret"
 						if (($pmb_transferts_actif=="1") && ("".$expl['expl_statut'].""==$transferts_statut_transferts)) {
 							$class_statut = "expl_transfert";
 						} else {
@@ -1155,7 +1155,7 @@ class record_display {
 				$expl_liste .= "<td class='expl_situation'>".static::get_display_situation($expl)." </td>";
 				$expl_liste = str_replace("!!class_statut!!", $class_statut, $expl_liste);
 	
-				//Champs personalisés
+				//Champs personalisï¿½s
 				$perso_aff = "" ;
 				if (!$memo_p_perso_expl->no_special_fields) {
 					$perso_=$memo_p_perso_expl->show_fields($expl['expl_id']);
@@ -1206,7 +1206,7 @@ class record_display {
 			$expl_liste_all=str_replace("!!mylocation!!",$_SESSION["empr_location_libelle"],$expl_liste_all);
 			$expl_liste_all=str_replace("!!id!!",$id+$bull_id,$expl_liste_all);
 		} else {
-			// affichage de la liste d'exemplaires calculée ci-dessus
+			// affichage de la liste d'exemplaires calculï¿½e ci-dessus
 			if (!$expl_liste_all && $opac_show_empty_items_block==1) {
 				$expl_liste_all = $expl_list_header.$expl_list_header_deb."<tr class=even><td colspan='".(count($expls_datas['colonnesarray'])+1)."'>".$msg["no_expl"]."</td></tr>".$expl_list_footer;
 			} elseif (!$expl_liste_all && $opac_show_empty_items_block==0) {
@@ -1221,7 +1221,7 @@ class record_display {
 	} // fin function get_display_expl_list
 	
 	/**
-	 * Génère la liste des exemplaires
+	 * Gï¿½nï¿½re la liste des exemplaires
 	 * @param int $notice_id Identifiant de la notice
 	 * @return string
 	 */
@@ -1247,7 +1247,7 @@ class record_display {
 			$bull = $record_datas->get_bul_info();
 			$bull_id = (isset($bull['bulletin_id']) ? $bull['bulletin_id'] : '');
 			
-			// les dépouillements ou périodiques n'ont pas d'exemplaire
+			// les dï¿½pouillements ou pï¿½riodiques n'ont pas d'exemplaire
 			if (($type=="a" && !$opac_show_exemplaires_analysis) || $type=="s") return "" ;
 			if(!$memo_p_perso_expl)	$memo_p_perso_expl=new parametres_perso("expl");
 			$header_found_p_perso=0;
@@ -1304,8 +1304,8 @@ class record_display {
 							} else { // pas sorti
 								$class_statut = "expl_available";
 							}
-						} else { // pas prêtable
-							// exemplaire pas prêtable, on affiche juste "exclu du pret"
+						} else { // pas prï¿½table
+							// exemplaire pas prï¿½table, on affiche juste "exclu du pret"
 							if (($pmb_transferts_actif=="1") && ("".$expl['expl_statut'].""==$transferts_statut_transferts)) {
 								$class_statut = "expl_transfert";
 							} else {
@@ -1316,7 +1316,7 @@ class record_display {
 					$expl_liste .= "<td class='".$msg['statut']."'>".static::get_display_situation($expl)." </td>";
 					$expl_liste = str_replace("!!class_statut!!", $class_statut, $expl_liste);
 			
-					//Champs personalisés
+					//Champs personalisï¿½s
 					$perso_aff = "" ;
 					if (!$memo_p_perso_expl->no_special_fields) {
 						$perso_=$memo_p_perso_expl->show_fields($expl['expl_id']);
@@ -1366,7 +1366,7 @@ class record_display {
 				$expl_liste_all=str_replace("!!mylocation!!",$_SESSION["empr_location_libelle"],$expl_liste_all);
 				$expl_liste_all=str_replace("!!id!!",$id+$bull_id,$expl_liste_all);
 			} else {
-				// affichage de la liste d'exemplaires calculée ci-dessus
+				// affichage de la liste d'exemplaires calculï¿½e ci-dessus
 				if (!$expl_liste_all && $opac_show_empty_items_block==1) {
 					$expl_liste_all = $expl_list_header.$expl_list_header_deb."<tr class=even><td colspan='".(count($expls_datas['colonnesarray'])+1)."'>".$msg["no_expl"]."</td></tr>".$expl_list_footer;
 				} elseif (!$expl_liste_all && $opac_show_empty_items_block==0) {
@@ -1382,7 +1382,7 @@ class record_display {
 	} // fin function get_display_expl_responsive_list
 	
 	/**
-	 * Fontion qui génère le bloc H3 + table des autres lectures
+	 * Fontion qui gï¿½nï¿½re le bloc H3 + table des autres lectures
 	 * @param number $notice_id Identifiant de la notice
 	 * @param number $bulletin_id Identifiant du bulletin
 	 * @return string
@@ -1474,7 +1474,7 @@ class record_display {
 					}
 					$mention_resp ? $auteur = $mention_resp : $auteur="";
 				
-					// on affiche les résultats 
+					// on affiche les rï¿½sultats 
 					if ($odd_even==0) {
 						$pair_impair="odd";
 						$odd_even=1;
@@ -1519,9 +1519,9 @@ class record_display {
 					$title_image_ok = htmlentities($record_datas->get_tit1(), ENT_QUOTES, $charset);
 				}
 				if ($depliable) {
-					$image = "<img class='vignetteimg align_right' src='".static::get_parameter_value('url_base')."images/vide.png' title=\"".$title_image_ok."\" hspace='4' vspace='2' vigurl=\"".$url_image_ok."\"  alt='".$msg["opac_notice_vignette_alt"]."'/>";
+					$image = "<img class='vignetteimg align_right mt-5' src='".static::get_parameter_value('url_base')."images/vide.png' title=\"".$title_image_ok."\" hspace='4' vspace='2' vigurl=\"".$url_image_ok."\"  alt='".$msg["opac_notice_vignette_alt"]."'/>";
 				} else {
-					$image = "<img class='vignetteimg align_right' src='".$url_image_ok."' title=\"".$title_image_ok."\" hspace='4' vspace='2' alt='".$msg["opac_notice_vignette_alt"]."' />";
+					$image = "<img class='vignetteimg align_right mt-5' src='".$url_image_ok."' title=\"".$title_image_ok."\" hspace='4' vspace='2' alt='".$msg["opac_notice_vignette_alt"]."' />";
 				}
 			}
 		}
@@ -1592,7 +1592,7 @@ class record_display {
 	}
 	
 	/**
-	 * Renvoie les états de collections
+	 * Renvoie les ï¿½tats de collections
 	 * @param int $notice_id Identifiant de la notice
 	 * @return mixed
 	 */
@@ -1650,7 +1650,7 @@ class record_display {
 		return $avis->get_display_only_stars();
 	}
 	/**
-	 * Retourne l'affichage des étoiles
+	 * Retourne l'affichage des ï¿½toiles
 	 * @param float $moyenne
 	 */
 	
@@ -1708,9 +1708,9 @@ class record_display {
 	}
 	
 	/**
-	 * Retourne l'affichage étendu d'une notice
+	 * Retourne l'affichage ï¿½tendu d'une notice
 	 * @param unknown $notice_id Identifiant de la notice
-	 * @param string $django_directory Répertoire Django à utiliser
+	 * @param string $django_directory Rï¿½pertoire Django ï¿½ utiliser
 	 * @return string Code html d'affichage de la notice
 	 */
 	static public function get_display_extended($notice_id, $django_directory = "") {
@@ -1724,9 +1724,9 @@ class record_display {
 	}
 	
 	/**
-	 * Retourne l'affichage d'une notice dans un résultat de recherche
+	 * Retourne l'affichage d'une notice dans un rï¿½sultat de recherche
 	 * @param int $notice_id Identifiant de la notice
-	 * @param string $django_directory Répertoire Django à utiliser
+	 * @param string $django_directory Rï¿½pertoire Django ï¿½ utiliser
 	 * @return string Code html d'affichage de la notice
 	 */
 	static public function get_display_in_result($notice_id, $django_directory = "") {
@@ -1742,7 +1742,7 @@ class record_display {
 	/**
 	 * Retourne l'affichage d'une notice pour impression sur imprimante format court
 	 * @param int $notice_id Identifiant de la notice
-	 * @param string $django_directory Répertoire Django à utiliser
+	 * @param string $django_directory Rï¿½pertoire Django ï¿½ utiliser
 	 * @param array $parameters Permet un affichage dynamique en fonction de champs de formulaire par exemple
 	 * @return string Code html d'affichage de la notice
 	 */
@@ -1759,7 +1759,7 @@ class record_display {
 	/**
 	 * Retourne l'affichage d'une notice pour impression sur imprimante format long
 	 * @param int $notice_id Identifiant de la notice
-	 * @param string $django_directory Répertoire Django à utiliser
+	 * @param string $django_directory Rï¿½pertoire Django ï¿½ utiliser
 	 * @param array $parameters Permet un affichage dynamique en fonction de champs de formulaire par exemple
 	 * @return string Code html d'affichage de la notice
 	 */
@@ -1776,7 +1776,7 @@ class record_display {
 	/**
 	 * Retourne l'affichage d'une notice pour impression sur pdf format court
 	 * @param int $notice_id Identifiant de la notice
-	 * @param string $django_directory Répertoire Django à utiliser
+	 * @param string $django_directory Rï¿½pertoire Django ï¿½ utiliser
 	 * @param array $parameters Permet un affichage dynamique en fonction de champs de formulaire par exemple
 	 * @return string Code html d'affichage de la notice
 	 */
@@ -1793,7 +1793,7 @@ class record_display {
 	/**
 	 * Retourne l'affichage d'une notice pour impression sur pdf format long
 	 * @param int $notice_id Identifiant de la notice
-	 * @param string $django_directory Répertoire Django à utiliser
+	 * @param string $django_directory Rï¿½pertoire Django ï¿½ utiliser
 	 * @param array $parameters Permet un affichage dynamique en fonction de champs de formulaire par exemple
 	 * @return string Code html d'affichage de la notice
 	 */
@@ -1812,8 +1812,8 @@ class record_display {
 	 * @param string $template_name Nom du template : record_extended ou record_in_result
 	 * @param string $niveau_biblio Niveau bibliographique
 	 * @param string $typdoc Type de document
-	 * @param string $django_directory Répertoire Django à utiliser (paramètre opac_notices_format_django_directory par défaut)
-	 * @return string Nom du template à appeler
+	 * @param string $django_directory Rï¿½pertoire Django ï¿½ utiliser (paramï¿½tre opac_notices_format_django_directory par dï¿½faut)
+	 * @return string Nom du template ï¿½ appeler
 	 */
 	static public function get_template($template_name, $niveau_biblio, $typdoc, $django_directory = "") {
 		global $include_path;
@@ -1882,9 +1882,9 @@ class record_display {
 	}
 	
 	/**
-	 * Retourne l'affichage des documents numériques
+	 * Retourne l'affichage des documents numï¿½riques
 	 * @param int $notice_id Identifiant de la notice
-	 * @return string Rendu html des documents numériques
+	 * @return string Rendu html des documents numï¿½riques
 	 */
 	static public function get_display_explnums($notice_id) {
 		global $include_path;
@@ -1967,7 +1967,7 @@ class record_display {
 			$f_modif_demande = str_replace('!!form_action!!',$act_form,$f_modif_demande);
 			$f_modif_demande = str_replace('!!cancel_action!!',$act_cancel,$f_modif_demande);
 			
-			// Requires et début de formulaire
+			// Requires et dï¿½but de formulaire
 			$html = "
 					<script type='text/javascript'>
 						require(['dojo/parser', 'apps/pmb/PMBDialog']);
@@ -1986,9 +1986,9 @@ class record_display {
 	}
 	
 	/**
-	 * Retourne le rendu html des documents numériques du bulletin parent de la notice d'article
+	 * Retourne le rendu html des documents numï¿½riques du bulletin parent de la notice d'article
 	 * @param int $notice_id Identifiant de la notice
-	 * @return string Rendu html des documents numériques du bulletin parent
+	 * @return string Rendu html des documents numï¿½riques du bulletin parent
 	 */
 	static public function get_display_bull_for_art_expl_num($notice_id) {
 		
@@ -2038,7 +2038,7 @@ class record_display {
 	}
 	
 	/**
-	 * Fonction d'affichage des réseaux sociax
+	 * Fonction d'affichage des rï¿½seaux sociax
 	 * @param int $notice_id Identifiant de la notice
 	 * @return string
 	 */
@@ -2073,7 +2073,7 @@ class record_display {
 		$record_datas = static::get_record_datas($notice_id);
 		if($_SESSION['id_empr_session'] && static::get_parameter_value('serialcirc_active') && $record_datas->get_opac_serialcirc_demande() && $allow_serialcirc) {
 			if($record_datas->get_niveau_biblio() == "s"){
-				// pour un pério, on affiche un bouton pour demander l'inscription à un liste de diffusion
+				// pour un pï¿½rio, on affiche un bouton pour demander l'inscription ï¿½ un liste de diffusion
 				//TODO si le statut le permet...
 				$html .= "
 					<div class='row'>&nbsp;</div>
@@ -2086,7 +2086,7 @@ class record_display {
 					</div>";
 			}else if ($record_datas->get_niveau_biblio() == "b"){
 				// pour un bulletin, on regarde s'il est pas en cours d'inscription...
-				// récup la circulation si existante...
+				// rï¿½cup la circulation si existante...
 				$query = "select id_serialcirc from serialcirc join abts_abts on abt_id = num_serialcirc_abt join bulletins on bulletin_notice = abts_abts.num_notice where bulletins.num_notice = ".$notice_id;
 				$result = pmb_mysql_query($query);
 				if(pmb_mysql_num_rows($result)){
@@ -2130,7 +2130,7 @@ class record_display {
 		global ${"bull_num_deb_".$notice_id};
 		$html = '';
 
-		//Recherche dans les numéros
+		//Recherche dans les numï¿½ros
 		$start_num = ${"bull_num_deb_".$notice_id};
 		$restrict_date = "";
 		if($f_bull_deb_id){
@@ -2141,7 +2141,7 @@ class record_display {
 			$restrict_num = "";
 		}
 
-		// Recherche dans les dates et libellés de période
+		// Recherche dans les dates et libellï¿½s de pï¿½riode
 		if(!$restrict_num) {
 			if($bull_date_start && $bull_date_end){
 				if($bull_date_end < $bull_date_start){
@@ -2158,13 +2158,13 @@ class record_display {
 			}
 		}
 
-		// nombre de références par pages (12 par défaut)
+		// nombre de rï¿½fï¿½rences par pages (12 par dï¿½faut)
 		if (!isset($opac_bull_results_per_page)) $opac_bull_results_per_page = 12;
 		if(!$page) $page = 1;
 		$debut = ($page-1)*$opac_bull_results_per_page;
 		$limiter = " LIMIT ".$debut.",".$opac_bull_results_per_page;
 		
-		//Recherche par numéro
+		//Recherche par numï¿½ro
 		$num_field_start = "
 		<input type='hidden' name='f_bull_deb_id' id='f_bull_deb_id' />
 		<input id='bull_num_deb_".$notice_id."' name='bull_num_deb_".$notice_id."' type='text' size='10' completion='bull_num' autfield='f_bull_deb_id' value='".$start_num."'>";
@@ -2212,7 +2212,7 @@ class record_display {
 		</div>\n";
 		$html.= $tableau;
 		
-		//quel affichage de notice il faut utiliser (Public, ISBD) (valeur postée)
+		//quel affichage de notice il faut utiliser (Public, ISBD) (valeur postï¿½e)
 		if ($premier) {
 			$html.= "<script> show_what('".$premier."','".$notice_id."'); </script>";
 		}
@@ -2264,7 +2264,7 @@ class record_display {
 		$rescount1 = pmb_mysql_query($requete);
 		$count1 = pmb_mysql_num_rows($rescount1);
 	
-		//si on recherche par date ou par numéro, le résultat sera trié par ordre croissant
+		//si on recherche par date ou par numï¿½ro, le rï¿½sultat sera triï¿½ par ordre croissant
 		if ($restrict_num || $restrict_date) {
 			$requete.=" ORDER BY date_date, bulletin_numero*1 ";
 		} else {
@@ -2319,7 +2319,7 @@ class record_display {
 					//notice de bulletin
 					$id_for_right = $infos->num_notice;
 				}else{
-					//notice de pério
+					//notice de pï¿½rio
 					$id_for_right = $infos->bulletin_notice;
 				}
 			}

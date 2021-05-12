@@ -402,6 +402,10 @@ class avis {
 		if ($order % 2 == 1) $pair_impair="even"; else 	$pair_impair="odd";
 		$display = "
 		<div  id='".$node_id."_child_avis_".$data->id_avis."' class='$pair_impair avis_display' >
+
+			
+
+
 			<div class='avis_display_header'>";
 		if($opac_avis_note_display_mode){
 			$display .= "<span class='avis_detail_note_".$data->note." avis_note' >";
@@ -429,6 +433,7 @@ class avis {
 					<b>".htmlentities($data->sujet,ENT_QUOTES,$charset)."</b>
 				</span>
 			</div>
+
 			<div class='avis_display_info'>
 				<span class='avis_creator'>";
 		switch ($opac_avis_show_writer) {

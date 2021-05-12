@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: notice_affichage.class.php,v 1.527 2019-07-05 12:36:24 btafforeau Exp $
 
@@ -55,28 +55,28 @@ if (empty($fonction_auteur)) {
 	$fonction_auteur = $fonction_auteur->table;
 }
 
-// définition de la classe d'affichage des notices
+// dï¿½finition de la classe d'affichage des notices
 class notice_affichage {
-	public $notice_id		= 0;					// id de la notice à afficher
+	public $notice_id		= 0;					// id de la notice ï¿½ afficher
 	public $notice_header	= "" ;					// titre + auteur principaux
 	public $notice_header_without_html	= "" ;		// titre + auteur principaux sans <span>
 	public $notice_header_with_link="" ;			// titre + auteur principaux avec un lien sur la notice
 	public $notice_header_globe_link	= "" ;		// le globe du lien
-			// le terme affichage correspond au code HTML qui peut être envoyé avec un print
+			// le terme affichage correspond au code HTML qui peut ï¿½tre envoyï¿½ avec un print
 	public $notice_isbd	= "" ;			// Affichage ISBD de la notice
 	public $notice_public	= "" ;			// Affichage public PMB de la notice
-	public $notice_indexations	= "" ;		// Affichage des indexations catégories et mots clés, peut être ajouté à $notice_isbd ou à $notice_public afin d'avoir l'affichage complet PMB
-	public $notice_exemplaires	= "" ;		// Affichage des exemplaires, peut être ajouté à $notice_isbd ou à $notice_public afin d'avoir l'affichage complet PMB
-	public $notice_explnum	= "" ;			// Affichage des exemplaires numériques, peut être ajouté à $notice_isbd ou à $notice_public afin d'avoir l'affichage complet PMB
-	public $notice_notes	= "" ;			// Affichage des notes de contenu et résumé, peut être ajouté à $notice_isbd ou à $notice_public afin d'avoir l'affichage complet PMB
-	public $notice;				// objet notice tel que fetché dans la table notices,
-						//		augmenté de $this->notice->serie_name si série il y a
-						//		augmenté de n_gen, n_contenu, n_resume si on est allé les chercher car non ISBD standard
+	public $notice_indexations	= "" ;		// Affichage des indexations catï¿½gories et mots clï¿½s, peut ï¿½tre ajoutï¿½ ï¿½ $notice_isbd ou ï¿½ $notice_public afin d'avoir l'affichage complet PMB
+	public $notice_exemplaires	= "" ;		// Affichage des exemplaires, peut ï¿½tre ajoutï¿½ ï¿½ $notice_isbd ou ï¿½ $notice_public afin d'avoir l'affichage complet PMB
+	public $notice_explnum	= "" ;			// Affichage des exemplaires numï¿½riques, peut ï¿½tre ajoutï¿½ ï¿½ $notice_isbd ou ï¿½ $notice_public afin d'avoir l'affichage complet PMB
+	public $notice_notes	= "" ;			// Affichage des notes de contenu et rï¿½sumï¿½, peut ï¿½tre ajoutï¿½ ï¿½ $notice_isbd ou ï¿½ $notice_public afin d'avoir l'affichage complet PMB
+	public $notice;				// objet notice tel que fetchï¿½ dans la table notices,
+						//		augmentï¿½ de $this->notice->serie_name si sï¿½rie il y a
+						//		augmentï¿½ de n_gen, n_contenu, n_resume si on est allï¿½ les chercher car non ISBD standard
 	public $responsabilites 	= array("responsabilites" => array(),"auteurs" => array());  // les auteurs avec tout ce qu'il faut
 	public $categories 	= array();	// les id des categories
-	public $auteurs_principaux	= "" ;		// ce qui apparait après le titre pour le header
+	public $auteurs_principaux	= "" ;		// ce qui apparait aprï¿½s le titre pour le header
   	public $auteurs_tous	= "" ;		// Tous les auteurs avec leur fonction
-  	public $categories_toutes	= "" ;		// Toutes les catégories dans lesquelles est rangée la notice
+  	public $categories_toutes	= "" ;		// Toutes les catï¿½gories dans lesquelles est rangï¿½e la notice
 
 	public $lien_rech_notice 		;
 	public $lien_rech_auteur 		;
@@ -94,14 +94,14 @@ class notice_affichage {
  	public $langues = array();
 	public $languesorg = array();
 
-  	public $action		= '';	// URL à associer au header
-	public $header		= '';	// chaine accueillant le chapeau de notice (peut-être cliquable)
-	public $tit_serie		= '';	// titre de série si applicable
+  	public $action		= '';	// URL ï¿½ associer au header
+	public $header		= '';	// chaine accueillant le chapeau de notice (peut-ï¿½tre cliquable)
+	public $tit_serie		= '';	// titre de sï¿½rie si applicable
 	public $tit1		= '';	// valeur du titre 1
 	public $result		= '';	// affichage final
-	public $isbd		= '';	// isbd de la notice en fonction du level défini
+	public $isbd		= '';	// isbd de la notice en fonction du level dï¿½fini
 	public $expl		= 0;	// flag indiquant si on affiche les infos d'exemplaire
-	public $link_expl		= '';	// lien associé à un exemplaire
+	public $link_expl		= '';	// lien associï¿½ ï¿½ un exemplaire
 	public $show_resa		= 0;	// flag indiquant si on affiche les infos de resa
 	public $p_perso;
 	public $cart_allowed = 0;
@@ -110,23 +110,23 @@ class notice_affichage {
 	public $sugg_allowed = 0;
 	public $liste_lecture_allowed = 0;
 	public $to_print = 0;
-	public $affichage_resa_expl = "" ; // lien réservation, exemplaires et exemplaires numériques, en tableau comme il faut
-	public $affichage_expl = "" ;  // la même chose mais sans le lien réservation
+	public $affichage_resa_expl = "" ; // lien rï¿½servation, exemplaires et exemplaires numï¿½riques, en tableau comme il faut
+	public $affichage_expl = "" ;  // la mï¿½me chose mais sans le lien rï¿½servation
 	public $affichage_avis_detail=""; // affichage des avis de lecteurs
 
 	public $statut = 1 ;  			// Statut (id) de la notice
-	public $statut_notice = "" ;  	// Statut (libellé) de la notice
-	public $visu_notice = 1 ;  	// Visibilité de la notice à tout le monde
-	public $visu_notice_abon = 0 ; // Visibilité de la notice aux abonnés uniquement
-	public $visu_expl = 1 ;  		// Visibilité des exemplaires de la notice à tout le monde
-	public $visu_expl_abon = 0 ;  	// Visibilité des exemplaires de la notice aux abonnés uniquement
-	public $visu_explnum = 1 ;  	// Visibilité des exemplaires numériques de la notice à tout le monde
-	public $visu_explnum_abon = 0 ;// Visibilité des exemplaires numériques de la notice aux abonnés uniquement
-	public $visu_scan_request = 1; // Visibilité du lien de demande de numérisation
-	public $visu_scan_request_abon = 0; // Visibilité du lien de demande de numérisation aux abonnés uniquement
+	public $statut_notice = "" ;  	// Statut (libellï¿½) de la notice
+	public $visu_notice = 1 ;  	// Visibilitï¿½ de la notice ï¿½ tout le monde
+	public $visu_notice_abon = 0 ; // Visibilitï¿½ de la notice aux abonnï¿½s uniquement
+	public $visu_expl = 1 ;  		// Visibilitï¿½ des exemplaires de la notice ï¿½ tout le monde
+	public $visu_expl_abon = 0 ;  	// Visibilitï¿½ des exemplaires de la notice aux abonnï¿½s uniquement
+	public $visu_explnum = 1 ;  	// Visibilitï¿½ des exemplaires numï¿½riques de la notice ï¿½ tout le monde
+	public $visu_explnum_abon = 0 ;// Visibilitï¿½ des exemplaires numï¿½riques de la notice aux abonnï¿½s uniquement
+	public $visu_scan_request = 1; // Visibilitï¿½ du lien de demande de numï¿½risation
+	public $visu_scan_request_abon = 0; // Visibilitï¿½ du lien de demande de numï¿½risation aux abonnï¿½s uniquement
 
 	public $childs = array() ; // filles de la notice
-	public $notice_childs = "" ; // l'équivalent à afficher
+	public $notice_childs = "" ; // l'ï¿½quivalent ï¿½ afficher
 	public $anti_loop="";
 	public $seule = 0 ;
 	public $premier = "PUBLIC" ;
@@ -138,11 +138,11 @@ class notice_affichage {
 
 	public $dom_2 = NULL;			// objet domain
 	public $rights = 0;			// droits d'acces emprunteur/notice
-	public $header_only = 0;		// pour ne prendre que le nécessaire pour composer le titre
-	public $parents = "";			// la chaine des parents, utilisée pour do_parents en isbd et en public
-	public $no_header = 0 ;		// ne pas afficher de header, permet de masquer l'icône
-	public $notice_header_without_doclink=""; // notice_header sans les icones de lien url et d'indication de documents numériques
-	public $notice_header_doclink=""; // les icones de lien url et d'indication de documents numériques
+	public $header_only = 0;		// pour ne prendre que le nï¿½cessaire pour composer le titre
+	public $parents = "";			// la chaine des parents, utilisï¿½e pour do_parents en isbd et en public
+	public $no_header = 0 ;		// ne pas afficher de header, permet de masquer l'icï¿½ne
+	public $notice_header_without_doclink=""; // notice_header sans les icones de lien url et d'indication de documents numï¿½riques
+	public $notice_header_doclink=""; // les icones de lien url et d'indication de documents numï¿½riques
 	public $notice_affichage_cmd;
 	public $notice_affichage_enrichment="";
 	public $authperso_info=array();
@@ -150,15 +150,15 @@ class notice_affichage {
 	public $hash = "";
 	public $show_map = 1;
 
-	protected $affichage_demand = ""; // Bouton de création de demande à partir d'une notice
-	protected $affichage_scan_requests = ""; // Bouton de création de demande de numérisation à partir d'une notice
+	protected $affichage_demand = ""; // Bouton de crï¿½ation de demande ï¿½ partir d'une notice
+	protected $affichage_scan_requests = ""; // Bouton de crï¿½ation de demande de numï¿½risation ï¿½ partir d'une notice
 
 	private $parents_header_without_html = false;
 	protected $notice_relations;
 	
 	protected $record_datas;
 	
-	protected $display_childs = true; //affichage ou non des notices filles (dérivable en classe d'aff perso)
+	protected $display_childs = true; //affichage ou non des notices filles (dï¿½rivable en classe d'aff perso)
 	
 	protected $notice_reduit_format;
 	
@@ -166,7 +166,7 @@ class notice_affichage {
 	
 	// constructeur------------------------------------------------------------
 	public function __construct($id, $liens="", $cart=0, $to_print=0,$header_only=0,$no_header=0, $show_map=1, $parents_header_without_html = false) {
-	  	// $id = id de la notice à afficher
+	  	// $id = id de la notice ï¿½ afficher
 	  	// $liens	 = tableau de liens tel que ci-dessous
 	  	// $cart : afficher ou pas le lien caddie
 	  	// $to_print = affichage mode impression ou pas
@@ -214,7 +214,7 @@ class notice_affichage {
 		
 		$this->to_print = $to_print;
 		$this->header_only = $header_only;
-	  	// $seule : si 1 la notice est affichée seule et dans ce cas les notices childs sont en mode dépliable
+	  	// $seule : si 1 la notice est affichï¿½e seule et dans ce cas les notices childs sont en mode dï¿½pliable
 	  	global $seule ;
 	  	$this->seule = $seule ;
 	  	$this->docnum_allowed = 1;
@@ -237,7 +237,7 @@ class notice_affichage {
 		$this->hash = $this->generate_hash();
 	}
 
-	// récupération des valeurs en table---------------------------------------
+	// rï¿½cupï¿½ration des valeurs en table---------------------------------------
 	public function fetch_data() {
 
 		global $dbh;
@@ -409,9 +409,9 @@ class notice_affichage {
 				$info_bulle=" title='".$congres->info_bulle."' ";
 			} else {
 				$auteur_isbd = $this->get_display_author_name($notice->author_name, $notice->author_rejete);
-				// on s'arrête là pour auteur_titre = "Prénom NOM" uniquement
+				// on s'arrï¿½te lï¿½ pour auteur_titre = "Prï¿½nom NOM" uniquement
 				$auteur_titre = $auteur_isbd ;
-				// on complète auteur_isbd pour l'affichage complet
+				// on complï¿½te auteur_isbd pour l'affichage complet
 				if ($notice->author_date) $auteur_isbd .= " (".$notice->author_date.")" ;
 			}			
 			$qualification = '';
@@ -452,8 +452,8 @@ class notice_affichage {
 		}
 		return $this->responsabilites;
 	}
-	// récupération des auteurs ---------------------------------------------------------------------
-	// retourne $this->auteurs_principaux = ce qu'on va afficher en titre du résultat
+	// rï¿½cupï¿½ration des auteurs ---------------------------------------------------------------------
+	// retourne $this->auteurs_principaux = ce qu'on va afficher en titre du rï¿½sultat
 	// retourne $this->auteurs_tous = ce qu'on va afficher dans l'isbd
 	// NOTE: now we have two functions:
 	// 		fetch_auteurs()  	the pmb-standard one
@@ -464,7 +464,7 @@ class notice_affichage {
 		$this->get_responsabilites();
 		
 		// $this->auteurs_principaux
-		// on ne prend que le auteur_titre = "Prénom NOM"
+		// on ne prend que le auteur_titre = "Prï¿½nom NOM"
 		$this->auteurs_principaux = $this->record_datas->get_auteurs_principaux();
 
 		// $this->auteurs_tous
@@ -515,7 +515,7 @@ class notice_affichage {
 
 	} // fin fetch_auteurs
 
-	// requête de récupération des categories ------------------------------------------------------------------
+	// requï¿½te de rï¿½cupï¿½ration des categories ------------------------------------------------------------------
 	public function get_query_categories() {
 		global $lang;
 		global $opac_thesaurus, $opac_thesaurus_defaut;
@@ -544,17 +544,17 @@ class notice_affichage {
 	
 		$tmpcateg_aff = '';
 		foreach ($categ_repetables as $nom_thesaurus => $val_lib) {
-			//c'est un tri par libellé qui est demandé
+			//c'est un tri par libellï¿½ qui est demandï¿½
 			if ($opac_categories_affichage_ordre==0){
 				$tmp=array();
 				foreach ( $val_lib as $key => $value ) {
 					$tmp[$key]=strip_tags($value);
 				}
-				$tmp=array_map("convert_diacrit",$tmp);//On enlève les accents
+				$tmp=array_map("convert_diacrit",$tmp);//On enlï¿½ve les accents
 				$tmp=array_map("strtoupper",$tmp);//On met en majuscule
 				asort($tmp);//Tri sur les valeurs en majuscule sans accent
 				foreach ( $tmp as $key => $value ) {
-					$tmp[$key]=$val_lib[$key];//On reprend les bons couples clé / libellé
+					$tmp[$key]=$val_lib[$key];//On reprend les bons couples clï¿½ / libellï¿½
 				}
 				$val_lib=$tmp;
 			}
@@ -574,7 +574,7 @@ class notice_affichage {
 		return $tmpcateg_aff;
 	}
 	
-	// récupération des categories ------------------------------------------------------------------
+	// rï¿½cupï¿½ration des categories ------------------------------------------------------------------
 	public function fetch_categories() {
 		global $opac_thesaurus, $opac_categories_categ_in_line, $opac_categories_affichage_ordre;
 		global $lang,$opac_categories_show_only_last;
@@ -605,7 +605,7 @@ class notice_affichage {
 
 				if ($opac_categories_show_only_last || $categ_head) {
 					if ($opac_thesaurus) $catalog_form="[".$libelle_thesaurus."] ".$libelle_categ;
-					// Si il y a présence d'un commentaire affichage du layer
+					// Si il y a prï¿½sence d'un commentaire affichage du layer
 					$result_com = categorie::zoom_categ($categ_id, $comment_public);
 					$libelle_aff_complet = inslink($libelle_categ,  str_replace("!!id!!", $categ_id, $this->lien_rech_categ), $result_com['java_com']);
 					$libelle_aff_complet .= $result_com['zoom'];
@@ -656,7 +656,7 @@ class notice_affichage {
 							}
 							$anti_recurse=array();
 						} else $path_table=array();
-						// ceci remet le tableau dans l'ordre général->particulier
+						// ceci remet le tableau dans l'ordre gï¿½nï¿½ral->particulier
 						$path_table = array_reverse($path_table);
 						if(sizeof($path_table)) {
 							$temp_table = array();
@@ -668,13 +668,13 @@ class notice_affichage {
 						} else {
 							$catalog_form = $libelle_categ;
 						}
-						// pour libellé complet mais sans le nom du thésaurus
+						// pour libellï¿½ complet mais sans le nom du thï¿½saurus
 						$libelle_aff_complet = $catalog_form ;
 
 						if ($opac_thesaurus) $catalog_form="[".$libelle_thesaurus."] ".$catalog_form;
 
 						//$categ = new category($categ_id);
-						// Si il y a présence d'un commentaire affichage du layer
+						// Si il y a prï¿½sence d'un commentaire affichage du layer
 						$result_com = categorie::zoom_categ($categ_id, $comment_public);
 						$libelle_aff_complet = inslink($libelle_aff_complet,  str_replace("!!id!!", $categ_id, $this->lien_rech_categ), $result_com['java_com']);
 						$libelle_aff_complet .= $result_com['zoom'];
@@ -764,7 +764,7 @@ class notice_affichage {
 		return record_display::get_display_suggestion($this->notice_id);
 	} // fin affichage_suggestion()
 
-	//Affichage de l'icône permettant d'ajouter la notice à une liste de lecture
+	//Affichage de l'icï¿½ne permettant d'ajouter la notice ï¿½ une liste de lecture
 	public function affichage_liste_lecture() {
 		global $msg;
 		return "<script type='text/javascript' src='./includes/javascript/liste_lecture.js'></script>
@@ -787,7 +787,7 @@ class notice_affichage {
 		return 'img_plus';
 	}
 	
-	// génération du de l'affichage double avec onglets ---------------------------------------------
+	// gï¿½nï¿½ration du de l'affichage double avec onglets ---------------------------------------------
 	//	si $depliable=1 alors inclusion du parent / child
 	public function genere_double($depliable=1, $premier='ISBD') {
 		global $msg,$charset;
@@ -847,7 +847,7 @@ class notice_affichage {
 			$img_liste_lecture = $this->affichage_liste_lecture();
 		} else $img_liste_lecture = "";
 	
-		// préparation de la case à cocher pour traitement panier
+		// prï¿½paration de la case ï¿½ cocher pour traitement panier
 		if ($cart_aff_case_traitement) $case_a_cocher = "<input type='checkbox' value='!!id!!' name='notice[]'/>&nbsp;";
 		else $case_a_cocher = "" ;
 	
@@ -988,7 +988,7 @@ class notice_affichage {
 	
 		if (($opac_avis_display_mode==1) && (($this->avis_allowed && $this->avis_allowed !=2) || ($_SESSION["user_code"] && $this->avis_allowed ==2 && $allow_avis))) $this->affichage_avis_detail=$this->avis_detail();
 	
-		// Serials : différence avec les monographies on affiche [périodique] et [article] devant l'ISBD
+		// Serials : diffï¿½rence avec les monographies on affiche [pï¿½riodique] et [article] devant l'ISBD
 		if ($this->notice->niveau_biblio =='s') {
 			$voir_bulletins = "";
 			if(!$flag_no_get_bulletin){
@@ -1124,7 +1124,7 @@ class notice_affichage {
 					return $display;
 	}
 	
-	// génération du de l'affichage simple sans onglet ----------------------------------------------
+	// gï¿½nï¿½ration du de l'affichage simple sans onglet ----------------------------------------------
 	//	si $depliable=1 alors inclusion du parent / child
 	public function genere_simple($depliable=1, $what='ISBD') {
 		global $msg,$charset;
@@ -1151,7 +1151,7 @@ class notice_affichage {
 	
 		$this->double_ou_simple = 1 ;
 	
-		// préparation de la case à cocher pour traitement panier
+		// prï¿½paration de la case ï¿½ cocher pour traitement panier
 		if ($cart_aff_case_traitement) $case_a_cocher = "<input type='checkbox' value='!!id!!' name='notice[]'/>&nbsp;";
 		else $case_a_cocher = "" ;
 		
@@ -1265,7 +1265,7 @@ class notice_affichage {
 		if (($opac_avis_display_mode==1) && (($this->avis_allowed && $this->avis_allowed !=2) || ($_SESSION["user_code"] && $this->avis_allowed ==2 && $allow_avis))) $this->affichage_avis_detail=$this->avis_detail();
 
 		
-		// Serials : différence avec les monographies on affiche [périodique] et [article] devant l'ISBD
+		// Serials : diffï¿½rence avec les monographies on affiche [pï¿½riodique] et [article] devant l'ISBD
 		if ($this->notice->niveau_biblio =='s') {
 			$voir_bulletins = "";
 			if(!$flag_no_get_bulletin){
@@ -1446,7 +1446,7 @@ class notice_affichage {
 
 	} // fin genere_ajax()
 
-	// génération de l'isbd----------------------------------------------------
+	// gï¿½nï¿½ration de l'isbd----------------------------------------------------
 	public function do_isbd($short=0,$ex=1) {
 		global $dbh;
 		global $msg;
@@ -1483,10 +1483,10 @@ class notice_affichage {
 		if ($this->auteurs_tous) $this->notice_isbd .= " / ".$this->auteurs_tous;
 		if ($this->congres_tous) $this->notice_isbd .= " / ".$this->congres_tous;
 
-		// mention d'édition
+		// mention d'ï¿½dition
 		if($this->notice->mention_edition) $this->notice_isbd .= " &nbsp;. -&nbsp; ".$this->notice->mention_edition;
 
-		// zone de collection et éditeur
+		// zone de collection et ï¿½diteur
 		$editeurs = '';
 		$collections = '';
 		if($this->notice->subcoll_id) {
@@ -1570,7 +1570,7 @@ class notice_affichage {
 		}
 
 		$zoneNote = '';
-		// note générale
+		// note gï¿½nï¿½rale
 		if($this->notice->n_gen) {
 			$zoneNote = nl2br(htmlentities($this->notice->n_gen,ENT_QUOTES, $charset));
 		}
@@ -1601,15 +1601,15 @@ class notice_affichage {
 		//notice de bulletin : etat des collections
 		if ($this->notice->niveau_biblio=='b' && $this->notice->niveau_hierar==2) $this->notice_isbd.=$this->get_display_collstates_bulletin_notice();
 
-		//Notices liées
-		// ajoutées en dehors de l'onglet PUBLIC ailleurs
+		//Notices liï¿½es
+		// ajoutï¿½es en dehors de l'onglet PUBLIC ailleurs
 
 		if ($ex) $this->affichage_resa_expl = $this->aff_resa_expl() ;
 
 		// demandes
 		if ($opac_demandes_allow_from_record) $this->aff_demand();
 
-		// demandes de numérisation
+		// demandes de numï¿½risation
 		if ($opac_scan_request_activate) $this->aff_scan_requests();
 	} // fin do_isbd($short=0,$ex=1)
 	
@@ -1660,7 +1660,7 @@ class notice_affichage {
 		return $line_aff_suite_perso;
 	}
 	
-	// génération de l'affichage public----------------------------------------
+	// gï¿½nï¿½ration de l'affichage public----------------------------------------
 	public function do_public($short=0,$ex=1) {
 		global $dbh;
 		global $msg;
@@ -1696,16 +1696,16 @@ class notice_affichage {
 		$this->do_public_line($msg['typdocdisplay_start'], $tdoc->table[$this->notice->typdoc], 'typdoc');
 		//auteurs
 		$this->do_public_line($msg['auteur_start'], $this->auteurs_tous, 'auteurs');
-		//congrès
+		//congrï¿½s
 		$this->do_public_line($msg['congres_aff_public_libelle'], $this->congres_tous, 'congres');
-		// mention d'édition
+		// mention d'ï¿½dition
 		$this->do_public_line($msg['mention_edition_start'], $this->notice->mention_edition, 'mention');
 		
 		if ($this->notice->ed1_id) {
 			$editeur = new publisher($this->notice->ed1_id);
 			$this->publishers[]=$editeur;
 			$this->do_public_line($msg['editeur_start'], inslink($editeur->display,  str_replace("!!id!!", $this->notice->ed1_id, $this->lien_rech_editeur)), 'ed1');
-			//année d'édition
+			//annï¿½e d'ï¿½dition
 			$this->do_public_line($msg['year_start'], $this->notice->year, 'year');
 		}
 		// Autre editeur
@@ -1730,8 +1730,8 @@ class notice_affichage {
 			$this->do_public_line($msg['coll_start'], inslink($collection->get_isbd(),  str_replace("!!id!!", $this->notice->coll_id, $this->lien_rech_collection)).$affnocoll." ".$collection->collection_web_link, 'coll');
 		}
 
-		// $annee est vide si ajoutée avec l'éditeur, donc si pas éditeur, on l'affiche ici
-		//année d'édition
+		// $annee est vide si ajoutï¿½e avec l'ï¿½diteur, donc si pas ï¿½diteur, on l'affiche ici
+		//annï¿½e d'ï¿½dition
 		if (!$this->notice->ed1_id) {
 			$this->do_public_line($msg['year_start'], $this->notice->year, 'year');
 		}
@@ -1770,7 +1770,7 @@ class notice_affichage {
 
 		$this->do_public_line($msg['price_start'], $this->notice->prix, 'prix');
 
-		// note générale
+		// note gï¿½nï¿½rale
 		$this->do_public_line($msg['n_gen_start'], nl2br(htmlentities($this->notice->n_gen,ENT_QUOTES, $charset)), 'ngen');
 		
 		// langues
@@ -1795,7 +1795,7 @@ class notice_affichage {
 		//notice de bulletin : etat des collections
 		if ($this->notice->niveau_biblio=='b' && $this->notice->niveau_hierar==2) $this->notice_public.=$this->get_display_collstates_bulletin_notice();
 
-		// exemplaires, résas et compagnie
+		// exemplaires, rï¿½sas et compagnie
 		if ($ex) $this->affichage_resa_expl = $this->aff_resa_expl() ;
 	
 		//carte des localisations
@@ -1806,7 +1806,7 @@ class notice_affichage {
 		// demandes
 		if ($opac_demandes_allow_from_record) $this->aff_demand();
 
-		// demandes de numérisation
+		// demandes de numï¿½risation
 		if ($opac_scan_request_activate) $this->aff_scan_requests();
 
 		return;
@@ -1863,24 +1863,24 @@ class notice_affichage {
 		}
 		$perso_voulus = array();
 		if ($type_reduit=="E" || $type_reduit=="P" ) {
-			// peut-être veut-on des personnalisés ?
+			// peut-ï¿½tre veut-on des personnalisï¿½s ?
 			$perso_voulus_temp = substr($this->notice_reduit_format,2) ;
 			if ($perso_voulus_temp!="") $perso_voulus = explode(",",$perso_voulus_temp);
 		}
 		
 		if ($type_reduit=="E") {
-			// zone de l'éditeur
+			// zone de l'ï¿½diteur
 			if ($this->notice->ed1_id) {
 				$editeur = new publisher($this->notice->ed1_id);
 				$editeur_reduit = $editeur->display ;
 				if ($this->notice->year) $editeur_reduit .= " (".$this->notice->year.")";
 			} elseif ($this->notice->year) {
-				// année mais pas d'éditeur et si pas un article
+				// annï¿½e mais pas d'ï¿½diteur et si pas un article
 				if($this->notice->niveau_biblio != 'a' && $this->notice->niveau_hierar != 2) 	$editeur_reduit = $this->notice->year." ";
 			}
 		} else $editeur_reduit = "" ;
 		
-		//Champs personalisés à ajouter au réduit
+		//Champs personalisï¿½s ï¿½ ajouter au rï¿½duit
 		if (!$this->p_perso->no_special_fields) {
 			if (count($perso_voulus)) {
 				$this->p_perso->get_values($this->notice_id) ;
@@ -1903,7 +1903,7 @@ class notice_affichage {
 			$aff_bullperio_title = "<span class='isbulletinof'><i> ".($this->parent_date?sprintf($msg["bul_titre_perio"],$this->parent_title):sprintf($msg["bul_titre_perio"],$this->parent_title.", ".$this->parent_numero." [".$this->parent_aff_date_date."]"))."</i></span>";
 		} else $aff_bullperio_title="";
 		
-		// récupération du titre de série
+		// rï¿½cupï¿½ration du titre de sï¿½rie
 		// constitution de la mention de titre
 		if($this->notice->serie_name) {
 			$notice_header = $this->notice->serie_name;
@@ -1920,7 +1920,7 @@ class notice_affichage {
 		$notice_header .= $aff_bullperio_title;
 		
 		$notice_header = "<span !!zoteroNotice!! class='header_title'>".$notice_header."</span>";
-		//on ne propose à Zotero que les monos et les articles...
+		//on ne propose ï¿½ Zotero que les monos et les articles...
 		if($this->notice->niveau_biblio == "m" ||($this->notice->niveau_biblio == "a" && $this->notice->niveau_hierar == 2)) {
 			$notice_header =str_replace("!!zoteroNotice!!"," notice='".$this->notice_id."' ",$notice_header);
 		}else $notice_header =str_replace("!!zoteroNotice!!","",$notice_header);
@@ -1956,7 +1956,7 @@ class notice_affichage {
 		
 		if(!$this->notice->eformat) $info_bulle=$msg["open_link_url_notice"];
 		else $info_bulle=$this->notice->eformat;
-		// ajout du lien pour les ressources électroniques
+		// ajout du lien pour les ressources ï¿½lectroniques
 		$resource_link = "
 			&nbsp;<span class='notice_link'>
 			<a href=\"".$this->notice->lien."\" target=\"_blank\" type='external_url_notice'>
@@ -1986,7 +1986,7 @@ class notice_affichage {
 		return $query;
 	}
 	
-	// génération du header----------------------------------------------------
+	// gï¿½nï¿½ration du header----------------------------------------------------
 	public function do_header($id_tpl=0) {
 		global $opac_url_base, $msg, $charset;
 		global $memo_notice;
@@ -2086,7 +2086,7 @@ class notice_affichage {
 
 	} // fin do_header()
 
-	// génération du header_without_html----------------------------------------------------
+	// gï¿½nï¿½ration du header_without_html----------------------------------------------------
 	public function do_header_without_html($id_tpl=0) {
 		global $opac_notice_reduit_format,$charset ;
 		global $msg ;
@@ -2101,24 +2101,24 @@ class notice_affichage {
 
 		$perso_voulus = array();
 		if ($type_reduit=="E" || $type_reduit=="P" ) {
-			// peut-être veut-on des personnalisés ?
+			// peut-ï¿½tre veut-on des personnalisï¿½s ?
 			$perso_voulus_temp = substr($opac_notice_reduit_format,2) ;
 			if ($perso_voulus_temp!="") $perso_voulus = explode(",",$perso_voulus_temp);
 		}
 
 		if ($type_reduit=="E") {
-			// zone de l'éditeur
+			// zone de l'ï¿½diteur
 			if ($this->notice->ed1_id) {
 				$editeur = new publisher($this->notice->ed1_id);
 				$editeur_reduit = $editeur->display ;
 				if ($this->notice->year) $editeur_reduit .= " - ".$this->notice->year." ";
 			} elseif ($this->notice->year) {
-				// année mais pas d'éditeur et si pas un article
+				// annï¿½e mais pas d'ï¿½diteur et si pas un article
 				if($this->notice->niveau_biblio != 'a' && $this->notice->niveau_hierar != 2) 	$editeur_reduit = $this->notice->year." ";
 			}
 		} else $editeur_reduit = "" ;
 
-		//Champs personalisés à ajouter au réduit
+		//Champs personalisï¿½s ï¿½ ajouter au rï¿½duit
 		if (!$this->p_perso->no_special_fields) {
 			if (count($perso_voulus)) {
 				$this->p_perso->get_values($this->notice_id) ;
@@ -2138,7 +2138,7 @@ class notice_affichage {
 			$aff_bullperio_title = " ".($this->parent_date?sprintf($msg["bul_titre_perio"],$this->parent_title):sprintf($msg["bul_titre_perio"],$this->parent_title.", ".$this->parent_numero." [".$this->parent_aff_date_date."]"));
 		} else $aff_bullperio_title="";
 
-		// récupération du titre de série
+		// rï¿½cupï¿½ration du titre de sï¿½rie
 		// constitution de la mention de titre
 		if($this->notice->serie_name) {
 			$this->notice_header_without_html = $this->notice->serie_name;
@@ -2168,7 +2168,7 @@ class notice_affichage {
 	} // fin do_header_without_html()
 
 
-	// génération du header similaire (pour le notices similaires uniquement) ----------------------------------------------------
+	// gï¿½nï¿½ration du header similaire (pour le notices similaires uniquement) ----------------------------------------------------
 	public function do_header_similaire($id_tpl=0) {
 		global $opac_notice_reduit_format, $opac_notice_reduit_format_similaire;
 		if(isset($opac_notice_reduit_format_similaire)) {
@@ -2200,7 +2200,7 @@ class notice_affichage {
 					$this->parents.="<br /><b>".$relation_type."</b> ";
 					$this->parents.= $relations_links[0]['display'];
 					$this->parents.="<br /><br />";
-					// si une seule, peut-être est-ce une notice de bulletin, aller cherche $this->bulletin_id
+					// si une seule, peut-ï¿½tre est-ce une notice de bulletin, aller cherche $this->bulletin_id
 					$rqbull="select bulletin_id from bulletins where num_notice=".$this->notice_id;
 					$rqbullr=pmb_mysql_query($rqbull);
 					if(pmb_mysql_num_rows($rqbullr)) {
@@ -2241,7 +2241,7 @@ class notice_affichage {
 		return "&nbsp; ";
 	}
 	
-	// Construction des mots clé----------------------------------------------------
+	// Construction des mots clï¿½----------------------------------------------------
 	public function do_mots_cle() {
 		global $pmb_keyword_sep ;
 		if (!$pmb_keyword_sep) $pmb_keyword_sep=" ";
@@ -2260,12 +2260,12 @@ class notice_affichage {
 		return $mots_cles ;
 	}
 
-	// récupération des info de bulletinage (si applicable)
+	// rï¿½cupï¿½ration des info de bulletinage (si applicable)
 	public function get_bul_info() {
 		global $dbh;
 		global $msg;
 		if ($this->notice->niveau_biblio == 'a') {
-			// récupération des données du bulletin et de la notice apparentée
+			// rï¿½cupï¿½ration des donnï¿½es du bulletin et de la notice apparentï¿½e
 			$requete = "SELECT b.tit1,b.notice_id,a.*,c.*, date_format(date_date, '".$msg["format_date"]."') as aff_date_date ";
 			$requete .= "from analysis a, notices b, bulletins c";
 			$requete .= " WHERE a.analysis_notice=".$this->notice_id;
@@ -2273,7 +2273,7 @@ class notice_affichage {
 			$requete .= " AND c.bulletin_notice=b.notice_id";
 			$requete .= " LIMIT 1";
 		} elseif ($this->notice->niveau_biblio == 'b') {
-			// récupération des données du bulletin et de la notice apparentée
+			// rï¿½cupï¿½ration des donnï¿½es du bulletin et de la notice apparentï¿½e
 			$requete = "SELECT tit1,notice_id,b.*, date_format(date_date, '".$msg["format_date"]."') as aff_date_date ";
 			$requete .= "from bulletins b, notices";
 			$requete .= " WHERE num_notice=$this->notice_id ";
@@ -2293,7 +2293,7 @@ class notice_affichage {
 		}
 	} // fin get_bul_info()
 
-	// fonction de génération de ,la mention in titre du pério + numéro
+	// fonction de gï¿½nï¿½ration de ,la mention in titre du pï¿½rio + numï¿½ro
 	public function genere_in_perio () {
 		global $charset ;
 		// serials : si article
@@ -2317,7 +2317,7 @@ class notice_affichage {
 		return $retour ;
 	} // fin genere_in_perio ()
 
-	// fonction d'affichage des exemplaires, résa et expl_num
+	// fonction d'affichage des exemplaires, rï¿½sa et expl_num
 	public function aff_resa_expl() {
 		global $opac_resa ;
 		global $opac_max_resa ;
@@ -2325,12 +2325,12 @@ class notice_affichage {
 		global $msg;
 		global $dbh;
 		global $popup_resa ;
-		global $opac_resa_popup ; // la résa se fait-elle par popup ?
-		global $opac_resa_planning; // la résa est elle planifiée
+		global $opac_resa_popup ; // la rï¿½sa se fait-elle par popup ?
+		global $opac_resa_planning; // la rï¿½sa est elle planifiï¿½e
 		global $allow_book;
 		global $opac_show_exemplaires_analysis;
 
-		// afin d'éviter de recalculer un truc déjà calculé...
+		// afin d'ï¿½viter de recalculer un truc dï¿½jï¿½ calculï¿½...
 		if (isset($this->affichage_resa_expl_flag)) return $this->affichage_resa_expl ;
 
 		$ret='';
@@ -2348,7 +2348,7 @@ class notice_affichage {
 					$resa_id_bulletin=$this->bulletin_id;
 				}
 
-				//Des exemplaires réservables ?
+				//Des exemplaires rï¿½servables ?
 				if($resa_id_bulletin) {
 					$resa_check=check_statut(0,$resa_id_bulletin) ;
 				} else {
@@ -2359,7 +2359,7 @@ class notice_affichage {
 
 					if (!$opac_resa_planning) {
 
-						//des réservations en cours?
+						//des rï¿½servations en cours?
 						if ($resa_id_bulletin) {
 							$requete_resa = "SELECT count(1) FROM resa WHERE resa_idbulletin='$resa_id_bulletin' ";
 						} else {
@@ -2382,8 +2382,8 @@ class notice_affichage {
 								} else $ret .= str_replace("!!nb_max_resa!!", $opac_max_resa, $msg["resa_nb_max_resa"]) ;
 								$ret.= "<br />";
 							} elseif (!$_SESSION["user_code"]) {
-								// utilisateur pas connecté
-								// préparation lien réservation sans être connecté
+								// utilisateur pas connectï¿½
+								// prï¿½paration lien rï¿½servation sans ï¿½tre connectï¿½
 								$ret .= "<h3>".$msg["bulletin_display_resa"]."</h3>";
 								if ($opac_resa_popup) $ret .= "<a href='#' onClick=\"if(confirm('".$msg["confirm_resa"]."')){w=window.open('./do_resa.php?lvl=resa&id_notice=".$resa_id_notice."&id_bulletin=".$resa_id_bulletin."&oresa=popup','doresa','scrollbars=yes,width=500,height=600,menubar=0,resizable=yes'); w.focus(); return false;}else return false;\" id=\"bt_resa\">".$msg["bulletin_display_place_resa"]."</a>" ;
 								else $ret .= "<a href='./do_resa.php?lvl=resa&id_notice=".$resa_id_notice."&id_bulletin=".$resa_id_bulletin."&oresa=popup' onClick=\"return confirm('".$msg["confirm_resa"]."')\" id=\"bt_resa\">".$msg["bulletin_display_place_resa"]."</a>" ;
@@ -2394,7 +2394,7 @@ class notice_affichage {
 
 					} else {
 
-						//des prévisions en cours?
+						//des prï¿½visions en cours?
 						if($resa_id_bulletin) {
 							$nb_resa_encours = resa_planning::count_resa(0,$resa_id_bulletin);
 						}else {
@@ -2423,8 +2423,8 @@ class notice_affichage {
 								}
 								$ret.= "<br />";
 							} elseif (!$_SESSION["user_code"]) {
-								// utilisateur pas connecté
-								// préparation lien réservation sans être connecté
+								// utilisateur pas connectï¿½
+								// prï¿½paration lien rï¿½servation sans ï¿½tre connectï¿½
 								$ret .= "<h3>".$msg["bulletin_display_resa"]."</h3>";
 								if ($opac_resa_popup) {
 									$ret .= "<a href='#' onClick=\"w=window.open('./do_resa.php?lvl=resa_planning&id_notice=".$resa_id_notice."&id_bulletin=".$resa_id_bulletin."&oresa=popup','doresa','scrollbars=yes,width=500,height=600,menubar=0,resizable=yes'); w.focus(); return false;\" id=\"bt_resa\">".$msg["bulletin_display_place_resa"]."</a>" ;
@@ -2494,7 +2494,7 @@ class notice_affichage {
 	public function get_aff_fields_perso() {
 		$aff_fields_perso = "" ;
 		if (!$this->p_perso->no_special_fields) {
-			// $this->memo_perso_ permet au affichages personalisés dans notice_affichage_ex de gagner du temps
+			// $this->memo_perso_ permet au affichages personalisï¿½s dans notice_affichage_ex de gagner du temps
 			if(!isset($this->memo_perso_)) $this->memo_perso_=$this->p_perso->show_fields($this->notice_id);
 			for ($i=0; $i<count($this->memo_perso_["FIELDS"]); $i++) {
 				$p=$this->memo_perso_["FIELDS"][$i];
@@ -2506,20 +2506,20 @@ class notice_affichage {
 		return $aff_fields_perso;
 	}
 	
-	// fonction d'affichage de la suite ISBD ou PUBLIC : partie commune, pour éviter la redondance de calcul
+	// fonction d'affichage de la suite ISBD ou PUBLIC : partie commune, pour ï¿½viter la redondance de calcul
 	public function aff_suite() {
 		global $msg;
 		global $charset;
 		global $opac_allow_tags_search, $opac_permalink, $opac_url_base;
 
-		// afin d'éviter de recalculer un truc déjà calculé...
+		// afin d'ï¿½viter de recalculer un truc dï¿½jï¿½ calculï¿½...
 		if(!isset($this->affichage_suite_flag)) $this->affichage_suite_flag = 0;
 		if ($this->affichage_suite_flag) return $this->affichage_suite ;
 
 		// toutes indexations
 		$ret_index = "";
-		// Catégories
-		// On demande à afficher le header seulement et on arrive ici..appelons donc le fetch_categories
+		// Catï¿½gories
+		// On demande ï¿½ afficher le header seulement et on arrive ici..appelons donc le fetch_categories
 		if($this->header_only) {
 			$this->fetch_categories();
 		}
@@ -2531,7 +2531,7 @@ class notice_affichage {
 			$ret_index .= $this->get_line_aff_suite($msg['concepts_start'], skos_view_concepts::get_list_in_notice($concepts_list), 'concept');
 		}
 
-		// Affectation du libellé mots clés ou tags en fonction de la recherche précédente
+		// Affectation du libellï¿½ mots clï¿½s ou tags en fonction de la recherche prï¿½cï¿½dente
 		if($opac_allow_tags_search == 1) $libelle_key = $msg['tags'];
 		else $libelle_key = 	$msg['motscle_start'];
 
@@ -2545,13 +2545,13 @@ class notice_affichage {
 		}
 		$ret = $ret_index;
 
-		// résumé
+		// rï¿½sumï¿½
 		$ret .= $this->get_line_aff_suite($msg['n_resume_start'], nl2br($this->notice->n_resume), 'nresume');
 		
 		// note de contenu
 		$ret .= $this->get_line_aff_suite($msg['n_contenu_start'], nl2br($this->notice->n_contenu), 'contenu');
 
-		//Champs personalisés
+		//Champs personalisï¿½s
 		$ret .= $this->get_aff_fields_perso();
 
 		if ($this->notice->lien) {
@@ -2579,7 +2579,7 @@ class notice_affichage {
 		return $coins_span;
 	}
 
-	// fonction de génération d'une colonne du tableau des exemplaires
+	// fonction de gï¿½nï¿½ration d'une colonne du tableau des exemplaires
 	public static function get_display_column($label='', $expl=array()) {
 		global $msg, $charset;
 		global $opac_url_base;
@@ -2619,8 +2619,8 @@ class notice_affichage {
 				} else { // pas sorti
 					$situation .= "<strong>".$msg['available']."</strong>";
 				}
-			} else { // pas prêtable
-				// exemplaire pas prêtable, on affiche juste "exclu du pret"
+			} else { // pas prï¿½table
+				// exemplaire pas prï¿½table, on affiche juste "exclu du pret"
 				if (($pmb_transferts_actif=="1") && ("".$expl['expl_statut'].""==$transferts_statut_transferts)) {
 					$situation .= "<strong>".$msg['reservation_lib_entransfert']."</strong>";
 				} else {
@@ -2631,7 +2631,7 @@ class notice_affichage {
 		return $situation;
 	}
 	
-	// fonction de génération du tableau des exemplaires
+	// fonction de gï¿½nï¿½ration du tableau des exemplaires
 	public static function expl_list($type,$id,$bull_id=0,$build_ifempty=1) {
 		global $msg, $charset;
 		global $expl_list_header, $expl_list_footer;
@@ -2646,7 +2646,7 @@ class notice_affichage {
 		$expl_liste_all = '';
 		$nb_expl_autre_loc=0;
 		$nb_perso_aff=0;
-		// les dépouillements ou périodiques n'ont pas d'exemplaire
+		// les dï¿½pouillements ou pï¿½riodiques n'ont pas d'exemplaire
 		if (($type=="a" && !$opac_show_exemplaires_analysis) || $type=="s") return "" ;
 		if(!$memo_p_perso_expl)	$memo_p_perso_expl=new parametres_perso("expl");
 		$header_found_p_perso=0;
@@ -2668,7 +2668,7 @@ class notice_affichage {
 		if(isset($expls_datas['expls']) && count($expls_datas['expls'])) {
 			$pair_impair="odd";
 			foreach ($expls_datas['expls'] as $expl) {
-				// mémorisation des exemplaires et de leur localisation
+				// mï¿½morisation des exemplaires et de leur localisation
 				$memo_expl['expl'][]=array(
 						'expl_id' => $expl['expl_id'],
 						'expl_location'	=> array($expl['expl_location']),
@@ -2689,8 +2689,8 @@ class notice_affichage {
 						} else { // pas sorti
 							$class_statut = "expl_available";
 						}
-					} else { // pas prêtable
-						// exemplaire pas prêtable, on affiche juste "exclu du pret"
+					} else { // pas prï¿½table
+						// exemplaire pas prï¿½table, on affiche juste "exclu du pret"
 						if (($pmb_transferts_actif=="1") && ("".$expl['expl_statut'].""==$transferts_statut_transferts)) {
 							$class_statut = "expl_transfert";
 						} else {
@@ -2701,7 +2701,7 @@ class notice_affichage {
 				$expl_liste .= "<td class='expl_situation'>".static::get_display_situation($expl)." </td>";
 				$expl_liste = str_replace("!!class_statut!!", $class_statut, $expl_liste);
 				
-				//Champs personalisés
+				//Champs personalisï¿½s
 				$perso_aff = "" ;
 				if (!$memo_p_perso_expl->no_special_fields) {
 					$perso_=$memo_p_perso_expl->show_fields($expl['expl_id']);
@@ -2749,7 +2749,7 @@ class notice_affichage {
 			$expl_liste_all=str_replace("!!mylocation!!",$_SESSION["empr_location_libelle"],$expl_liste_all);
 			$expl_liste_all=str_replace("!!id!!",$id+$bull_id,$expl_liste_all);
 		} else {
-			// affichage de la liste d'exemplaires calculée ci-dessus
+			// affichage de la liste d'exemplaires calculï¿½e ci-dessus
 			if (!$expl_liste_all && $opac_show_empty_items_block==1) {
 				$expl_liste_all = $expl_list_header.$expl_list_header_deb."<tr class=even><td colspan='".(count($expls_datas['colonnesarray'])+1)."'>".$msg["no_expl"]."</td></tr>".$expl_list_footer;
 			} elseif (!$expl_liste_all && $opac_show_empty_items_block==0) {
@@ -2763,7 +2763,7 @@ class notice_affichage {
 
 	} // fin function expl_list
 
-	// fontion qui génère le bloc H3 + table des autres lectures
+	// fontion qui gï¿½nï¿½re le bloc H3 + table des autres lectures
 	public static function autres_lectures ($notice_id=0,$bulletin_id=0) {
 		global $dbh, $msg;
 		global $opac_autres_lectures_tri;
@@ -2847,7 +2847,7 @@ class notice_affichage {
 					}
 					$mention_resp ? $auteur = $mention_resp : $auteur="";
 
-					// on affiche les résultats
+					// on affiche les rï¿½sultats
 					if ($odd_even==0) {
 						$pair_impair="odd";
 						$odd_even=1;
@@ -2894,9 +2894,9 @@ class notice_affichage {
 					$title_image_ok = htmlentities($this->notice->tit1, ENT_QUOTES, $charset);
 				}
 				if ($depliable) {
-					$image = "<img class='vignetteimg align_right' src='".$opac_url_base."images/vide.png' title=\"".$title_image_ok."\" hspace='4' vspace='2' vigurl=\"".$url_image_ok."\" alt='".$msg["opac_notice_vignette_alt"]."' />";
+					$image = "<img class='vignetteimg align_right mt-5' src='".$opac_url_base."images/vide.png' title=\"".$title_image_ok."\" hspace='4' vspace='2' vigurl=\"".$url_image_ok."\" alt='".$msg["opac_notice_vignette_alt"]."' />";
 				} else {
-					$image = "<img class='vignetteimg align_right' src='".$url_image_ok."' title=\"".$title_image_ok."\" hspace='4' vspace='2' alt='".$msg["opac_notice_vignette_alt"]."' />";
+					$image = "<img class='vignetteimg align_right mt-5' src='".$url_image_ok."' title=\"".$title_image_ok."\" hspace='4' vspace='2' alt='".$msg["opac_notice_vignette_alt"]."' />";
 				}
 			} else {
 				$image="" ;
@@ -2989,7 +2989,7 @@ class notice_affichage {
 		global $memo_notice;
 
 		$this->antiloop[$this->notice_id]=true;
-		//Notices liées
+		//Notices liï¿½es
 		$this->notice_relations = notice_relations_collection::get_object_instance($this->notice_id);
 		$display_links_pairs = $this->notice_relations->get_display_links('pairs', $this);
 		$display_links_childs = $this->notice_relations->get_display_links('childs', $this);
@@ -3017,7 +3017,7 @@ class notice_affichage {
 		$bullarray=array();
 		$nb_bul=0;
 		if($this->notice->opac_visible_bulletinage){
-			//Droits d'accès
+			//Droits d'accï¿½s
 			if (is_null($this->dom_2)) {
 				$acces_j='';
 				$statut_j=',notice_statut';
@@ -3054,7 +3054,7 @@ class notice_affichage {
 		$bullarray=array();
 		if($this->notice->opac_visible_bulletinage){
 			$i=0;
-			//Droits d'accès
+			//Droits d'accï¿½s
 			if (is_null($this->dom_2)) {
 				$acces_j='';
 				$statut_j=',notice_statut';
@@ -3106,7 +3106,7 @@ class notice_affichage {
 	}
 
 	/*
-	 * Un pério est ouvert à la recherche si il possède au moins un article ou une notice de bulletin
+	 * Un pï¿½rio est ouvert ï¿½ la recherche si il possï¿½de au moins un article ou une notice de bulletin
 	 */
 	public function open_to_search(){
 		return $this->record_datas->is_open_to_search();
@@ -3117,7 +3117,7 @@ class notice_affichage {
 		global $opac_serialcirc_active;
 		global $allow_serialcirc;
 		$display ="";
-		//si on n'est pas connecté, il n'y a pas de boutons à afficher
+		//si on n'est pas connectï¿½, il n'y a pas de boutons ï¿½ afficher
 		if($_SESSION['id_empr_session'] && $opac_serialcirc_active && $this->notice->opac_serialcirc_demande && $allow_serialcirc){
 			$display .= record_display::get_display_serialcirc_form_actions($this->notice_id);
 		}
@@ -3193,7 +3193,7 @@ class notice_affichage {
 	}
 
 	/**
-	 * Retourne les informations d'exemplaires rattachés à la notice
+	 * Retourne les informations d'exemplaires rattachï¿½s ï¿½ la notice
 	 */
 	static public function get_infos_expl($id_notice){
 		$infos_expl = array();
@@ -3213,7 +3213,7 @@ class notice_affichage {
 	}
 
 	/**
-	 * Vérifie que la requête Ajax soit bien envoyée par une action utilisateur
+	 * Vï¿½rifie que la requï¿½te Ajax soit bien envoyï¿½e par une action utilisateur
 	 */
 	static public function check_token($id_notice, $datetime, $token) {
 		global $dbh;
@@ -3251,7 +3251,7 @@ class notice_affichage {
 	}
 	
 	protected function do_connectors() {
-		// On gère un flag pour les cas particuliers des notices cairn qui ne seraient pas issue du connecteur
+		// On gï¿½re un flag pour les cas particuliers des notices cairn qui ne seraient pas issue du connecteur
 		$from_cairn_connector = false;
 		$query = "SELECT recid FROM notices_externes WHERE num_notice = " . $this->notice_id;
 		$result = pmb_mysql_query($query);
