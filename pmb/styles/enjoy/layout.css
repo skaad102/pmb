@@ -244,7 +244,10 @@ form {
 	background-repeat: repeat-x;
 	background-image: linear-gradient(to top, #50B648 0%, #b6ffb6 100%);
 }
-
+#navbar ul li.cloud a {
+	background-repeat: repeat-x;
+	background-image: linear-gradient(to top, #0E2F5A 0%, #3448C5 100%);
+}
 
 #navbar ul li a:hover {
 	background-repeat: repeat-x;
@@ -252,7 +255,13 @@ form {
 }
 
 #navbar ul li.tawk a:hover {
-	background-image: #13910a
+	background-repeat: repeat-x;
+	background-image: linear-gradient(to top, #0c6b05 0%, #0a7e0a 100%);
+}
+
+#navbar ul li.cloud a:hover {
+	background-repeat: repeat-x;
+	background-image: linear-gradient(to top, #021938 0%, #0c1c86 100%);
 }
 
 #navbar ul li#navbar-circ a {
