@@ -1,6 +1,6 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: askmdp.php,v 1.64 2019-06-04 08:58:11 ngantier Exp $
 
@@ -9,12 +9,12 @@ $is_opac_included = false;
 
 require_once($base_path."/includes/init.inc.php");
 
-//fichiers nécessaires au bon fonctionnement de l'environnement
+//fichiers nï¿½cessaires au bon fonctionnement de l'environnement
 require_once($base_path."/includes/common_includes.inc.php");
 
 require_once($base_path.'/includes/templates/common.tpl.php');
 
-// classe de gestion des catégories
+// classe de gestion des catï¿½gories
 require_once($base_path.'/classes/categorie.class.php');
 require_once($base_path.'/classes/notice.class.php');
 require_once($base_path.'/classes/notice_display.class.php');
@@ -25,7 +25,7 @@ require_once($base_path.'/classes/indexint.class.php');
 // classe d'affichage des tags
 require_once($base_path.'/classes/tags.class.php');
 
-// classe de gestion des réservations
+// classe de gestion des rï¿½servations
 require_once($base_path.'/classes/resa.class.php');
 
 require_once($base_path.'/classes/quick_access.class.php');
@@ -48,14 +48,14 @@ require_once($base_path."/includes/includes_rss.inc.php");
 
 // pour fonction de formulaire de connexion
 require_once($base_path."/includes/empr.inc.php");
-// pour fonction de vérification de connexion
+// pour fonction de vï¿½rification de connexion
 require_once($base_path.'/includes/empr_func.inc.php');
 
 
-// si paramétrage authentification particulière et pour la re-authentification ntlm
+// si paramï¿½trage authentification particuliï¿½re et pour la re-authentification ntlm
 if (file_exists($base_path.'/includes/ext_auth.inc.php')) require_once($base_path.'/includes/ext_auth.inc.php');
 
-//Vérification de la session
+//Vï¿½rification de la session
 $log_ok=connexion_empr();
 
 if ($is_opac_included) {
@@ -63,11 +63,11 @@ if ($is_opac_included) {
 	$footer = $inclus_footer ;
 }
 
-// si $opac_show_homeontop est à 1 alors on affiche le lien retour à l'accueil sous le nom de la bibliothèque dans la fiche empr
+// si $opac_show_homeontop est ï¿½ 1 alors on affiche le lien retour ï¿½ l'accueil sous le nom de la bibliothï¿½que dans la fiche empr
 if ($opac_show_homeontop==1) $std_header= str_replace("!!home_on_top!!",$home_on_top,$std_header);
 else $std_header= str_replace("!!home_on_top!!","",$std_header);
 
-// mise à jour du contenu opac_biblio_main_header
+// mise ï¿½ jour du contenu opac_biblio_main_header
 $std_header= str_replace("!!main_header!!",$opac_biblio_main_header,$std_header);
 
 // RSS
@@ -125,13 +125,15 @@ if ($demande!="ok" || $email=='') {
 					$headers  = "MIME-Version: 1.0\n";
 					$headers .= "Content-type: text/html; charset=iso-8859-1\n";
 		
-					// clé pour autoriser une seule connexion auto :
+					// clï¿½ pour autoriser une seule connexion auto :
 					$alphanum  = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 					$password_key = substr(str_shuffle($alphanum), 0, 20);
 					$rqt = "update empr set cle_validation='".$password_key."' where empr_login='".$row->empr_login."' ";
 					$res = pmb_mysql_query($rqt,$dbh);
 					
-					// Bonjour,<br /><br />Pour faire suite à votre demande de réinitialisation de mot de passe à <b>!!biblioname!!</b>, veuillez trouver ci-dessous le lien qui vous permettra d'effectuer ce changement : <br /><br />!!lien_mdp!!<br /><br /> - Pour rappel, votre identifiant est : !!login!!<br /><br />Si vous rencontrez des difficultés, adressez un mail à !!biblioemail!!.<br /><br />
+					// Bonjour,<br /><br />Pour faire suite ï¿½ votre demande de rï¿½initialisation de mot de passe ï¿½ <b>!!biblioname!!</b>, veuillez trouver ci-dessous le lien qui vous permettra d'effectuer ce changement : <br /><br />!!lien_mdp!!<br /><br /> - Pour rappel, votre identifiant est : !!login!!<br /><br />Si vous rencontrez des difficultï¿½s, adressez un mail ï¿½ !!biblioemail!!.<br /><br />
+					//configuaccion del mail
+					//mdp_mail_body
 					$messagemail = $msg['mdp_mail_body'] ;
 					$messagemail = str_replace("!!login!!",$row->empr_login,$messagemail);
 					$messagemail = str_replace("!!biblioname!!","<a href=\"$opac_url_base\">".$biblio_name_temp."</a>",$messagemail);	

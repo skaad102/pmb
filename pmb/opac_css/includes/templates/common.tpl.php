@@ -446,7 +446,7 @@ $std_header .= "
 		
 	<div id=\"main\">
 	
-	<div id='main_header' class='uk-visible@m uk-margin-remove'>!!main_header!!</div><div id=\"main_hors_footer\">!!home_on_top!!
+	<div id='main_header' class='uk-visible@l uk-margin-remove'>!!main_header!!</div><div id=\"main_hors_footer\">!!home_on_top!!
 						\n";
 $std_header .= "<script type='text/javascript' src='" . $include_path . "/javascript/auth_popup.js'></script>	\n";
 
@@ -954,7 +954,7 @@ $footer = "
 
 		!!div_liens_bas!! \n
 		</div><!-- /div id=main -->\n
-		<div class='uk-visible@m uk-margin-remove' id=\"intro\">\n";
+		<div class='uk-visible@l uk-margin-remove' id=\"intro\">\n";
 
 $inclus_footer = "	
 		</span>
@@ -993,13 +993,13 @@ $footer .= $footer_suite;
 $inclus_footer .= $footer_suite;
 
 $footer .= "
-<div id='loginMod' class=' uk-container uk-visible@m'>		
+<div id='loginMod' class=' uk-container uk-visible@l'>		
 		!!contenu_bandeau!! </div>" ;
 
 $footer .= "</div><!-- /div id=container -->
 <!--Start of Tawk.to Script-->
 <script src=".$base_path.'/includes/javascript/tawk.js'."></script>
-<script src=".$base_path.'/includes/javascript/hideBtn.js'."></script>
+<script src=".$base_path.'/includes/javascript/pageAjuste.js'."></script>
 <!--End of Tawk.to Script-->
 		!!cms_build_info!!
 		<script type='text/javascript'>init_drag();	//rechercher!!</script> 

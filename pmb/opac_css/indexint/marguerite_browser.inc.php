@@ -6,129 +6,89 @@
 
 if (stristr($_SERVER['REQUEST_URI'], ".inc.php")) die("no access");
 
-$marguerite_img ="<SCRIPT LANGUAGE=\"JavaScript\"><!--
-var js = 1.0;
+$marguerite_img ="
+<div>
+        <div id='info-box'>
+            <div class='row'>
+                <div class='column c-left'>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id000!!&main=1'><img src=\"images/img/1.png\"  class='ml'></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id200!!&main=1'><img src=\"images/img/3.png\" class='ml'></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id400!!&main=1'><img src=\"images/img/5.png\" class='ml'></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id600!!&main=1'><img src=\"images/img/7.png\" class='ml'></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id800!!&main=1'><img src=\"images/img/9.png\" class='ml'></a>
+                    </div>
+                </div>
+                <div class='column c-right'>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id100!!&main=1'><img src=\"images/img/2.png\" class='mr'></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id300!!&main=1'><img src=\"images/img/4.png\" class='mr'></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id500!!&main=1'><img src=\"images/img/6.png\" class='mr'></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id700!!&main=1'><img src=\"images/img/8.png\" class='mr'></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id900!!&main=1'><img src=\"images/img/10.png\" class='mr'></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-Version = parseInt(navigator.appVersion);
+        <!-- INFO BOX MOBILE -->
+        <div id='info-box-mobile'>
+            <div class='row'>
+                <div class='column'>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id000!!&main=1'><img src=\"images/img/1s.png\"></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id100!!&main=1'><img src=\"images/img/2s.png\"></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id200!!&main=1'><img src=\"images/img/3s.png\"></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id300!!&main=1'><img src=\"images/img/4s.png\"></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id400!!&main=1'><img src=\"images/img/5s.png\"></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id500!!&main=1'><img src=\"images/img/6s.png\"></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id600!!&main=1'><img src=\"images/img/7s.png\"></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id700!!&main=1'><img src=\"images/img/8s.png\"></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id800!!&main=1'><img src=\"images/img/9s.png\"></a>
+                    </div>
+                    <div class='block'>
+                        <a target='_blank' href='index.php?lvl=indexint_see&id=!!id900!!&main=1'><img src=\"images/img/10s.png\"></a>
+                    </div>
 
-if (navigator.appName == \"Netscape\")
-    js = ((Version >= 4) ? 1.2 : ( (Version == 3) ? 1.1 : 1.0 ));
-else
-    if (navigator.appVersion.indexOf('MSIE') != -1) 
-        js = ((Version >= 4) ? 1.1 : 1.0);
+                </div>
+            </div>
+        </div>
+    </div>
 
-function changeImagemap(newImage) {
-    if (js > 1.0) document ['boxImage'].src = eval(newImage + \".src\");
-}
-
-if (js > 1.0) {
-	mapMarg = new Image();
-	mapMarg.src = \"images/marg.gif\";
-
-    map0 = new Image();
-    map0.src  = \"images/marg0.gif\";
-
-    map1 = new Image();
-    map1.src  = \"images/marg1.gif\";
-
-    map2 = new Image();
-    map2.src  = \"images/marg2.gif\";
-
-    map3 = new Image();
-    map3.src  = \"images/marg3.gif\";
-
-    map4 = new Image();
-    map4.src  = \"images/marg4.gif\";
-
-    map5 = new Image();
-    map5.src  = \"images/marg5.gif\";
-
-    map6 = new Image();
-    map6.src  = \"images/marg6.gif\";
-
-    map7 = new Image();
-    map7.src  = \"images/marg7.gif\";
-
-    map8 = new Image();
-    map8.src  = \"images/marg8.gif\";
-
-    map9 = new Image();
-    map9.src  = \"images/marg9.gif\";
-
-}
-
-
-
-//-->
-
-	mapMarg = new Image();
-	mapMarg.src = \"images/marg.gif\";
-
-    map0 = new Image();
-    map0.src  = \"images/marg0.gif\";
-
-    map1 = new Image();
-    map1.src  = \"images/marg1.gif\";
-
-    map2 = new Image();
-    map2.src  = \"images/marg2.gif\";
-
-    map3 = new Image();
-    map3.src  = \"images/marg3.gif\";
-
-    map4 = new Image();
-    map4.src  = \"images/marg4.gif\";
-
-    map5 = new Image();
-    map5.src  = \"images/marg5.gif\";
-
-    map6 = new Image();
-    map6.src  = \"images/marg6.gif\";
-
-    map7 = new Image();
-    map7.src  = \"images/marg7.gif\";
-
-    map8 = new Image();
-    map8.src  = \"images/marg8.gif\";
-
-    map9 = new Image();
-    map9.src  = \"images/marg9.gif\";
-
-</SCRIPT>
-<map name=\"image-map\">
-  <area shape='poly' coords='176,14,265,43,178,168' HREF='index.php?lvl=indexint_see&id=!!id100!!&main=1'
-   onMouseOver='changeImagemap(\"map1\");self.status=\"".$msg["put_mouse_over_petals"]."\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"!!100!!\";return true'
-   onMouseOut='changeImagemap(\"mapMarg\");self.status=\"\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"".$msg["put_mouse_over_petals"]."\";return true'>
-  <area shape='poly' coords='265,44,322,119,177,171' HREF='index.php?lvl=indexint_see&id=!!id200!!&main=1'
-   onMouseOver='changeImagemap(\"map2\");self.status=\"".$msg["put_mouse_over_petals"]."\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"!!200!!\";return true'
-   onMouseOut='changeImagemap(\"mapMarg\");self.status=\"\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"".$msg["put_mouse_over_petals"]."\";return true'>
-  <area shape='poly' coords='177,172,321,121,323,216' HREF='index.php?lvl=indexint_see&id=!!id300!!&main=1'
-   onMouseOver='changeImagemap(\"map3\");self.status=\"".$msg["put_mouse_over_petals"]."\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"!!300!!\";return true'
-   onMouseOut='changeImagemap(\"mapMarg\");self.status=\"\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"".$msg["put_mouse_over_petals"]."\";return true'>
-  <area shape='poly' coords='176,174,321,218,269,298' HREF='index.php?lvl=indexint_see&id=!!id400!!&main=1'
-   onMouseOver='changeImagemap(\"map4\");self.status=\"".$msg["put_mouse_over_petals"]."\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"!!400!!\";return true'
-   onMouseOut='changeImagemap(\"mapMarg\");self.status=\"\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"".$msg["put_mouse_over_petals"]."\";return true'>
-  <area shape='poly' coords='267,299,178,330,176,177' HREF='index.php?lvl=indexint_see&id=!!id500!!&main=1'
-   onMouseOver='changeImagemap(\"map5\");self.status=\"".$msg["put_mouse_over_petals"]."\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"!!500!!\";return true'
-   onMouseOut='changeImagemap(\"mapMarg\");self.status=\"\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"".$msg["put_mouse_over_petals"]."\";return true'>
-  <area shape='poly' coords='172,171,174,326,83,297' HREF='index.php?lvl=indexint_see&id=!!id600!!&main=1'
-   onMouseOver='changeImagemap(\"map6\");self.status=\"".$msg["put_mouse_over_petals"]."\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"!!600!!\";return true'
-   onMouseOut='changeImagemap(\"mapMarg\");self.status=\"\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"".$msg["put_mouse_over_petals"]."\";return true'>
-  <area shape='poly' coords='172,167,23,217,82,293' HREF='index.php?lvl=indexint_see&id=!!id700!!&main=1'
-   onMouseOver='changeImagemap(\"map7\");self.status=\"".$msg["put_mouse_over_petals"]."\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"!!700!!\";return true'
-   onMouseOut='changeImagemap(\"mapMarg\");self.status=\"\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"".$msg["put_mouse_over_petals"]."\";return true'>
-  <area shape='poly' coords='23,125,26,218,173,170' HREF='index.php?lvl=indexint_see&id=!!id800!!&main=1'
-   onMouseOver='changeImagemap(\"map8\");self.status=\"".$msg["put_mouse_over_petals"]."\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"!!800!!\";return true'
-   onMouseOut='changeImagemap(\"mapMarg\");self.status=\"\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"".$msg["put_mouse_over_petals"]."\";return true'>
-  <area shape='poly' coords='173,168,24,122,80,42' HREF='index.php?lvl=indexint_see&id=!!id900!!&main=1'
-   onMouseOver='changeImagemap(\"map9\");self.status=\"".$msg["put_mouse_over_petals"]."\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"!!900!!\";return true'
-   onMouseOut='changeImagemap(\"mapMarg\");self.status=\"\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"".$msg["put_mouse_over_petals"]."\";return true'>
-  <area shape='poly' coords='171,165,78,39,167,10' HREF='index.php?lvl=indexint_see&id=!!id000!!&main=1'
-   onMouseOver='changeImagemap(\"map0\");self.status=\"".$msg["put_mouse_over_petals"]."\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"!!000!!\";return true'
-   onMouseOut='changeImagemap(\"mapMarg\");self.status=\"\";document.getElementById(\"marguerite_petal_text\").innerHTML = \"".$msg["put_mouse_over_petals"]."\";return true'>
-</map>
 <div class='uk-margin-auto-left uk-margin-auto-vertical'>
-<img NAME=\"boxImage\" src=\"images/marg.gif\" style='border:0px; width:348px; height:341px;' USEMAP=\"#image-map\"> </div>";
+ </div>";
 
 $rqt = " select indexint_id, indexint_comment, indexint_name from indexint where indexint_name in ('000','100','200','300','400','500','600','700','800','900') ";
 $res = pmb_mysql_query($rqt, $dbh);
@@ -140,5 +100,5 @@ while($indexint=pmb_mysql_fetch_object($res)) {
 	}
 print preg_replace('/!!indexint_title!!/m',$msg["colors_marguerite"], $decimal_see_header);
 print "<span style='text-align:center'>".$marguerite_img;
-print "<div id=\"marguerite_petal_text\">".$msg["put_mouse_over_petals"]."</div></span><br />";
+print "<div id=\"marguerite_petal_text\"></div></span><br />";
 print $decimal_see_footer;

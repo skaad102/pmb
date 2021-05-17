@@ -1,10 +1,10 @@
 <?php
 // +-------------------------------------------------+
-// © 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+// ï¿½ 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
 // +-------------------------------------------------+
 // $Id: collections.tpl.php,v 1.49 2019-08-06 09:53:27 ngantier Exp $
 
-// templates pour gestion des autorités collections
+// templates pour gestion des autoritï¿½s collections
 
 if (stristr($_SERVER['REQUEST_URI'], ".tpl.php")) die("no access");
 
@@ -280,6 +280,7 @@ function f_coll_id_callback() {
 	<div id='zone-container'>
 		<div id='el0Child_0' class='row'>
 			<!-- nom -->
+			
 			<div id='el0Child_0_a' class='colonne2' movable='yes' title=\"".htmlentities($msg[67], ENT_QUOTES, $charset)."\">
 				<div class='row'>
 					<label class='etiquette' for='form_nom'>$msg[67]</label>
