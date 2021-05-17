@@ -1,0 +1,1 @@
+document.querySelectorAll('span.cmsNoStyles').forEach(e=>{e.remove()})

@@ -999,6 +999,7 @@ $footer .= "
 $footer .= "</div><!-- /div id=container -->
 <!--Start of Tawk.to Script-->
 <script src=".$base_path.'/includes/javascript/tawk.js'."></script>
+<script src=".$base_path.'/includes/javascript/hideBtn.js'."></script>
 <!--End of Tawk.to Script-->
 		!!cms_build_info!!
 		<script type='text/javascript'>init_drag();	//rechercher!!</script> 

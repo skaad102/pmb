@@ -341,7 +341,9 @@ iframe#iframe_resume_panier {
 #connexion h3 {
 	margin-bottom: 5px;
 	margin-top: 10px;
-	font-size: 13px;
+	font-size: 1.1rem;
+	font-weight: 700;
+
 }
 
 #connexion #login_form form {
@@ -387,7 +389,8 @@ iframe#iframe_resume_panier {
 #adresse h3 {
 	margin-bottom: 5px;
 	margin-top: 20px;
-	font-size: 13px;
+	font-size: 1.1rem;
+	font-weight:700
 }
 
 #adresse #opac_biblio_email {

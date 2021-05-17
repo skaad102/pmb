@@ -23,13 +23,15 @@ $login_form = "
 <br>
 
 
-<div class='uk-container uk-width-auto'>
-          <div class='uk-card uk-card-default uk-card-hover uk-width-auto@m uk-margin-auto uk-margin-auto-vertical '>
-              <div class='uk-card-header '>
+<div class='uk-container uk-margin-xlarge-left uk-margin-xlarge-right uk-width-auto'>
+          <div class='uk-card uk-card-default uk-card-hover uk-width-auto@m uk-margin-auto uk-margin-auto-vertical' style='
+          border-radius: 2rem;'>
+            <div class='uk-card-header '>
                 <h2 class='uk-card-title'><strong>Identificación</strong></h2 >
               </div>
       
-                  <form id='login' method='post' action='./main.php' autocomplete='off'>
+                  <form id='login' method='post' action='./main.php' autocomplete='off' style='
+                  border-radius: 2rem;'>
                       <input type=hidden name=ret_url value=\"".addslashes($ret_url)."\">";
                           if (count($_tableau_databases)>1) {
                             $login_form .= "<script type='text/javascript' src='./javascript/http_request.js'></script>
@@ -56,7 +58,7 @@ $login_form = "
                       <div class='uk-margin'>
                         <div class='uk-inline'>
                             <span class='uk-form-icon' uk-icon='icon: user'></span>
-                            <input class='uk-input uk-width-expand' type='text' name='user' id='user' value=''>
+                            <input class='uk-input uk-width-expand' type='text' name='user' id='user' value='' style='font-size: 1.5rem'>
                         </div>
                       </div>
 
@@ -64,7 +66,7 @@ $login_form = "
                     <div class='uk-margin'>
                         <div class='uk-inline'>
                           <span class='uk-form-icon uk-form-icon-flip' uk-icon='icon: lock'></span>
-                          <input class='uk-input' type='password' name='password' id='password' value=''>
+                          <input class='uk-input' type='password' name='password' id='password' value='' style='font-size: 1.5rem'>
                         </div>
                     </div>
                     <div class='row'></div>
