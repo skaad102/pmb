@@ -27,7 +27,7 @@
     }
 
     .block img {
-        width: 50%;
+        width: 100%;
         transition: transform .15s ease-out;
         margin-top: 20px;
         

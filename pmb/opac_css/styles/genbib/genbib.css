@@ -867,6 +867,9 @@ input#a2z_abt_actif {
 #aut_see {
    	margin-top: 10px;
 }
+#aut_see img.center{
+	width: 30%;
+}
 
 
 /* -----------------------------------------------------*/
