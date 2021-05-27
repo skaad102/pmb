@@ -5716,8 +5716,8 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code = "import_authorities_log_more_recent"> Ya existe un registro más reciente </entry>
 <entry code = "import_authorities_log_updated"> Aviso actualizado </entry>
 <entry code = "import_authorities_log_authority_locked"> Autoridad en PMB bloqueada en la importación </entry>
-<entry code = "nb_authorities_already_imported">%s registros procesados ​​en%s ... </entry>
-<entry code = "end_authorities_import"> Importar termid! Se han procesado% d registros. </entry>
+<entry code = "nb_authorities_already_imported">%s registros procesados ​​en %s ... </entry>
+<entry code = "end_authorities_import"> Importación terminada! Se han procesado %d registros. </entry>
 <entry code = "import_authorities_error">%d aviso (s) error (s)! </entry>
 <entry code = "download"> Descargar </entry>
 <entry code = "import_authorities_type"> Importar un tipo de autoridad </entry>
@@ -8397,6 +8397,8 @@ $Id: es_ES.xml,v 1.1527 2019-09-03 10:22:29 ngantier Exp $ -->
 <entry code = "pricing_system_cant_delete"> No se puede eliminar este sistema de precios porque está adjunto a los depósitos </entry>
 <entry code = "pricing_system_success_delete"> La eliminación se ha completado con éxito. </entry>
 <entry code = "purchase_invoice_status_new"> Nuevo </entry>
+
+
 <entry code="acquisition_invoice_status_validated">Valid�</entry>
 <entry code="acquisition_invoice_validate">Valider les factures</entry>
 <entry code="acquisition_account_cant_delete">Impossible de supprimer ce d�compte car il est rattach� � une facture</entry>

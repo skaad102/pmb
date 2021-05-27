@@ -1445,7 +1445,7 @@ $Id: fr_FR.xml,v 1.1946 2019-08-29 12:25:40 moble Exp $ -->
 <entry code="parperso_options_list_before_rec">Vous ne pouvez pas cr�er des options de choix tant que le champ n'a pas �t� enregistr� !</entry>
 <entry code="parperso_options_comment_larg">Largeur du champ commentaire</entry>
 <entry code="parperso_options_comment_lines">Nombre de lignes du champ commentaire</entry>
-<entry code="checkuser_no_session">Pas de session ouverte, vous devez vous connecter.</entry>
+<entry code="checkuser_no_session">No hay sesión abierta, debe iniciar sesión.</entry>
 <entry code="checkuser_session_depassee">Su sesión ha estado inactiva durante demasiado tiempo, debe volver a conectarse.</entry>
 <entry code="checkuser_session_invalide">Votre session est invalide, vous devez vous reconnecter.</entry>
 <entry code="checkuser_aucun_droit">Vous n'avez pas acc�s � cette fonctionnalit�.</entry>

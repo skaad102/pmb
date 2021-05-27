@@ -521,7 +521,7 @@ $Id: es_ES.xml,v 1.482 2019-08-21 07:42:07 ccraig Exp $ -->
 <entry code="voir_contenu_detail">Abrir para más información</entry>
 <entry code="mdp_txt_intro_demande">Danos tu correo electrónico para que podamos enviarte tus datos de conexión.</entry>
 <entry code="mdp_bt_send">Enviar</entry>
-<entry code="mdp_mail_body"><![CDATA[Buenos dias,<br /><br />Para dar seguimiento a su solicitud de restablecimiento de contraseña <b>!!biblioname!!</b>, A continuación, encontrará el enlace que le permitirá realizar este cambio. : <br /><br />!!lien_mdp!!<br /><br /> La clave de conexión automática se eliminará después de abrir el enlace por razones de seguridad.<br /><br /> - Como recordatorio, su nombre de usuario es: !!login!!<br /><br />Si encuentra alguna dificultad, envíe un correo electrónico a !!biblioemail!!.<br /><br />]]></entry>
+<entry code="mdp_mail_body"><![CDATA[Buenos dias,<br/><br/>Para dar seguimiento a su solicitud de restablecimiento de contraseña <b>!!biblioname!!</b>, A continuación, encontrará el enlace que le permitirá realizar este cambio : <br/><br/>!!lien_mdp!!<br/><br/> La clave de conexión automática se eliminará después de abrir el enlace por razones de seguridad.<br/><br/> - Como recordatorio, su nombre de usuario es: !!login!!<br/><br/>Si encuentra alguna dificultad, envíe un correo electrónico a !!biblioemail!!.<br/><br/>]]></entry>
 <entry code="mdp_mail_obj">Datos de conexión para !!biblioname!!</entry>
 <entry code="mdp_sent_ok">Los datos de conexión se han mandado a</entry>
 <entry code="mdp_no_email">Correo electrónico incorrecto o desconocido, si tienes algún problema manda un correo electrónico !!biblioemail!!.</entry>
