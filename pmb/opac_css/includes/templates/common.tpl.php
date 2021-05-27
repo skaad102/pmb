@@ -419,6 +419,7 @@ if ($opac_recherche_ajax_mode) {
 	$std_header .= "
 	<script type='text/javascript' src='" . $base_path . "/includes/javascript/tablist_ajax.js'></script>";
 }
+
 $std_header .= "
 <script type='text/javascript' src='" . $base_path . "/includes/javascript/tablist.js'></script>
 <script type='text/javascript' src='" . $base_path . "/includes/javascript/misc.js'></script>
@@ -434,22 +435,34 @@ $std_header .= "
 			</div>
 		</nav>
 
-		<!-- offCanbas login -->
-		<div id='logsd' uk-offcanvas='mode: push; overlay: true'>
-		<div class='uk-offcanvas-bar'>
-		<button class='uk-offcanvas-close' type='button' uk-close></button>
+		<!-- offCanbas login Collapse-->
 
-		</div>
+		<div id='logsd' uk-offcanvas='mode: push; overlay: true'>
+			<div class='uk-offcanvas-bar'>
+			<button class='uk-offcanvas-close' type='button' uk-close></button>
+				<div id='nvVertical' class='mt-5 uk-width-1-2@s'>
+					<ul id='ulNvVertical' class='uk-nav-default uk-nav-parent-icon' uk-nav>
+
+						<li><a href='./index.php'><span class='uk-margin-small-right' uk-icon='icon: home'></span> Bienvenido</a></li>
+
+						<li><a href='./index.php?lvl=infopages&amp;pagesid=4'><span class='uk-margin-small-right' uk-icon='icon: calendar'></span> Calendario</a></li>
+
+						<li><a href='./index.php?lvl=infopages&amp;pagesid=6'><span class='uk-margin-small-right' uk-icon='icon: users'></span> Nosotros</a></li>
+
+						<li><a target='_blanck' href='https://boletinbibliotecaunitropico.blogspot.com/'><span class='uk-margin-small-right' uk-icon='icon: world'></span> Boletín</a></li>
+
+						<li><a href='./index.php?lvl=infopages&pagesid=8'><span class='uk-margin-small-right' uk-icon='icon: unlock'></span> Open</a></li>
+					</ul>
+				</div>
+			</div>
 		</div> 
 
-
-		
 	<div id=\"main\">
 	
 	<div id='main_header' class='uk-visible@l uk-margin-remove'>!!main_header!!</div><div id=\"main_hors_footer\">!!home_on_top!!
 						\n";
 $std_header .= "<script type='text/javascript' src='" . $include_path . "/javascript/auth_popup.js'></script>	\n";
-
+/* offCanbas login Collapse añadir los nuevos <li> del parametro administracion>herramientas>opac>biblio_preamble_p2 */
 $inclus_header = "
 !!liens_rss!!
 !!enrichment_headers!!
